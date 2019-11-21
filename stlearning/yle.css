@@ -52,6 +52,7 @@ footer{
 
 img {  
   background-size: contain;
+  /* background-size: cover; */
   background-repeat: no-repeat;
   background-position: center;
   background-image: url('../img/hoge.png');
@@ -62,6 +63,28 @@ img {
   background: white;
   border: 1px #c0c0c0 solid; 
   padding: 10px;
+}
+
+/* 画像の比率固定 */
+.parent {
+  position: relative;
+  width: 100%;
+}
+
+.parent:before {
+  /* 1:3ならば1/3で33％ */
+  padding-top: 33%;
+  display: block;
+  content:"";
+}
+
+/* 孫がいるならばwrapper */
+.child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
 @media screen and (max-width:376px) {
