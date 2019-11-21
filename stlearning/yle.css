@@ -50,8 +50,22 @@ footer{
   height: 70px;
 }
 
+img {  
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('../img/hoge.png');
+}
+
+/* bootstrapの余白 */
+.box {
+  background: white;
+  border: 1px #c0c0c0 solid; 
+  padding: 10px;
+}
+
 @media screen and (max-width:376px) {
-  
+    
 }
 /* -------------------------------------- */
 .container {    
@@ -69,9 +83,9 @@ footer{
   width: 100%;  
 }
 /* -------------------------------------- */
-img {  
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-image: url('../img/hoge.png');
-}
+/* レスポンシブデザイン
+Extra small ／544px未満/.col-xs-	
+Small ／ 544px以上 768px未満/.col-sm-	
+Medium ／ 768px以上 992px未満/.col-md-	
+large ／ 992px以上 1200px未満/.col-lg-	
+Extra large ／ 1200px以上/.col-xl- */
