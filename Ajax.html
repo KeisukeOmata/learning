@@ -1,0 +1,29 @@
+<button id="btn">取得</button>
+<body>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script>
+  $(function () {
+    $('#btn').on('click', function () {
+      $.ajax({
+        url: "https://hoge",
+        dataType: 'json',
+      }).done(function (data) {
+        var hoge = data.hoge;
+        $('#hoge').text(data.hoge);
+        $.ajax({
+          url: "https://hoge",
+          dataType: 'json',
+        }).done(function (data) {
+          var fuga = data.fuga;
+          // 同じスコープ内だから上で定義した変数も使える
+          $('#hoge').text(hoge);
+        }).fail(function (data) {
+          alert('hugaのapiが読み込めません。');  
+      　});
+      }).fail(function (data) {
+        alert('hogeのapiが読み込めません。');  
+      });
+    });
+  });
+  </script>
+</body>
