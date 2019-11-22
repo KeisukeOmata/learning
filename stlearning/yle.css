@@ -1,0 +1,77 @@
+* {    
+  box-sizing: border-box;   
+  margin: 0;    
+  padding: 0;  
+}
+
+*:focus {
+  outline: none;
+  }
+
+html {    
+  box-sizing: border-box;  
+}
+
+*, *:before, *:after {    
+  box-sizing: inherit;  
+}
+
+html, body {    
+  height: 100%;    
+  margin: 0;  
+}    
+
+body {    
+  -webkit-align-items: center;    
+  -ms-flex-align: center;    
+  align-items: center;    
+  display: -webkit-flex;    
+  display: flex;
+  line-height: 1.5;    
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+footer{
+  margin-top: auto;
+  text-align: center;
+  margin-bottom: -10px;
+  height: 70px;
+}
+
+@media screen and (max-width:376px) {
+  
+}
+--------------------------------------
+.container {    
+  height: 0;    
+  padding-bottom: 20%;    
+  position: relative;  
+}    
+
+.container div {    
+  border: 2px dashed #ddd;    
+  height: 100%;    
+  left: 0;    
+  position: absolute;    
+  top: 0;    
+  width: 100%;  
+}
+--------------------------------------
+img {  
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('../img/hoge.png');
+}
