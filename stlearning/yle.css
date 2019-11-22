@@ -78,7 +78,7 @@ img {
   content:"";
 }
 
-/* 孫がいるならばwrapper */
+/* 孫がいるならばwrapperを指定 */
 .child {
   position: absolute;
   top: 0;
