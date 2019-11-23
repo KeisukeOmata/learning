@@ -1,0 +1,1 @@
+SELECT SUM(goals) AS "チームの合計得点" FROM players;
