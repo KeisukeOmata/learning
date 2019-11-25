@@ -6,29 +6,15 @@
 
 *:focus {
   outline: none;
-  }
-
-html {    
-  box-sizing: border-box;  
 }
 
-*, *:before, *:after {    
-  box-sizing: inherit;  
+a:link { 
+  color : #000000; 
 }
 
-html, body {    
-  height: 100%;    
-  margin: 0;  
-}    
-
-body {    
-  -webkit-align-items: center;    
-  -ms-flex-align: center;    
-  align-items: center;    
-  display: -webkit-flex;    
-  display: flex;
-  line-height: 1.5;    
-}
+a:visited { 
+  color : #000000;
+ }
 
 .clearfix::after {
   content: "";
@@ -49,7 +35,7 @@ footer{
   margin-bottom: -10px;
   height: 70px;
 }
-
+/* -------------------------------------- */
 img {  
   background-size: contain;
   /* background-size: cover; */
@@ -88,21 +74,6 @@ img {
 }
 
 @media screen and (max-width:376px) {   
-}
-/* -------------------------------------- */
-.container {    
-  height: 0;    
-  padding-bottom: 20%;    
-  position: relative;  
-}    
-
-.container div {    
-  border: 2px dashed #ddd;    
-  height: 100%;    
-  left: 0;    
-  position: absolute;    
-  top: 0;    
-  width: 100%;  
 }
 /* -------------------------------------- */
 /* レスポンシブデザイン
