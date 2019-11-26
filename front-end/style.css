@@ -6,6 +6,22 @@
 
 *:focus {
   outline: none;
+  }
+
+button:focus {
+  outline: none;
+}
+
+button {
+	width: auto;
+	padding:0;
+	margin:0;
+	background:none;
+	border:0;
+	font-size:0;
+	line-height:0;
+	overflow:visible;
+	cursor:pointer;
 }
 
 a:link { 
@@ -15,6 +31,10 @@ a:link {
 a:visited { 
   color : #000000;
  }
+
+li {
+  list-style: none;
+}
 
 .clearfix::after {
   content: "";
@@ -56,14 +76,12 @@ img {
   position: relative;
   width: 100%;
 }
-
 .parent:before {
   /* 1:3ならば1/3で33％ */
   padding-top: 33%;
   display: block;
   content:"";
 }
-
 /* 孫がいるならばwrapperを指定 */
 .child {
   position: absolute;
@@ -74,6 +92,16 @@ img {
 }
 
 @media screen and (max-width:376px) {   
+
+  /* order1が先になる */
+  /* flexはwrapperに指定している */
+  .hoge2 {
+    order: 1;
+  }
+  .hoge1 {
+    order: 2;
+  }
+
 }
 /* -------------------------------------- */
 /* レスポンシブデザイン
