@@ -1,4 +1,0 @@
-class Book < ApplicationRecord
-    
-      
-end
