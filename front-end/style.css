@@ -1,0 +1,112 @@
+* {    
+  box-sizing: border-box;   
+  margin: 0;    
+  padding: 0;  
+}
+
+*:focus {
+  outline: none;
+  }
+
+button:focus {
+  outline: none;
+}
+
+button {
+	width: auto;
+	padding:0;
+	margin:0;
+	background:none;
+	border:0;
+	font-size:0;
+	line-height:0;
+	overflow:visible;
+	cursor:pointer;
+}
+
+a:link { 
+  color : #000000; 
+}
+
+a:visited { 
+  color : #000000;
+ }
+
+li {
+  list-style: none;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+footer{
+  margin-top: auto;
+  text-align: center;
+  margin-bottom: -10px;
+  height: 70px;
+}
+/* -------------------------------------- */
+img {  
+  background-size: contain;
+  /* background-size: cover; */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('../img/hoge.png');
+}
+
+/* bootstrapの余白 */
+.box {
+  background: white;
+  border: 1px #c0c0c0 solid; 
+  padding: 10px;
+}
+
+/* 画像の比率固定 */
+.parent {
+  position: relative;
+  width: 100%;
+}
+.parent:before {
+  /* 1:3ならば1/3で33％ */
+  padding-top: 33%;
+  display: block;
+  content:"";
+}
+/* 孫がいるならばwrapperを指定 */
+.child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+@media screen and (max-width:376px) {   
+
+  /* order1が先になる */
+  /* flexはwrapperに指定している */
+  .hoge2 {
+    order: 1;
+  }
+  .hoge1 {
+    order: 2;
+  }
+
+}
+/* -------------------------------------- */
+/* レスポンシブデザイン
+Extra small ／544px未満/.col-xs-	
+Small ／ 544px以上 768px未満/.col-sm-	
+Medium ／ 768px以上 992px未満/.col-md-	
+large ／ 992px以上 1200px未満/.col-lg-	
+Extra large ／ 1200px以上/.col-xl- */

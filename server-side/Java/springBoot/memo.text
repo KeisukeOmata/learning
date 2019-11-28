@@ -1,0 +1,31 @@
+env | grep JAVA
+------------------------
+Java Extension Pack
+Spring Boot Extension Pack
+Lombok Annotations Support for VS Code
+
+コマンドパレット(command,shift,p)でspringと検索し、Spring Initializr: Generate a Maven Projectを選択
+Javaを選択
+パッケージ名を入力
+プロジェクト名を入力
+SpringBootのバージョンを選択
+DevTool, Lombok, H2, JDBC, Thymeleaf, Web
+------------------------
+DI
+  DependencyInjection（依存性の注入）
+  　依存性
+  　　あるクラスが別のクラスを利用する
+　  　　他のクラスをローカル変数として持っている
+  　　　他のクラスがメソッドの引数、戻り値になっている
+  　注入
+  　　変数にインスタンスを代入
+  インスタンス管理
+  　インスタンスの作成
+  　インスタンスのライフサイクル(new, null)管理
+AOP
+  AspectOrientedPrograming
+  アスペクト指向プログラミング。共通処理をまとめておくこと
+SpringSecurity
+  セキュリティ設定
+SpringDataJDBC
+  Javaを使ってデータベースにアクセスするための標準API
