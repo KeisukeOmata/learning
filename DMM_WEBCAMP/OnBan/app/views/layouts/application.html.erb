@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>おんばん</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" >
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho" rel="stylesheet">
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- ヘッダー -->
+      <header>
+        <nav class="navbar navbar-default navbar-static-top navbar-custom">
+        	<div class="container-fluid">
+	        	<div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarEexample1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <div class="navbar-brand">
+                <% if admin_signed_in? %>
+                <% else %>
+                  <%= link_to items_path do %><p>
+                    <%= image_tag("/images/a4ba6ab5751d41c9eb45d497405e2f1e.png") %></p>
+                  <% end %>
+                  <% if user_signed_in? %>
+                    <h4>に ようこそ
+                    <%= link_to current_user.family_name, user_path(current_user.id) %> 様</h4>
+                  <% else %>
+                    <h4> に ようこそ ゲスト様</h4>
+                  <% end %>
+                <% end %>  
+              </div>
+            </div>
+         		<div class="collapse navbar-collapse navbar-right" id="navbarEexample1">
+		        	<ul class="nav navbar-nav">
+                <% if admin_signed_in? %>
+                  <li><%= link_to 'ユーザー', admins_users_path %></li>
+                  <li><%= link_to '受注', admins_orders_path %></li>
+                  <li><%= link_to '商品登録', new_admins_item_path %></li>
+                  <li><%= link_to 'レーベル登録', admins_labels_path %></li>
+                  <li><%= link_to 'ジャンル登録', admins_categories_path %></li>
+                  <li><%= link_to 'アーティスト登録', admins_artists_path %></li>
+                  <li><%= link_to 'ログアウト', destroy_admin_session_path, method: :delete %></li>
+                <% else %>
+                  <% if user_signed_in? %>
+                    <li><%= link_to cart_items_path do %><i class="fas fa-shopping-cart" style="font-size: 25px;"></i></li><% end %>
+                    <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+                  <% else %>
+                    <li><%= link_to '新規登録', new_user_registration_path %></li>
+                    <li><%= link_to 'ログイン', new_user_session_path %></li>
+                  <% end %>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <%= yield %>
+      <!-- フッター -->
+    </div>
+    <footer>
+        <div class="footer">
+            <div class="footer-text">
+              <p>© 2019 team.Justice</p>
+            </div>
+          </div>
+    </footer>
+  </body>
+</html>

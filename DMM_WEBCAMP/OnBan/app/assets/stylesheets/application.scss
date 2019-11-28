@@ -1,0 +1,110 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.center-style {
+   text-align: center;
+ }
+
+ .navbar-custom {
+    background-color: #f7f6f5;
+    color: #fff;
+}
+
+.navbar {
+  position: relative;
+  margin-bottom: -10px;
+}
+
+.navbar-brand {
+  position: relative;
+  font-size: 15px;
+}
+
+.navbar-brand h4 {
+    color: #4d4d4d;
+    margin-left: 150px;
+}
+
+.navbar-brand img {
+  top: 10%;
+  position: absolute;
+
+}
+
+.main {
+  margin-bottom: 80px;
+}
+
+.container{
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.footer-text {
+  text-align: center;
+  line-height: 50px;
+}
+
+.footer {
+  background-color: #f7f6f5;
+}
+
+.footer p {
+  margin-bottom: -10px;
+}
+
+@media screen and (max-width:499px) {   
+
+  .main {
+    width: 100%;
+  }
+  
+  .navbar-brand a p img {
+    margin-left: -15px;
+  }
+
+  .navbar-brand h4 {
+    font-size: 8px;
+    margin-left: 130px;
+    margin-top: 20px; 
+  } 
+
+  .center-style {
+    width: 300px;
+  }
+
+}
