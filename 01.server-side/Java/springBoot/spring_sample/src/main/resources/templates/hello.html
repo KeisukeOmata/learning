@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <metacharset="UTF8"></meta>
+  <title>HelloWorld</title>
+</head>
+<body>
+  <h1>HelloWorld</h1>
+  <form method="post" action="/hello">
+    <!-- th:valueで画面からControllerに値を渡す -->
+    好きな文字を入力：<input type="text" name="text1" th:value="${text1_value}"/>
+</form>
+</body>
+</html>
