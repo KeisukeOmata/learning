@@ -1,0 +1,44 @@
+<% if flash[:alert] %>
+  <div class="alert alert-warning" role="alert">
+    <p><%= flash[:alert] %></p>
+  </div>
+<% end %>
+<div class="container">
+  <div class="center-style" style="margin-bottom: 80px;">
+    <!-- 新規登録/編集のフォーム -->
+    <h3 style="padding-bottom: 20px;">新しくアーティストを登録</h3>
+    <!-- 新規登録と編集で登録ボタンを押した時のURLを三項演算子でそれぞれに分岐させています -->
+    <%# urlがidをもたなければ(nil)新規登録(admins_artists_path)、idを持つ場合は編集(admins_artist_path(id: @artist.id)) %>
+    <%= form_for(@artist, url: @artist.id == nil ? admins_artists_path : admins_artist_path(id: @artist.id)) do |f| %>
+      <%= f.label :artist_name %>
+      <%= f.text_field :artist_name %>
+      <div style="padding-left: 15px; display: inline-block;"><%= f.submit '登録', class: "btn btn-info" %>
+      </div>
+    <% end %>
+    <!-- 新規登録画面に切替(フォームを編集状態から新規登録状態にしたいときに押します) -->
+    <div style="padding: 20px;"><%= link_to '編集モードから抜ける', admins_artists_path, class: "btn btn-default" %>
+    </div>
+    <!-- 登録したアーティスト一覧 -->
+    <h3>アーティスト一覧</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>アーティスト名</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @artists.each do |artist| %>
+          <tr>
+            <td><%= artist.artist_name %></td>
+            <!-- showe、edit画面は今回作らないので、選択したレコードのidを取得する指示を()に書いてます。 -->
+            <td><%= link_to "編集", admins_artists_path(id: artist.id), class: "btn btn-success" %></td>
+            <td><%= link_to "削除", admins_artist_path(id: artist.id), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-default" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= paginate @artists, class: "paginate" %>
+    <br>
+  </div>
+</div>

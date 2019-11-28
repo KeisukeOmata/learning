@@ -1,0 +1,8 @@
+<div class="container" style="margin-bottom: 80px;">
+  <h3 style="text-align: center; padding-bottom: 20px;">商品登録</h3>
+  <%# 登録フォームはパーシャル %>
+  <div class="from-body"><%= render 'form', item: @item %>
+  </div>
+  <div style="display: inline-block; float: right;"><%= link_to '商品一覧へ戻る', items_path, class: "btn btn-default" %>
+  </div>
+</div>

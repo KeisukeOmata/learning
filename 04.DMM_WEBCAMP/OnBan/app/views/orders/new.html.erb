@@ -1,0 +1,32 @@
+<div class="container" style="margin-bottom: 50px;">
+  <div class="order-new-box">
+    <h3 style="text-align: center; padding-bottom: 25px; padding-top: 15px;">お会計</h3>
+    <%= form_with url: orders_path, local: true do |f| %>
+      <div class="order-new-text" style="padding-left: 15px;">
+        <label>送付先住所を選択</label><br>
+        <%# userテーブルが持つ住所 %>
+        <%# コントローラーのcreateにvalue 0を返す %>
+        <%= f.radio_button :method, 0, :checked => "checked" %>
+        〒<%= @user.postal_code %>
+	      <%= @user.street_address %>
+	      <%= @user.family_name %>
+        <%= @user.first_name %>
+        <br>
+        <% @addresses.each do |a| %>
+          <%# addressテーブルが持つ住所 %>
+          <%# コントローラーのcreateに:methodを返す %>
+	        <%= f.radio_button :method, a.id %>
+	        〒<%= a.other_postal_code %>
+	        <%= a.other_street_address %>
+          <%= a.receiver_user %>
+        <% end %>
+        <p style="font-weight: bold; padding-top: 25px;">支払い方法を選択</p>
+        <%= f.select(:payment, {代引き: '代引き', 銀行振込: '銀行振込', クレジットカード: 'クレジットカード'}) %><br>
+        <p style="display: inline-block; padding-top: 50px; font-size: 20px;">小計：<%= (current_user.total_price).to_i %>円</p>
+        <p style="display: inline-block; font-size: 20px;">　送料：<%= @order.shipping_cost %>円</p>
+        <p style="display: inline-block; padding-bottom: 25px; font-size: 20px;">　支払い合計：<%= (current_user.total_cost).to_i %>円</p>
+      </div>
+      <p style="text-align: center; padding-bottom: 15px;"><%= f.submit '購入確定', class: "btn btn-info" %></p>
+    <% end %>
+  </div>
+</div>

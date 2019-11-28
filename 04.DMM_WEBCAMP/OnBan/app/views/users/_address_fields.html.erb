@@ -1,0 +1,14 @@
+<div class="nested-fields form-inline">
+  <div class="form-group">
+    <%= f.label :郵便番号 %>
+    <%= f.text_field :other_postal_code, :size=>"15" %>
+  </div><br>
+  <div class="form-group">
+    <%= f.label :住所 %>
+    <%= f.text_field :other_street_address, id:"edit-address-field" %>
+  </div><br>
+  <div class="form-group">
+    <%= f.label :宛名 %>
+    <%= f.text_field :receiver_user %>
+  </div>
+</div>
