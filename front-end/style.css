@@ -82,7 +82,7 @@ img {
   display: block;
   content:"";
 }
-/* 孫がいるならばwrapperを指定 */
+/* スライドショーのときなどはwrapperを指定 */
 .child {
   position: absolute;
   top: 0;
