@@ -1,3 +1,0 @@
-class Bicycle extends Vehicle {
-
-}

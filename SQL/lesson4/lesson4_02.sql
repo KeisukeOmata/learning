@@ -1,1 +1,0 @@
-UPDATE students SET name = "Jordan", course = "HTML" WHERE id=6;
