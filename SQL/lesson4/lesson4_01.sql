@@ -1,1 +1,0 @@
-INSERT INTO students(name, course) VALUES("Kate", "Java");
