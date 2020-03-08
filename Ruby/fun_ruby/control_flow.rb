@@ -16,3 +16,8 @@ end
 繰り返し回数.times do
   命令
 end
+
+
+a.each do |n|
+  p n
+end
