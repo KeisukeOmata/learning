@@ -40,6 +40,8 @@ Trackableのコメントアウトを外す
 rails db:migrate
 #ログイン画面
 rails g devise:views
+#コントローラー
+rails g devise:controllers admins
 
 #kaminari
 gem 'kaminari','~> 1.1.1'
