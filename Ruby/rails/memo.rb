@@ -21,7 +21,56 @@ gem "refile-mini_magick"
 sudo apt-get update
 sudo apt-get -y install imagemagick libmagick++-dev
 bundle install
-image_idカラムを追加
+モデルにhoge_idカラムを追加
+モデルに以下を追加
+--------------------------------
+attachment :hoge
+--------------------------------
 rails db:migrate
-モデルに attachment :image を追加
 runtimeエラーが出た場合は config/initializers/application_controller_renderer.rb にシークレットキーを追加
+
+#devise
+gem 'devise'
+bundle install
+rails g devise:install
+#ログイン機能を利用するモデル
+rails g devise Hoge
+Trackableのコメントアウトを外す
+カラムを追加
+rails db:migrate
+#ログイン画面
+rails g devise:views
+
+#kaminari
+gem 'kaminari','~> 1.1.1'
+bundle install
+rails g kaminari:config
+rails g kaminari:views default
+#view
+<% paginate @hoges, class: "paginate" %
+#controller
+@hoges = Hoge.page(params[:page]).reverse_order
+#config/initializers/kaminari_config.rb
+config.default_per_page = 5
+
+#bootstrap
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'jquery-rails'
+bundle install
+app/asset/stylesheet のファイル名を .scssに変更
+app/assets/stylesheets/application.scssを編集
+--------------------------------
+*= require_tree .
+*= require_self
+*
+@import "bootstrap-sprockets";
+@import "bootstrap";        
+--------------------------------
+app/assets/javascripts/application.jsを編集
+--------------------------------
+//= require rails-ujs
+//= require turbolinks
+//= require jquery
+//= require bootstrap-sprockets
+//= require_tree .
+--------------------------------
