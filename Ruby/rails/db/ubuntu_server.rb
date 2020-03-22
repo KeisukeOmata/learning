@@ -19,7 +19,7 @@ sudo apt-get -y install libssl-dev
 # MySQLのインストール
 sudo apt-get -y install mysql-server libmysqlclient-dev
 # SQLite3の場合
-# $ sudo apt-get -y install sqlite3 libsqlite3-dev
+# sudo apt-get -y install sqlite3 libsqlite3-dev
 
 # MySQLのUTF-8対応
 vi /etc/mysql/my.cnf
