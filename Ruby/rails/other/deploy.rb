@@ -95,7 +95,7 @@ mysql> create database hoge;
 #プロジェクト準備
 vagrant環境内でrails --version
 #5.2以上
-scp -i ~/.ssh/キーペア名.pem master.key ec2-user@パブリックIP:/var/www/html/meshiterro-demo/config
+scp -i ~/.ssh/キーペア名.pem master.key ec2-user@パブリックIP:/var/www/html/アプリ名/config
 #5.1.〇
 bundle exec rake secret
 vi config/secrets.yml
@@ -123,3 +123,32 @@ bundle exec rake db:migrate RAILS_ENV=production
 cd /var/www
 sudo chown -R ec2-user:apache html
 sudo service httpd restart
+
+#git pull
+ssh -i ~/.ssh/キーペア名.pem ec2-user@パブリックIP
+cd /var/www/html/アプリ名/
+sudo git pull origin master
+cd..
+sudo chown -R ec2-user:ec2-user .
+cd アプリ名
+bundle exec rake assets:precompile RAILS_ENV=production
+bundle exec rake db:migrate RAILS_ENV=production
+cd /var/www
+sudo chown -R apache:apache html
+sudo service httpd restart
+
+#git pullできないとき
+sudo git checkout HEAD app/views/spots/index.html.erb
+sudo git checkout HEAD Gemfile
+#Gemfileに追記
+gem 'responders', '~> 2.4.1'
+mv Gemfile.lock Gemfile.lock6
+
+#GemfileもHEADしたとき
+gem 'json'
+gem 'mysql2'
+テストのgem 'listen', '>= 3.0.5', '< 3.2’をコメントアウト
+gem 'listen', '>= 3.0.5', '< 3.2'
+Ruby version is 2.3.8
+gem 'responders', '~> 2.4.1'
+bundle install --path vendor/bundle --without test development
