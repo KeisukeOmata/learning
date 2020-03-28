@@ -28,6 +28,14 @@ chmod 700 ~/.ssh
 sudo ls -l ~/.ssh/キーペア名.pem
 sudo chmod 600 ~/.ssh/キーペア名.pem
 
+#Apacheのインストール
+sudo yum install -y httpd
+#自動で起動
+sudo chkconfig httpd on
+#起動
+sudo service httpd start
+
+#使ってないけど
 #nginxのインストール
 sudo yum install -y nginx
 #自動で起動
