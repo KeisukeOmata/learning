@@ -26,6 +26,18 @@ file.each_line do |line|
 end
 file.close
 ------------------------
-#grep
+#grep.rb
 #正規表現オブジェクトを作る
 Regexp.new(str)
+pattern = Regexp.new(ARGV[0])
+filename = ARGV[1]
+
+file = File.open(filename)
+file.each_line do |line|
+  if pattern =~ line
+    print line
+  end
+end
+file.close
+
+ruby grep.rb パターン ファイル名

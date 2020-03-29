@@ -1,3 +1,14 @@
+#メソッドの作成
+def メソッド名
+  命令
+end
+
+def hello
+  p "hello, world!"
+end
+#呼び出し
+hello()
+------------------------
 print("Hello, Ruby.\n")
 print "Hello, Ruby.\n"
 #改行あり
