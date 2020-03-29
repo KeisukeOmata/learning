@@ -6,3 +6,13 @@
 /Ruby/i =~ "ruby" => 0
 /Ruby/i =~ "RUBY" => 0
 /Ruby/i =~ "rUBY" => 0
+
+#正規表現の使い方
+names = ["dog", "hotdog", "cat", "hotcat"]
+names.each do |name|
+  if /dog/ =~ name
+    p name
+  end
+end
+dog
+hotdog
