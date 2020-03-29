@@ -16,3 +16,6 @@ names.each do |name|
 end
 dog
 hotdog
+
+#正規表現オブジェクトを作る
+Regexp.new(str)
