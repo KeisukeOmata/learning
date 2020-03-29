@@ -28,3 +28,14 @@ grep(pattern, filename)
 #コマンドライン
 ruby grep.rb パターン名 ファイル名
 ------------------------
+#dateライブラリ
+require "date"
+#本日日付を取得
+Date.today
+#特定の日付のオブジェクトを作成
+Date.new(yyyy, mm, dd)
+------------------------
+require "pp"
+#適当に改行を行ってくれる
+pp ハッシュ
+------------------------
