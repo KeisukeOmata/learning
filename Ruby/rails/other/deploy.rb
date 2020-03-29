@@ -79,7 +79,7 @@ production:
   #RDSのエンドポイント名
   host: rds-mysql-server.cx0qmvhk3rmn.ap-northeast-1.rds.amazonaws.com
   #RDSのマスターユーザーネーム
-  username: root
+  username: hoge
   #RDSのマスターパスワード
   password: hogehoge
 ----------------------------
@@ -139,16 +139,20 @@ sudo service httpd restart
 
 #git pullできないとき
 sudo git checkout HEAD app/views/spots/index.html.erb
-sudo git checkout HEAD Gemfile
-#Gemfileに追記
-gem 'responders', '~> 2.4.1'
-mv Gemfile.lock Gemfile.lock6
 
 #GemfileもHEADしたとき
+sudo git checkout HEAD Gemfile
+#Gemfileに追記
 gem 'json'
 gem 'mysql2'
-テストのgem 'listen', '>= 3.0.5', '< 3.2’をコメントアウト
+テストのgem 'listen', '>= 3.0.5', '< 3.2'をコメントアウト
 gem 'listen', '>= 3.0.5', '< 3.2'
 Ruby version is 2.3.8
 gem 'responders', '~> 2.4.1'
+mv Gemfile.lock Gemfile.lock6
 bundle install --path vendor/bundle --without test development
+#git pullへ戻る
+
+#エラーログ
+/var/log/httpd/error_log
+/var/www/html/アプリ名/log/production.log 
