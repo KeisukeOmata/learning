@@ -15,6 +15,16 @@ Fileクラス
 シンボルオブジェクト
 Symbolクラス
 etc..
+
+#アイデンティティ
+a = []
+p a.object_id => 6375931
+
+str1 = "hoge"
+str2 = str1
+str3 = fuga
+p str1.equal?(str2) => true
+p str1.equal?(str3) => false
 ------------------------------
 #変数
 #先頭が$
