@@ -122,6 +122,46 @@ class class2
   include Hoge
   #共通して利用したいメソッド
 end
+
+#モジュールのメソッドを呼び出す場合
+module Hoge
+  def hello
+    p "hello"
+  end
+  module_function :hello
+end
+#一般的にselfは使わない
+Hoge.hello => "hello"
+
+#Mix-in
+#クラスにモジュールを取り込む
+module M
+  def hoge
+    "hoge"
+  end
+end
+class C
+  include M
+end
+c = C.new
+p c.hoge => "hoge"
+
+#インクルードされているかを調べる
+c.include?(M) => true
+#継承されているクラスの一覧
+c.ancestors => [C, M, Object, Kernel, BasicObject]
+#スーパークラスを調べる
+c.superclass => Object
+
+#オブジェクトに、モジュールのメソッド全てを特異メソッドとして追加する
+module Hoge
+  def hello(str1)
+    "#{self}#{str1}"
+  end
+end
+str = "hoge"
+str.extend(Hoge)
+str.hello(fuga) => "hogefuga"
 ------------------------------
 #オブジェクト(インスタンス)
 数値オブジェクト => Numericクラスのオブジェクト
