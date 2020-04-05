@@ -82,6 +82,13 @@ class hoge
   public
 end
 ------------------------
+#メソッドに別名を割り当てる
+#alias 新しい名前 古い名前
+alias new_name name == alias :new_name :name
+
+#メソッドをなかったことにする
+undef method == undef :method
+------------------------
 print("Hello, Ruby.\n")
 print "Hello, Ruby.\n"
 #改行あり
