@@ -44,8 +44,38 @@ class HelloWorld
   def self.hello(name)
     p "#{name}"
   end
-  
+
+  #クラス変数
+  @@name = ""
+
+  #クラス変数にattr_readerは使えない
+  def name
+    @@name
+  end
+
+  #クラス変数にattr_writerは使えない
+  #呼び出しはself.name = "hoge"
+  def name=(set)
+    @@name = set
+  end
+
 end
+------------------------------
+#クラスの定数を参照
+クラス名::定数名
+------------------------------
+#クラスの拡張
+#既存のStringクラスにインスタンスメソッドを追加
+class String
+  def count_word
+    #空白文字区切りで配列に格納
+    a = self.split(/\s+/)
+    #配列の要素数を返す
+    return a.size
+  end
+end
+str = "A B C D"
+p str.count_word => 4
 ------------------------------
 #継承
 #既に定義されているクラスを拡張して新しいクラスを作る
@@ -58,6 +88,10 @@ end
 #継承先
 デジタル時計クラス
 アナログ時計クラス
+
+class AnalogClock < Clock
+  
+end
 ------------------------------
 #オブジェクト(インスタンス)
 数値オブジェクト => Numericクラスのオブジェクト
@@ -94,6 +128,7 @@ p str1.equal?(str3) => false
 
 #先頭が@@
 クラス変数
+=> クラスの全てのインスタンスで共有できる
 
 #nil, true, false, selfなど
 擬似変数
