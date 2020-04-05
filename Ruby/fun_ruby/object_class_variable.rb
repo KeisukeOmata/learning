@@ -90,7 +90,37 @@ p str.count_word => 4
 アナログ時計クラス
 
 class AnalogClock < Clock
-  
+
+end
+------------------------------
+#特異クラス
+#任意のオブジェクトだけ使えるメソッド(特異メソッド)を追加
+str1 = "hoge"
+str2 = "hoge"
+class << str1
+  def hoge
+     "#{self}"
+  end
+end
+p str1.hoge => "hoge"
+p str2.hoge => エラー！！
+------------------------------
+#モジュール
+#インスタンスを持てない
+#継承できない
+
+module Hoge
+  #共通して利用したいメソッド
+end
+
+class class1
+  include Hoge
+  #共通して利用したいメソッド
+end
+
+class class2
+  include Hoge
+  #共通して利用したいメソッド
 end
 ------------------------------
 #オブジェクト(インスタンス)
