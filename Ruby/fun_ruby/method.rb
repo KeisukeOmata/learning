@@ -1,12 +1,56 @@
 #メソッドの作成
-def メソッド名
-  命令
-end
-
 def hello
   p "hello, world!"
 end
+hello()
+
+def hello(name)
+  p "#{name}"
+end
+hello("hoge") => hoge
+
+#引数が不定の場合
+def hello(a, *b, c)
+  p [a, b, c]
+end
+hello(1, 2, 3, 4, 5) => [1, [2, 3, 4], 5]
+
+#キーワード引数
+def volume(x: 0, y: 0, z: 0)
+  p x * y * z
+end
+volume(x: 1, y: 2, z: 3) => 6
+------------------------
+#戻り値
+def volume(x, y, z)
+  return x * y * z
+end
+p volume(1, 2, 3) => 6
+
+#returnがない場合はメソッド内で最後に得られる値が返される
+def volume(x, y, z)
+  x * y * z
+end
+p volume(1, 2, 3) => 6
+------------------------
 #呼び出し
+#オブジェクト == レシーバ
+#引数 == パラメータ
+オブジェクト.メソッド名(引数1, 引数2..引数n)
+------------------------
+メソッドの分類
+
+#インスタンスメソッド
+#オブジェクト(インスタンス).メソッド名
+"hoge".to_i
+1000.to_s
+
+#クラスメソッド
+#クラス.メソッド名 == クラス::メソッド名
+Array.new == Array::new
+File.open("hoge") == File::open("hoge")
+
+#関数的メソッド
 hello()
 ------------------------
 print("Hello, Ruby.\n")
