@@ -53,6 +53,35 @@ File.open("hoge") == File::open("hoge")
 #関数的メソッド
 hello()
 ------------------------
+メソッドの呼び出し制限
+class hoge
+  #インスタンスメソッドとして使える
+  #hoge.pub => pub
+  def pub
+    p "pub"
+  end
+  public :pub
+
+  #レシーバを利用して呼び出せないようにする => インスタンスの外側からは利用できない
+  #hoge.priv => エラー！！
+  #initializeは常にprivate
+  def priv
+    p "priv"
+  end
+  private :priv
+
+  #同一クラスであればインスタンスメソッドとして使える
+  #hoge.prot => prot
+  #fuga.prot => エラー！！
+  def prot
+    p "prot"
+  end
+  protected :prot
+
+  #引数を指定しなければ以降のメソッドはpublicになる
+  public
+end
+------------------------
 print("Hello, Ruby.\n")
 print "Hello, Ruby.\n"
 #改行あり
