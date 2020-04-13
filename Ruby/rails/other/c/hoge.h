@@ -1,7 +1,8 @@
 #ifndef _HOGE_H_
 #define _HOGE_H_
 
-// プロトタイプ宣言
-int hoge(int);
+void hoge(int, int);
+// プロトタイプ宣言はポインタ
+void fuga(int*, int*);
 
 #endif // _HOGE_H_
