@@ -47,6 +47,21 @@ end
 繰り返し回数.times (|i|) {
   命令
 }
+
+#from.updo(2から10まで)
+2.updo(10) do |i|
+  p i
+end
+
+#from.downto(10から2まで)
+10.downdo(2) do |i|
+  p i
+end
+
+#from.step(to, step)(2から10まで3ずつ)
+2.step(10, 3) do |i|
+  p i
+end
 ------------------------------
 #each
 #オブジェクトから要素を取り出す場合
