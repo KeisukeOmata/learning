@@ -31,7 +31,8 @@ a[2, 0] = ["hoge", "fuga"]
 a.compact! => 配列からnilを削除
 a.uniq! => 配列から重複を削除
 a.delete("hoge") => 配列からhogeを削除
-a.delete_at(n) => 配列からn+1番目を削除
+a.delete_at(n) => 配列からn番目を削除
+a.slice!(n) => 配列からn番目を削除
 
 #配列の要素を置き換える
 a.collect!{|item| item*2} => 配列の要素を全て2倍
@@ -115,3 +116,38 @@ postalは123456
 sym = :name
 sym.to_s => "name"
 "name".to_sym => :name
+-------------------------------------
+#文字列
+#ヒアドキュメント
+#<<-EOSからEOSまでの文字列を作る
+name = "hoge"
+str = <<-EOS
+  文字列です。
+  #{name}
+EOS
+puts str
+文字列です
+hoge
+
+str = "hoge"
+str[0] => "h"
+
+str1 = "hoge"
+str2 = "fuga"
+str1.concat(str2) => "hogefuga"
+
+file = File.open
+file.each_line do |line|
+  #改行があれば削除
+  line.chomp!
+  lineを処理する
+end
+
+str = "hogehogehoge"
+#左から探索
+str.index("geho") => 2
+#右から探索
+str.rindex("geho") => 6
+#含む
+str.include?("geho") => true
+-------------------------------------
