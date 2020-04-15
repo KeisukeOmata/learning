@@ -9,7 +9,7 @@ int main(
 )
 {
     int n = 0;
-    char msg[25 + 1];
+    char msg[50 + 1];
     char name[4 + 1];
     int age = 0;
 
