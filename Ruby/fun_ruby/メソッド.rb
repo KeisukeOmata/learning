@@ -89,6 +89,36 @@ alias new_name name == alias :new_name :name
 #メソッドをなかったことにする
 undef method == undef :method
 ------------------------
+#ブロック(do~end)とProcとlambda
+def hoge
+  yield
+end
+#yieldとはブロック引数(&fuga)とfuga.callを省略したもの
+def hoge(&fuga)
+  fuga.call
+end
+
+#メソッドの引数としてブロック(do~end)を渡して実行
+hoge do
+  p "Hello, hoge"
+end
+=> "Hello, hoge"
+
+#Procオブジェクト(fuga.call)はブロック(do~end)をオブジェクト化したもの
+#Procオブジェクトはcallで呼び出す
+#インスタンス生成
+fuga = Proc.new do |s|
+  p "Hello, #{s}"
+end
+#実行
+fuga.call("piyo")
+=> "Hello, piyo"
+
+#lambda
+lambda = lambda { |s| p "Hello, #{s}" }
+lambda.call("hogehoge")
+=> "Hello, hogehoge"
+------------------------
 print("Hello, Ruby.\n")
 print "Hello, Ruby.\n"
 #改行あり
@@ -104,3 +134,7 @@ p "数字は#{a}"
 #大きさの取得
 a = (1, 2, 3, 4)
 a.size => 4
+
+#並べ替え
+a = (1, 2, 3, 4)
+sorted = a.sort
