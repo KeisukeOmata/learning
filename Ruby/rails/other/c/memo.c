@@ -6,4 +6,4 @@ gcc main.c hoge.c
 sprintf(msg, "%d%s", hoge, fuga);
 if strcmp((hoge, "") == 0) {
     return 1;
-  }
+}
