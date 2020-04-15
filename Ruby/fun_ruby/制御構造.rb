@@ -47,6 +47,21 @@ end
 繰り返し回数.times (|i|) {
   命令
 }
+
+#from.updo(2から10まで)
+2.updo(10) do |i|
+  p i
+end
+
+#from.downto(10から2まで)
+10.downdo(2) do |i|
+  p i
+end
+
+#from.step(to, step)(2から10まで3ずつ)
+2.step(10, 3) do |i|
+  p i
+end
 ------------------------------
 #each
 #オブジェクトから要素を取り出す場合
@@ -58,6 +73,30 @@ end
 a.each {|n|
   p n
 }
+
+#ハッシュを渡す
+h = {"hoge" => 1000, "fuga" => 2000}
+h.each do |name, number|
+  p name
+  p number
+end
+
+#indexを付与
+a = ["hoge", "fuga"]
+a.each_with_index do |n, i|
+  p "#{i + 1}番目は#{n}"
+end
+
+#ファイルの1行毎
+#each_char, each_byteもある
+file = File.open("hoge.text")
+begin
+  file.each_line do |line|
+    p line
+  end
+ensure
+  file.close
+end
 ------------------------------
 #for
 #iは範囲オブジェクトの開始値
