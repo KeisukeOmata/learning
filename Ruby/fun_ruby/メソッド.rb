@@ -126,15 +126,29 @@ puts "Hello, Ruby."
 p "Hello, Ruby."
 p 100
 p "100"
-
+------------------------
+#数値型へ変換
+hoge.to_i
+#文字列型へ変換
+fuga.to_s
+------------------------
 #変数の展開
 a = 100
 p "数字は#{a}"
-
+------------------------
 #大きさの取得
 a = (1, 2, 3, 4)
 a.size => 4
-
+------------------------
 #並べ替え
 a = (1, 2, 3, 4)
 sorted = a.sort
+------------------------
+#乱数
+#100以下の数値
+Random.rand(100)
+num = Random.rand
+
+require "securerandom"
+SecureRandom.random_bytes(バイト数)
+SecureRandom.base64(バイト数)
