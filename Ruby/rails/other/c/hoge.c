@@ -24,6 +24,7 @@ int hoge(
         return n;
     }
 
+    // 数値型の値を変更するので＆で渡す
     n = setName(name, &age);
     if (n != 0){
         return n;
@@ -43,16 +44,21 @@ static int check(
     char* msg
 )
 {
+    char msgSub[50 + 1];
+    memset(msgSub, 0, sizeof(msgSub));
+
     if (strcmp(name, "") == 0)
     {
-        strcpy(msg, "名前を入力してください");
-        return 1;
+      sprintf(msgSub, "%s%d", "名前を入力してください", 0);
+      strcpy(msg, msgSub);
+      return 1;
     }
 
     if (age == 0)
     {
-        strcpy(msg, "年齢を入力してください");
-        return 1;
+      sprintf(msgSub, "%s%d", "年齢を入力してください", 0);
+      strcpy(msg, msgSub);
+      return 1;
     }
 
     return 0;
@@ -67,12 +73,14 @@ static int print(
     return 0;
 }
 
+// int型の値を変更するのでポインタでもらう
 static int setName(
     char* name,
     int* age
 )
 {
     strcpy(name, "fuga");
+    // ポインタ
     *age = 20;
     return 0;
 }
