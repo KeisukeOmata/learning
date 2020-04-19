@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "hoge.h"
+#include "fuga.h"
 
 static int check(char*, int, char*);
 static int print(char*, int);
@@ -13,6 +14,12 @@ int hoge(
 )
 {
     int n = 0;
+    Kozotai_Kata kozotai;
+
+    memset(&kozotai, 0, sizeof(kozotai));
+
+    strcpy(kozotai.name, "hoge");
+    kozotai.age = 27;
 
     n = check(name, age, msg);
     if (n != 0){
@@ -31,6 +38,11 @@ int hoge(
     }
 
     n = print(name, age);
+    if (n != 0){
+        return n;
+    }
+
+    n = fuga(&kozotai);
     if (n != 0){
         return n;
     }
