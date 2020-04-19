@@ -1,4 +1,4 @@
 // コンパイル
-gcc main.c hoge.c
+gcc main.c hoge.c fuga.c
 // 実行
-./a.out
+./a.out hoge 10
