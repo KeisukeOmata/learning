@@ -13,9 +13,7 @@ class ViewController: UIViewController {
     var car = Car()
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
+        super.viewDidLoad()        
         car.pre = 2
         car.rear = 2
     }
