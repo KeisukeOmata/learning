@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var useName: UITextField!
     @IBOutlet weak var passWord: UITextField!
@@ -17,14 +17,26 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        useName.delegate = self
+        passWord.delegate = self
     }
     
     @IBAction func ligin(_ sender: Any) {
+        icon.image = UIImage(named: "loginOK")
         useNameLabel.text = useName.text
         passWordLabel.text = passWord.text
     }
     
-
+    //キーボード以外をタッチすると閉じる
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        //キーボードを閉じる
+        textField.resignFirstResponder()
+        return true
+    }
+    
 }
 
