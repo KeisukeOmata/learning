@@ -8,6 +8,8 @@
 
 import UIKit
 
+//UITextFieldDelegate
+//touchesBegan、textFieldShouldReturnが使えるようになる
 class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var useName: UITextField!
@@ -17,6 +19,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //UITextFieldDelegateを使うときに必要な記述
         useName.delegate = self
         passWord.delegate = self
     }
@@ -32,11 +35,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
         view.endEditing(true)
     }
     
+    //returnキー押下でキーボードを閉じる
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        //キーボードを閉じる
         textField.resignFirstResponder()
         return true
     }
     
 }
-

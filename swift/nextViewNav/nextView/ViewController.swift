@@ -34,6 +34,7 @@ class ViewController: UIViewController {
         }
     }
     
+    //次のページに値を受け渡す
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nextVC = segue.destination as! NextViewController
         nextVC.count2 = count
