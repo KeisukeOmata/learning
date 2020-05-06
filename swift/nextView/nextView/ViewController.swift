@@ -15,7 +15,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
     @IBAction func plus(_ sender: Any) {
@@ -25,12 +24,14 @@ class ViewController: UIViewController {
             //画面遷移する
             performSegue(
                 //segueのidentifier
+                //StoryboardのIDではない！！
                 withIdentifier: "next",
                 sender: nil
             )
         }
     }
     
+    //次のページ(NextViewController)に値を受け渡す
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nextVC = segue.destination as! NextViewController
         nextVC.count2 = count
