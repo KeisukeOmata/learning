@@ -42,6 +42,7 @@ dog?.name
 dog?.hello()
 => "Optional(ワン)"
 
+//nilに対してプロパティを取得しようとしたり、メソッドを呼び出すことがなくなる
 var cat: cat?
 cat?.name
 => nil
