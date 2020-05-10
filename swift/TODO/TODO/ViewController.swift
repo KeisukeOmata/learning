@@ -8,6 +8,8 @@
 
 import UIKit
 
+//tableViewにはUITableViewDelegateとUITableViewDataSourceが必要
+//キーボードを使うにはUITextFieldDelegateが必要
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
 
     @IBOutlet weak var tableView: UITableView!
@@ -23,30 +25,35 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
     //どの順番で実行されるか？
-    //まずセクションの数を確認する
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return textArray.count
-    }
-    
+    //セクションの数を確認
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    //セクションの数だけcellForRowAtが呼ばれる   
+    //セクションの中のセルの数を確認
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return textArray.count
+    }
+    
+    //セルの数だけcellForRowAt(セル構築)が呼ばれる
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //withIdentifierに　は、Table View Sellに付けたIdentifierを入れる
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.textLabel?.text = textArray[indexPath.row]
-        cell.imageView?.image = UIImage(named: "checkImage")
+        cell.imageView!.image = UIImage(named: "checkImage")
         return cell
     }
     
+    //セルがタップされたとき呼ばれる
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        <#code#>
+        let nextVC = storyboard?.instantiateViewController(identifier: "next") as! nextViewController
+        nextVC.todoString = textArray[indexPath.row]
+        navigationController?.pushViewController(nextVC, animated: true)
     }
     
+    //セルの高さを決める
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        view.frame.size.height / 6
+        return view.frame.size.height / 6
     }
     
     //キーボードのリターンキー押下時
@@ -55,7 +62,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //キーボードを閉じる
         textField.resignFirstResponder()
         textField.text = ""
+        //一連の処理(セルの構築)を再実行する
         tableView.reloadData()
+        
+        return true
     }
 
 }

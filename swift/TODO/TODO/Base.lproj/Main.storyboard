@@ -24,7 +24,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="301" id="9vi-J0-4i7">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="301" id="9vi-J0-4i7">
                                         <rect key="frame" x="0.0" y="28" width="414" height="301"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9vi-J0-4i7" id="S5b-du-7N6">
@@ -52,7 +52,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="5lU-te-MbZ" id="Flu-MF-cbm"/>
-                        <outlet property="textField" destination="AEV-Gi-1cM" id="48S-xZ-ynf"/>
+                        <outlet property="textField" destination="AEV-Gi-1cM" id="fpw-I9-kl0"/>
                         <segue destination="UEN-mA-sab" kind="show" identifier="next" id="Izs-UH-yw0"/>
                     </connections>
                 </viewController>
@@ -63,7 +63,7 @@
         <!--Next View Controller-->
         <scene sceneID="RsN-bc-Hy3">
             <objects>
-                <viewController id="UEN-mA-sab" customClass="nextViewController" customModule="TODO" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="next" useStoryboardIdentifierAsRestorationIdentifier="YES" id="UEN-mA-sab" customClass="nextViewController" customModule="TODO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="84m-RW-uZW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
