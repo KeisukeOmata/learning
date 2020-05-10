@@ -52,7 +52,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="5lU-te-MbZ" id="Flu-MF-cbm"/>
-                        <outlet property="textField" destination="AEV-Gi-1cM" id="fpw-I9-kl0"/>
+                        <outlet property="textField" destination="AEV-Gi-1cM" id="9I9-BD-wyp"/>
                         <segue destination="UEN-mA-sab" kind="show" identifier="next" id="Izs-UH-yw0"/>
                     </connections>
                 </viewController>

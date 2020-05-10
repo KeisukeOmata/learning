@@ -23,6 +23,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.dataSource = self
         textField.delegate = self
     }
+    
+    //ナビゲーションバーを非表示にする
+    //他のviewコントローラーにも書く
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
+    }
 
     //どの順番で実行されるか？
     //セクションの数を確認
