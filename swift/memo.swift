@@ -48,3 +48,15 @@ cat?.name
 => nil
 cat?.hello()
 => nil
+---------------------------------------------
+デリゲートメソッドの使用方法
+1,宣言
+class ViewController: UIViewController, WKNavigationDelegate {
+2,設定
+    override func viewDidLoad() {
+        webView.navigationDelegate = self
+    }
+}
+3,記述
+func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+}
