@@ -44,8 +44,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //セルの数だけcellForRowAt(セル構築)が呼ばれる
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //withIdentifierに　は、Table View Sellに付けたIdentifierを入れる
+        //withIdentifierには、Table View Sellに付けたIdentifierを入れる
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        //セルのスタイルをなくす
+        cell.selectionStyle = .none
         cell.textLabel?.text = textArray[indexPath.row]
         cell.imageView!.image = UIImage(named: "checkImage")
         return cell
