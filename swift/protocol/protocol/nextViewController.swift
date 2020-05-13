@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol CatchProtocol {
+    func catchData(count: Int)
+}
+
 class nextViewController: UIViewController {
 
     @IBOutlet weak var label: UILabel!
