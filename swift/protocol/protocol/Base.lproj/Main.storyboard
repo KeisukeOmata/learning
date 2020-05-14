@@ -58,6 +58,9 @@
                                 <rect key="frame" x="57" y="64" width="31" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="戻る"/>
+                                <connections>
+                                    <action selector="back:" destination="CaV-iZ-Dhb" eventType="touchUpInside" id="Ls5-1J-chn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yTN-Vv-VuO">
                                 <rect key="frame" x="192" y="433" width="30" height="30"/>
