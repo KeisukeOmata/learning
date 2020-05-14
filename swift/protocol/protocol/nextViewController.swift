@@ -16,6 +16,7 @@ class nextViewController: UIViewController {
 
     @IBOutlet weak var label: UILabel!
     var count: Int = 0
+    var delegate: CatchProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,13 @@ class nextViewController: UIViewController {
     @IBAction func plusAction(_ sender: Any) {
         count += 1
         label.text = String(count)
+    }
+    
+    @IBAction func back(_ sender: Any) {
+        //作成したprotocol
+        delegate?.catchData(count: count)
+        //前の画面に戻る
+        dismiss(animated: true, completion: nil)
     }
     
 }
