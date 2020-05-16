@@ -20,8 +20,6 @@ class nextViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func plusAction(_ sender: Any) {
@@ -30,7 +28,7 @@ class nextViewController: UIViewController {
     }
     
     @IBAction func back(_ sender: Any) {
-        //作成したprotocol
+        //作成したprotocolを呼び出す
         delegate?.catchData(count: count)
         //前の画面に戻る
         dismiss(animated: true, completion: nil)
