@@ -25,6 +25,13 @@ class NextViewController: UIViewController {
     @IBAction func okAction(_ sender: Any) {
         let idoValue = idoTextField.text!
         let keidoValue = keidoTextField.text!
+        
+        if idoTextField.text != nil && keidoTextField.text != nil {
+            //プロトコルを呼び出す
+            delegate?.searchLocaion(idoValue: idoValue, keidoValue: keidoValue)
+            //前の画面に戻る
+            dismiss(animated: true, completion: nil)
+        }
     }
     
 }
