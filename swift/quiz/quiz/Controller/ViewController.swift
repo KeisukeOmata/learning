@@ -20,6 +20,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func answer(_ sender: Any) {
+        //タグで分岐させる
+        if (sender as AnyObject).tag == 1 {
+            
+        } else if (sender as AnyObject).tag == 2 {
+            
+        }
     }
     
 }
