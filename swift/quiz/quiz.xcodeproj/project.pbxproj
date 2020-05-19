@@ -12,6 +12,7 @@
 		E921C4FC247131F500B46066 /* sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E921C4FA247131F500B46066 /* sound.mp3 */; };
 		E921C5012471330500B46066 /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E921C5002471330400B46066 /* NextViewController.swift */; };
 		E921C5032471351C00B46066 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E921C5022471351C00B46066 /* ViewController.swift */; };
+		E921C50524749D6600B46066 /* imagesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E921C50424749D6600B46066 /* imagesModel.swift */; };
 		E99AE5FC24712DC40098C6D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99AE5FB24712DC40098C6D0 /* AppDelegate.swift */; };
 		E99AE5FE24712DC40098C6D0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99AE5FD24712DC40098C6D0 /* SceneDelegate.swift */; };
 		E99AE60324712DC40098C6D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E99AE60124712DC40098C6D0 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 		E921C4FA247131F500B46066 /* sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound.mp3; sourceTree = "<group>"; };
 		E921C5002471330400B46066 /* NextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
 		E921C5022471351C00B46066 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E921C50424749D6600B46066 /* imagesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imagesModel.swift; sourceTree = "<group>"; };
 		E99AE5F824712DC40098C6D0 /* quiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = quiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E99AE5FB24712DC40098C6D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E99AE5FD24712DC40098C6D0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +50,7 @@
 		E921C4FD2471320500B46066 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E921C50424749D6600B46066 /* imagesModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 				E99AE5FC24712DC40098C6D0 /* AppDelegate.swift in Sources */,
 				E921C5032471351C00B46066 /* ViewController.swift in Sources */,
 				E99AE5FE24712DC40098C6D0 /* SceneDelegate.swift in Sources */,
+				E921C50524749D6600B46066 /* imagesModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
