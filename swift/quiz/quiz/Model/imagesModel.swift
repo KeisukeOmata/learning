@@ -9,5 +9,10 @@
 import Foundation
 
 class ImagesModel {
+    let imageText: String
+    let answer: Bool
     
+    init(imageName: String, correctOrNot: Bool) {
+        
+    }
 }
