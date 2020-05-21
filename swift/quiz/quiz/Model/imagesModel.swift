@@ -13,6 +13,7 @@ class ImagesModel {
     let answer: Bool
     
     init(imageName: String, correctOrNot: Bool) {
-        
+        imageText = imageName
+        answer = correctOrNot
     }
 }
