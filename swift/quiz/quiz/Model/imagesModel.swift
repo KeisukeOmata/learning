@@ -12,6 +12,7 @@ class ImagesModel {
     let imageText: String
     let answer: Bool
     
+    //持たせる値は初期化に追加
     init(imageName: String, correctOrNot: Bool) {
         imageText = imageName
         answer = correctOrNot
