@@ -11,6 +11,7 @@ import Foundation
 class ImagesList {
     var list = [ImagesModel]()
     init(){
+        //ImagesModelの引数は2つ(名前(imageText)と正誤(answer))
         list.append(ImagesModel(imageName: "0", correctOrNot: true))
         list.append(ImagesModel(imageName: "1", correctOrNot: false))
         list.append(ImagesModel(imageName: "2", correctOrNot: false))

@@ -45,7 +45,17 @@ class ViewController: UIViewController {
     }
     
     func check(){
+        //imagesListはImagesListクラスの実体
+        //listは名前(imageText)と正誤(answer)を持ってる
+        let correctAnswer = imagesList.list[0].answer
         
+        if correctAnswer == pickedAnswer {
+            print("正解")
+            correctCount += 1
+        } else {
+            print("間違い")
+            wrongCount += 1
+        }
     }
     
 }
