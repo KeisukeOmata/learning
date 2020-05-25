@@ -42,12 +42,13 @@ class ViewController: UIViewController {
         }
         
         check()
+        nextQuestions()
     }
     
     func check(){
         //imagesListはImagesListクラスの実体
         //listは名前(imageText)と正誤(answer)を持ってる
-        let correctAnswer = imagesList.list[0].answer
+        let correctAnswer = imagesList.list[questionNumber].answer
         
         if correctAnswer == pickedAnswer {
             print("正解")
@@ -56,6 +57,20 @@ class ViewController: UIViewController {
             print("間違い")
             wrongCount += 1
         }
+    }
+    
+    func nextQuestions() {
+        if questionNumber <= 9 {
+            questionNumber += 1
+            imageView.image = UIImage(named: imagesList.list[questionNumber].imageText)
+        } else {
+            print("問題終了")
+            performSegue(withIdentifier: "next", sender: nil)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        <#code#>
     }
     
 }
