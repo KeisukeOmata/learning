@@ -69,8 +69,14 @@ class ViewController: UIViewController {
         }
     }
     
+    //performSegueの後に呼ばれる
+    //NextViewControllerに値を渡す
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        <#code#>
+        if segue.identifier == "next" {
+            let nextVC = segue.destination as! NextViewController
+            nextVC.correctedCount = correctCount
+            nextVC.wrongedCount = wrongCount
+        }
     }
     
 }
