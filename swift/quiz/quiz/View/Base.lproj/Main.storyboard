@@ -110,6 +110,9 @@
                                 <rect key="frame" x="148" y="516" width="182" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="home"/>
+                                <connections>
+                                    <action selector="back:" destination="WfW-Rh-FZQ" eventType="touchUpInside" id="amk-Pi-Xgp"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
