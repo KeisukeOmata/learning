@@ -18,6 +18,8 @@ class NextViewController: UIViewController {
     @IBOutlet weak var correctLabel: UILabel!
     var correctedCount = Int()
     var wrongedCount = Int()
+    var beforeCount = Int()
+    var delegate:nowScoreDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +28,14 @@ class NextViewController: UIViewController {
         wrongLabel.text = String(wrongedCount)
     }
     
-    //前の画面に戻る
     @IBAction func back(_ sender: Any) {
+        if beforeCount < correctedCount {
+            UserDefaults.standard.set(correctedCount, forKey: "beforeCount")
+            delegate?.nowScore(score: correctedCount)
+        } else {
+            
+        }
+        //前の画面に戻る
         dismiss(animated: true, completion: nil)
     }
     
