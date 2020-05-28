@@ -31,6 +31,11 @@ class ViewController: UIViewController {
         questionNumber = 0
         
         imageView.image = UIImage(named: imagesList.list[0].imageText)
+
+        if UserDefaults.standard.object(forKey: "beforeCount") != nil {
+            maxScore = UserDefaults.standard.object(forKey: "beforeCount") as! Int
+        }
+        maxScoreLabel.text = String(maxScore)
     }
     
     @IBAction func answer(_ sender: Any) {
