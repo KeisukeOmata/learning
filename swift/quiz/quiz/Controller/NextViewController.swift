@@ -19,7 +19,7 @@ class NextViewController: UIViewController {
     var correctedCount = Int()
     var wrongedCount = Int()
     var beforeCount = Int()
-    var delegate:nowScoreDelegate?
+    var delegate: nowScoreDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,9 +31,10 @@ class NextViewController: UIViewController {
     @IBAction func back(_ sender: Any) {
         if beforeCount < correctedCount {
             UserDefaults.standard.set(correctedCount, forKey: "beforeCount")
+            //プロトコルを呼び出す
             delegate?.nowScore(score: correctedCount)
-        } else {
-            
+        } else if beforeCount > correctedCount {
+            UserDefaults.standard.set(beforeCount, forKey: "beforeCount")
         }
         //前の画面に戻る
         dismiss(animated: true, completion: nil)

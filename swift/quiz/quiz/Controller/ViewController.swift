@@ -8,8 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, nowScoreDelegate {
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var maxScoreLabel: UILabel!
     let imagesList = ImagesList()
@@ -73,6 +73,11 @@ class ViewController: UIViewController {
             performSegue(withIdentifier: "next", sender: nil)
         }
     }
+
+    //プロトコルの中身
+    func nowScore(score: Int) {
+        maxScoreLabel.text = String(score)
+    }
     
     //performSegueの後に呼ばれる
     //NextViewControllerに値を渡す
@@ -81,6 +86,7 @@ class ViewController: UIViewController {
             let nextVC = segue.destination as! NextViewController
             nextVC.correctedCount = correctCount
             nextVC.wrongedCount = wrongCount
+            nextVC.delegate = self
         }
     }
     

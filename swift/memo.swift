@@ -60,3 +60,26 @@ class ViewController: UIViewController, WKNavigationDelegate {
 3,記述
 func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
 }
+---------------------------------------------
+継承
+
+Animalモデル
+class Animal {
+    func bless() {
+        print("息をする")
+    }
+}
+
+Dogモデル
+class Dog: Animal {
+
+    //親クラスのメソッドを呼び出す
+    override func bless() {
+        super.bless()
+        bark()
+    }
+
+    func bark() {
+        print("ワン")
+    }
+}
