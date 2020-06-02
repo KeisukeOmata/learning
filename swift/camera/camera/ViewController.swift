@@ -41,8 +41,43 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         //カメラが利用可能の場合
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             let cameraPicker = UIImagePickerController()
+            
+            cameraPicker.sourceType = sourceType
+            cameraPicker.delegate = self
+            cameraPicker.allowsEditing = true
+            present(cameraPicker, animated: true, completion: nil)
+        } else {
+            print("エラー")
         }
     }
+    
+    //キャンセルが押下されたとき
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    //アルバムを立ち上げる
+    @IBAction func openAlbum(_ sender: Any) {
+        let sourceType = UIImagePickerController.SourceType.photoLibrary
+               
+        //カメラが利用可能の場合
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            let cameraPicker = UIImagePickerController()
+                
+            cameraPicker.sourceType = sourceType
+            cameraPicker.delegate = self
+            cameraPicker.allowsEditing = true
+            present(cameraPicker, animated: true, completion: nil)
+        } else {
+            print("エラー")
+        }
+    }
+    
+    //画像を受け取る
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        <#code#>
+    }
+    
     
 }
 
