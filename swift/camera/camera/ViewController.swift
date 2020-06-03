@@ -75,9 +75,27 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     //画像を受け取る
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        <#code#>
+        if let pickedImage = info[.editedImage] as? UIImage {
+            //imageViewに画像を設定
+            backImageView.image = pickedImage
+            //画像をアルバムに保存
+            UIImageWriteToSavedPhotosAlbum(pickedImage, self, nil, nil)
+            //閉じる
+            picker.dismiss(animated: true, completion: nil)
+        }
     }
     
+    //Info.plistにプライバシー設定を追加
+    
+    //アクションシートの呼び出し
+    @IBAction func share(_ sender: Any) {
+        let text = ""
+        //画像サイズの圧縮
+        let image = backImageView.image?.jpegData(compressionQuality: 0.2)
+        //as [Any] => 型
+        let items = [text, image] as [Any]
+        let activityVC = UIActivityViewController(activityItems: items, applicationActivities: nil)
+    }
     
 }
 
