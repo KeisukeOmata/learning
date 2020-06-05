@@ -13,6 +13,7 @@
 		E95E21042489CB7000C00EFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E95E21022489CB7000C00EFB /* Main.storyboard */; };
 		E95E21062489CB7700C00EFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E95E21052489CB7700C00EFB /* Assets.xcassets */; };
 		E95E21092489CB7700C00EFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E95E21072489CB7700C00EFB /* LaunchScreen.storyboard */; };
+		E95E21112489CC6000C00EFB /* iPhone11.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E95E21102489CC6000C00EFB /* iPhone11.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		E95E21052489CB7700C00EFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E95E21082489CB7700C00EFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E95E210A2489CB7700C00EFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E95E21102489CC6000C00EFB /* iPhone11.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = iPhone11.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				E95E21052489CB7700C00EFB /* Assets.xcassets */,
 				E95E21072489CB7700C00EFB /* LaunchScreen.storyboard */,
 				E95E210A2489CB7700C00EFB /* Info.plist */,
+				E95E21102489CC6000C00EFB /* iPhone11.storyboard */,
 			);
 			path = mulchDevise;
 			sourceTree = "<group>";
@@ -128,6 +131,7 @@
 				E95E21092489CB7700C00EFB /* LaunchScreen.storyboard in Resources */,
 				E95E21062489CB7700C00EFB /* Assets.xcassets in Resources */,
 				E95E21042489CB7000C00EFB /* Main.storyboard in Resources */,
+				E95E21112489CC6000C00EFB /* iPhone11.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,7 +297,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = KeisukeOmata.mulchDevise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -310,7 +314,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = KeisukeOmata.mulchDevise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
