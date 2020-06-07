@@ -2,6 +2,11 @@ CocoaPods
 
 sudo jem install cocoapods
 pod setup
+cd アプリ
+pod init
+//podファイルに追記
+pod 'Alamofire', '~> 5.2'
+pod install
 ---------------------------------------------
 //オプショナル型　=> nilを許容
 //変数宣言時以外の?, !はオプショナル型とは無関係
