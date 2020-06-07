@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		916AA2192E2F2CB01065F021 /* Pods_bokete.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D833C913EDE25499CD2E00D4 /* Pods_bokete.framework */; };
 		E95E211F248DAC8700C00EFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95E211E248DAC8700C00EFB /* AppDelegate.swift */; };
 		E95E2121248DAC8700C00EFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95E2120248DAC8700C00EFB /* SceneDelegate.swift */; };
 		E95E2123248DAC8700C00EFB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95E2122248DAC8700C00EFB /* ViewController.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		408F66BE14C0030D6D15B09B /* Pods-bokete.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bokete.debug.xcconfig"; path = "Target Support Files/Pods-bokete/Pods-bokete.debug.xcconfig"; sourceTree = "<group>"; };
+		A7E7B7EF9F57C0A43DEEBE0B /* Pods-bokete.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bokete.release.xcconfig"; path = "Target Support Files/Pods-bokete/Pods-bokete.release.xcconfig"; sourceTree = "<group>"; };
+		D833C913EDE25499CD2E00D4 /* Pods_bokete.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bokete.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E95E211B248DAC8700C00EFB /* bokete.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bokete.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E95E211E248DAC8700C00EFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E95E2120248DAC8700C00EFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +35,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				916AA2192E2F2CB01065F021 /* Pods_bokete.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		784C6368475AF91B0463BEF8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				408F66BE14C0030D6D15B09B /* Pods-bokete.debug.xcconfig */,
+				A7E7B7EF9F57C0A43DEEBE0B /* Pods-bokete.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		885B325AF0EF9038842BD116 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D833C913EDE25499CD2E00D4 /* Pods_bokete.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E95E2112248DAC8700C00EFB = {
 			isa = PBXGroup;
 			children = (
 				E95E211D248DAC8700C00EFB /* bokete */,
 				E95E211C248DAC8700C00EFB /* Products */,
+				784C6368475AF91B0463BEF8 /* Pods */,
+				885B325AF0EF9038842BD116 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E95E212F248DAC8C00C00EFB /* Build configuration list for PBXNativeTarget "bokete" */;
 			buildPhases = (
+				7AAAC75678AE481508498A10 /* [CP] Check Pods Manifest.lock */,
 				E95E2117248DAC8700C00EFB /* Sources */,
 				E95E2118248DAC8700C00EFB /* Frameworks */,
 				E95E2119248DAC8700C00EFB /* Resources */,
+				C2DC8A5942202D9FAEBC172D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7AAAC75678AE481508498A10 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-bokete-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C2DC8A5942202D9FAEBC172D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-bokete/Pods-bokete-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-bokete/Pods-bokete-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-bokete/Pods-bokete-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E95E2117248DAC8700C00EFB /* Sources */ = {
@@ -282,6 +351,7 @@
 		};
 		E95E2130248DAC8C00C00EFB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 408F66BE14C0030D6D15B09B /* Pods-bokete.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -299,6 +369,7 @@
 		};
 		E95E2131248DAC8C00C00EFB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7E7B7EF9F57C0A43DEEBE0B /* Pods-bokete.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
