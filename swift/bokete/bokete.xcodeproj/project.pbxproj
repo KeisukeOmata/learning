@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		E95E2126248DAC8700C00EFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E95E2124248DAC8700C00EFB /* Main.storyboard */; };
 		E95E2128248DAC8C00C00EFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E95E2127248DAC8C00C00EFB /* Assets.xcassets */; };
 		E95E212B248DAC8C00C00EFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E95E2129248DAC8C00C00EFB /* LaunchScreen.storyboard */; };
+		E95E21332491A13700C00EFB /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95E21322491A13700C00EFB /* ShareViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		E95E2127248DAC8C00C00EFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E95E212A248DAC8C00C00EFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E95E212C248DAC8C00C00EFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E95E21322491A13700C00EFB /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +50,6 @@
 				408F66BE14C0030D6D15B09B /* Pods-bokete.debug.xcconfig */,
 				A7E7B7EF9F57C0A43DEEBE0B /* Pods-bokete.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -84,6 +85,7 @@
 				E95E211E248DAC8700C00EFB /* AppDelegate.swift */,
 				E95E2120248DAC8700C00EFB /* SceneDelegate.swift */,
 				E95E2122248DAC8700C00EFB /* ViewController.swift */,
+				E95E21322491A13700C00EFB /* ShareViewController.swift */,
 				E95E2124248DAC8700C00EFB /* Main.storyboard */,
 				E95E2127248DAC8C00C00EFB /* Assets.xcassets */,
 				E95E2129248DAC8C00C00EFB /* LaunchScreen.storyboard */,
@@ -209,6 +211,7 @@
 			files = (
 				E95E2123248DAC8700C00EFB /* ViewController.swift in Sources */,
 				E95E211F248DAC8700C00EFB /* AppDelegate.swift in Sources */,
+				E95E21332491A13700C00EFB /* ShareViewController.swift in Sources */,
 				E95E2121248DAC8700C00EFB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
