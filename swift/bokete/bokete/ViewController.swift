@@ -24,6 +24,7 @@ class ViewController: UIViewController {
         
         commentTextView.layer.cornerRadius = 20.0
         
+        //ユーザー側でカメラを許可しているか
         PHPhotoLibrary.requestAuthorization { (status) in
             switch(status) {
                 case .authorized: 
@@ -37,24 +38,66 @@ class ViewController: UIViewController {
             }
         }
         
-        func getImages(keyword: String) {
-            //16952655-0ebaa6fef1329e2a497eeda7e
-            let url = "https://pixabay.com/api/?key=16952655-0ebaa6fef1329e2a497eeda7e&q=\(keyword)"
-            //AlamoFireを使ってhttpリクエストを行う
-            AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default).responseJSON { (response) in
-                switch response.result {
-                case .success:
-                    let json: JSON = JSON(response.data as Any)
-                    let imageString = json["hits"][self.count]["webformatURL"].string
-                    
-                    self.odaiImageView.sd_setImage(with: URL(string: imageString!), completed: nil)
-                case .failure(let error):
-                    print(error)
+        getImages(keyword: "funny")
+            
+    }
+        
+    func getImages(keyword: String) {
+        //16952655-0ebaa6fef1329e2a497eeda7e
+        let url = "https://pixabay.com/api/?key=16952655-0ebaa6fef1329e2a497eeda7e&q=\(keyword)"
+        //AlamoFireを使ってhttpリクエストを行う
+        //responseの中身はjson
+        AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default).responseJSON { (response) in
+            switch response.result {
+            case .success:
+                let json: JSON = JSON(response.data as Any)
+                //クロージャーの中なのでself
+                var imageString = json["hits"][self.count]["webformatURL"].string
+
+                //jsonの終端
+                if imageString == nil {
+                    imageString = json["hits"][0]["webformatURL"].string
                 }
+                
+                //jsonで取得した画像を表示する
+                self.odaiImageView.sd_setImage(with: URL(string: imageString!), completed: nil)
+            case .failure(let error):
+                print(error)
             }
+        }
+    }
+
+    @IBAction func next(_ sender: Any) {
+        count += 1
+        if searchTextField.text == "" {
+            getImages(keyword: "funny")
+        } else {
+            getImages(keyword: searchTextField.text!)
+        }
+    }
+    
+    @IBAction func searchAction(_ sender: Any) {
+        self.count = 0
+        if searchTextField.text == "" {
+            getImages(keyword: "funny")
+        } else {
+            getImages(keyword: searchTextField.text!)
         }
         
     }
-
+    
+    //次のVCへ
+    @IBAction func done(_ sender: Any) {
+        performSegue(withIdentifier: "next", sender: nil)
+    }
+    
+    //値を受け渡す
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let shareVC = segue.destination as? ShareViewController
+        
+        shareVC?.commentString = commentTextView.text
+        shareVC?.resultImage = odaiImageView.image!
+    }
+    
 }
 
