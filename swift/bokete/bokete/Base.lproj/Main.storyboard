@@ -100,6 +100,9 @@
                                 <rect key="frame" x="50" y="735" width="301" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="シェアする"/>
+                                <connections>
+                                    <action selector="share:" destination="yEl-XL-bV8" eventType="touchUpInside" id="eQA-dT-Hqf"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hmG-IE-Mie">
                                 <rect key="frame" x="50" y="807" width="301" height="30"/>
@@ -117,6 +120,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="33A-ha-6rX"/>
                     </view>
+                    <connections>
+                        <outlet property="commentLabel" destination="f2G-sq-aTx" id="GcJ-vz-Ogf"/>
+                        <outlet property="resultImageView" destination="gbA-fi-DYR" id="Nni-HG-Azp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eWm-pd-UVa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
