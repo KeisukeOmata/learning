@@ -56,11 +56,14 @@ class ViewController: UIViewController {
 
                 //jsonの終端
                 if imageString == nil {
+                    //1番目に戻る
                     imageString = json["hits"][0]["webformatURL"].string
+                    //jsonで取得した画像を表示する
+                    self.odaiImageView.sd_setImage(with: URL(string: imageString!), completed: nil)
+                } else {
+                    //jsonで取得した画像を表示する
+                    self.odaiImageView.sd_setImage(with: URL(string: imageString!), completed: nil)
                 }
-                
-                //jsonで取得した画像を表示する
-                self.odaiImageView.sd_setImage(with: URL(string: imageString!), completed: nil)
             case .failure(let error):
                 print(error)
             }
