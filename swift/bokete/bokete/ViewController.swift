@@ -6,6 +6,11 @@
 //  Copyright © 2020 KeisukeOmata. All rights reserved.
 //
 
+//カメラを使う時
+//Info.plist
+//Privacy - Photo Library Usage Description
+//Privacy - Camera Usage Description
+
 import UIKit
 import SwiftyJSON
 import Alamofire
@@ -39,7 +44,6 @@ class ViewController: UIViewController {
         }
         
         getImages(keyword: "funny")
-            
     }
         
     func getImages(keyword: String) {
@@ -80,13 +84,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func searchAction(_ sender: Any) {
-        self.count = 0
+        count = 0
         if searchTextField.text == "" {
             getImages(keyword: "funny")
         } else {
             getImages(keyword: searchTextField.text!)
         }
-        
     }
     
     //次のVCへ

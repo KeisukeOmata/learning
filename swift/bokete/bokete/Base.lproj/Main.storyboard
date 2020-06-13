@@ -39,7 +39,6 @@
                                 <state key="normal" title="次のお題へ"/>
                                 <connections>
                                     <action selector="next:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kpW-vB-mf2"/>
-                                    <action selector="searchAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pMM-8K-Tg4"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qmi-7k-Idm">
@@ -108,6 +107,9 @@
                                 <rect key="frame" x="50" y="807" width="301" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="戻る"/>
+                                <connections>
+                                    <action selector="back:" destination="yEl-XL-bV8" eventType="touchUpInside" id="HQz-WM-Orr"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2G-sq-aTx">
                                 <rect key="frame" x="50" y="518" width="301" height="121"/>

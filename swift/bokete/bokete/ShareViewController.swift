@@ -26,8 +26,15 @@ class ShareViewController: UIViewController {
 
     }
     
+    //シェアするボタン
     @IBAction func share(_ sender: Any) {
+        //スクショを撮る
         takeScreenShot()
+        
+        let items = [screenShotImage] as [Any]
+        let activityVC = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        //アクティビティでシェアする
+        present(activityVC, animated: true, completion: nil)
     }
     
     //スクショを撮る
@@ -40,6 +47,11 @@ class ShareViewController: UIViewController {
         self.view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
         screenShotImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
+    }
+    
+    //戻るボタン
+    @IBAction func back(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
 }
