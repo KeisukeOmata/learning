@@ -12,15 +12,29 @@
 //GoogleService-Info.plistをプロジェクトに追加
 //AuthenticationからFacebookを有効にする
 //https://developers.facebook.com/
-//アプリを作成
+//アプリを作成し、アプリIDとアプリシークレットをFirebaseに貼り付け
+//Facebook側で設定
+//OAuth リダイレクト URI を Facebook アプリの設定に追加
 
 import UIKit
+import FBSDKCoreKit
+import FBSDKLoginKit
+import FacebookCore
+import FacebookLogin
+import Firebase
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, LoginButtonDelegate {
 
+    let fbLoginButton: FBLoginButton = FBLoginButton()
+    var displayName = String()
+    var pictureURL = String()
+    var pictureURLString = String()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        fbLoginButton.delegate = self
+
     }
 
 
