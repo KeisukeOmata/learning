@@ -33,8 +33,18 @@ class ViewController: UIViewController, LoginButtonDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Facebookログインボタンを表示
         fbLoginButton.delegate = self
+        fbLoginButton.frame = CGRect(x: view.frame.size.width / 2 - view.frame.size.width / 4, y: view.frame.size.height / 4, width: view.frame.size.width / 2, height: 30)
+        fbLoginButton.permissions = ["public_profile.email"]
+        view.addSubView(fbLoginButton)
 
+    }
+    
+    //ナビゲーションバーを非表示にする
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
     }
 
 
