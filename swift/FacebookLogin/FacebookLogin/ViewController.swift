@@ -46,7 +46,48 @@ class ViewController: UIViewController, LoginButtonDelegate {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
     }
+    
+    func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
+     
+        if error == nil {
+            //キャンセルされたとき
+            if result?.isCancelled == true {
+                return
+            }
+        }
+        
+        //Facebookのトークン
+        let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
+        //FireBaseログイン
+        Auth.auth().signIn(with: credential) { (result, error) in
+            //エラー処理
+            if let error == error {
+                return
+            }
+            
+            self.displayName = result!.user.displayName!
+            //absoluteString => URL型をString型に変換
+            self.pictureURLString = result!.user.photoURL!.absoluteString
+            
+            UserDefaults.standard.set(1, forKey: "loginOK")
+            UserDefaults.standard.set(self.displayName, forKey: "displayName")
+            UserDefaults.standard.set(self.pictureURLString, forKey: "pictureURLString")
+            
+            //画面遷移
+            let nextVC = self.storyboard?.instantiateInitialViewController(identifier: "next") as! NextViewController
+            self.navigationController?.pushViewController(nextVC, animated: true)
+        
+        }
+        
+    }
+    
+    func loginButtonWillLogin(_ loginButton: FBLoginButton) -> Bool {   
+        return true
+    }
 
+    func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
+        print("ログアウトしました！")
+    }
 
 }
 
