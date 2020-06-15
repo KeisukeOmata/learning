@@ -15,6 +15,7 @@
 		E95E214A2494CB2D00C00EFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E95E21492494CB2D00C00EFB /* Assets.xcassets */; };
 		E95E214D2494CB2D00C00EFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E95E214B2494CB2D00C00EFB /* LaunchScreen.storyboard */; };
 		E95E21552494CFB500C00EFB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E95E21542494CFB500C00EFB /* GoogleService-Info.plist */; };
+		E95E215724983F0400C00EFB /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95E215624983F0400C00EFB /* NextViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		E95E214C2494CB2D00C00EFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E95E214E2494CB2D00C00EFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E95E21542494CFB500C00EFB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E95E215624983F0400C00EFB /* NextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				E95E21402494CB2500C00EFB /* AppDelegate.swift */,
 				E95E21422494CB2500C00EFB /* SceneDelegate.swift */,
 				E95E21442494CB2500C00EFB /* ViewController.swift */,
+				E95E215624983F0400C00EFB /* NextViewController.swift */,
 				E95E21462494CB2500C00EFB /* Main.storyboard */,
 				E95E21492494CB2D00C00EFB /* Assets.xcassets */,
 				E95E214B2494CB2D00C00EFB /* LaunchScreen.storyboard */,
@@ -211,6 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E95E21452494CB2500C00EFB /* ViewController.swift in Sources */,
+				E95E215724983F0400C00EFB /* NextViewController.swift in Sources */,
 				E95E21412494CB2500C00EFB /* AppDelegate.swift in Sources */,
 				E95E21432494CB2500C00EFB /* SceneDelegate.swift in Sources */,
 			);
