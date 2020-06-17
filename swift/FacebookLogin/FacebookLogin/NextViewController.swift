@@ -16,6 +16,14 @@ class NextViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if UserDefaults.standard.object(forKey: "pictureURLString") != nil || (UserDefaults.standard.object(forKey: "displayName") != nil {
+            let imageString = UserDefaults.standard.object(forKey: "pictureURLString" as! String)
+
+            profileImageView.sd_setImage(with: URL(String: imageString), completed: nil)
+            profileImageView.layer.cornerRadius = 20.0
+
+        }
 
     }
     
