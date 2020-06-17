@@ -18,9 +18,6 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="zyH-JX-l4D"/>
-                    <connections>
-                        <segue destination="TqE-VS-cPh" kind="show" identifier="" id="pTl-7Z-Lqz"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -29,7 +26,7 @@
         <!--Next View Controller-->
         <scene sceneID="KnE-UC-iMY">
             <objects>
-                <viewController storyboardIdentifier="next" id="TqE-VS-cPh" customClass="NextViewController" customModule="FacebookLogin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="TqE-VS-cPh" customClass="NextViewController" customModule="FacebookLogin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZhC-P5-lb8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -38,8 +35,8 @@
                                 <rect key="frame" x="87" y="140" width="240" height="240"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ddu-nV-a6J">
-                                <rect key="frame" x="87" y="420" width="240" height="98"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ddu-nV-a6J">
+                                <rect key="frame" x="186" y="420" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -49,11 +46,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="MUx-EM-ew0"/>
                     </view>
-                    <navigationItem key="navigationItem" id="fdU-Id-3Lr"/>
+                    <connections>
+                        <outlet property="profileImageView" destination="Po2-tO-oaN" id="IHE-yj-guz"/>
+                        <outlet property="userNameLabel" destination="Ddu-nV-a6J" id="nAM-2n-VOs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z1x-uL-lud" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1868.1159420289857" y="109.82142857142857"/>
+            <point key="canvasLocation" x="1868" y="110"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2gU-9Q-YgZ">
