@@ -68,6 +68,7 @@ class ViewController: UIViewController, LoginButtonDelegate {
             self.displayName = result!.user.displayName!
             //absoluteString => URL型をString型に変換
             self.pictureURLString = result!.user.photoURL!.absoluteString
+            self.pictureURLString = self.pictureURLString + "?type=large"
             
             UserDefaults.standard.set(1, forKey: "loginOK")
             UserDefaults.standard.set(self.displayName, forKey: "displayName")
