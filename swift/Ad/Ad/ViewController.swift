@@ -29,6 +29,5 @@ class ViewController: UIViewController {
         BannerView.load(GADRequest())
     }
 
-
 }
 
