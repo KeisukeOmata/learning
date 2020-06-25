@@ -9,7 +9,12 @@
 import UIKit
 import GoogleMobileAds
 
-class TableViewController: UITableViewController {
+class TableViewController: UITableViewController, GADBannerViewDelegate, GADInterstitialDelegate {
+    
+    var profileImageArray = ["0", "1", "2", "3", "4"]
+    var textArray = ["顔文字0", "顔文字1", "顔文字2", "顔文字3", "インタースティシャル広告"]
+    var interstitial: GADInterstitial!
+    let backImageView = UIImageView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
