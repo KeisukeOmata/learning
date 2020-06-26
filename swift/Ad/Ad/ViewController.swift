@@ -24,7 +24,7 @@ class ViewController: UIViewController {
         
         //バナー広告の読み込み
         //テストID
-        BannerView.adUnitID = "ca-app-pub-3940256099942544~1458002511"
+        BannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
         BannerView.rootViewController = self
         BannerView.load(GADRequest())
     }
