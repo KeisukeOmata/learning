@@ -19,6 +19,7 @@
 		E960E5D524A8391F006AE715 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E960E5D424A8391F006AE715 /* RegisterViewController.swift */; };
 		E960E5D824A880AE006AE715 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E960E5D624A880AE006AE715 /* CustomCell.swift */; };
 		E960E5D924A880AE006AE715 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E960E5D724A880AE006AE715 /* CustomCell.xib */; };
+		E960E5DB24A951B5006AE715 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = E960E5DA24A951B5006AE715 /* Message.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		E960E5D424A8391F006AE715 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		E960E5D624A880AE006AE715 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomCell.swift; path = ChatApp/Controller/CustomCell.swift; sourceTree = SOURCE_ROOT; };
 		E960E5D724A880AE006AE715 /* CustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CustomCell.xib; path = ChatApp/Controller/CustomCell.xib; sourceTree = SOURCE_ROOT; };
+		E960E5DA24A951B5006AE715 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 		E960E5CB24A7D29B006AE715 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E960E5DA24A951B5006AE715 /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				E9141E7F24A778450052B72B /* ViewController.swift in Sources */,
 				E9141E7B24A778450052B72B /* AppDelegate.swift in Sources */,
 				E960E5D124A83677006AE715 /* ChatViewController.swift in Sources */,
+				E960E5DB24A951B5006AE715 /* Message.swift in Sources */,
 				E960E5D824A880AE006AE715 /* CustomCell.swift in Sources */,
 				E9141E7D24A778450052B72B /* SceneDelegate.swift in Sources */,
 			);
