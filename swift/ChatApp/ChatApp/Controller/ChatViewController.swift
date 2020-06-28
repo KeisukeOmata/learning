@@ -1,17 +1,23 @@
 import UIKit
+import ChameleonFramework
+import Firebase
 
-class ChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var messageTextField: UITextField!
+    @IBOutlet weak var sendButton: UIButton!
     //スクリーンのサイズを取得
     let screanSize = UIScreen.main.bounds.size
+    //チャットを格納する配列
+    var chatArray = [Message]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         tableView.dataSource = self
+        messageTextField.delegate = self
         
         //テーブルビューにはユーザー情報を表示
         //テーブルビューにCustomCell.xibを設定する
@@ -47,15 +53,109 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     //引数としてNSNotification型をとる
     //#selecterで用いる関数には@objcが必要
     @objc func keyboardWillHide(_ notification: NSNotification) {
+        //キーボードの高さを取得
+        messageTextField.frame.origin.y = screanSize.height - messageTextField.frame.height
+        
+        //guard文はエラーの際に必ずスコープから抜ける
+        //いずれかの条件が満たされない場合に処理を抜ける
+        guard 
+            let rect = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue,
+            //キーボードが閉じる時間
+            let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval
+        else {return}
+        
+        //キーボードが閉じるアニメーション
+        UIView.animate(withDuration: duration) {
+            let transform = CGAffineTransform(translationX: 0, y: 0)
+            
+            //クロージャーの中なのでself
+            self.view.transform = transform
+        }
         
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+    //キーボードを閉じる
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        messageTextField.resignFirstResponder()
     }
     
+    //テキストフィールドを閉じる
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //メッセージの数
+        chatArray.count
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    //numberOfRowsInSectionのセルの数だけ呼ばれる
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomCell
+        
+        //indexPath.rowは表示するセルの番号を0から取得する
+        cell.messageLabel.text = chatArray[indexPath.row].message
+        cell.userNameLabel.text = chatArray[indexPath.row].sender
+        cell.iconImageView.image = UIImage(named: "dogAvatarImage")
+        
+        //import Firebase
+        //ユーザーのメールアドレスで色分けする
+        if cell.userNameLabel.text == Auth.auth().currentUser?.email as! String {
+            //import ChameleonFramework
+            cell.messageLabel.backgroundColor = UIColor.flatGreen()
+        } else {
+            cell.messageLabel.backgroundColor = UIColor.flatBlue()
+        }
+            
+        return cell
+    }
+    
+    @IBAction func sendAction(_ sender: Any) {
+        //テキストを終了
+        messageTextField.endEditing(true)
+        //テキストを無効
+        messageTextField.isEnabled = false
+        //ボタンを無効
+        sendButton.isEnabled = false
+        
+        //Firebase
+        let chatDB = Database.database().reference().child("chats")
+        //キーバリューで値を送信(Dictionary型)
+        let messageInfo = ["sender": Auth.auth().currentUser?.email, "message": messageTextField.text!]
+        
+        //データベースに値を格納
+        chatDB.childByAutoId().setValue(messageInfo) { (error, result) in
+            if error != nil {
+                print(error!)
+            } else {
+                print("送信完了")
+                //テキストを有効
+                self.messageTextField.isEnabled = true
+                //ボタンを有効
+                self.sendButton.isEnabled = true
+                //テキストを空に
+                self.messageTextField.text = ""
+            }
+        }
+    }
+    
+    func fetchChatData() {
+        //データベース名
+        let fetchDataRef = Database.database().reference().child("chats")
+        
+        //更新があったデータを取得する
+        fetchDataRef.observe(.childAdded) { (snapShot) in
+            let snapShotData = snapShot.value as AnyObject
+            let sender = snapShotData.value(forKey: "sender")
+            let text = snapShotData.value(forKey: "message")
+            let message = Message()
+            message.message = text as! String
+        }
     }
     
 }
