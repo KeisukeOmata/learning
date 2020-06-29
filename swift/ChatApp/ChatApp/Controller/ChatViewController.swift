@@ -36,7 +36,10 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         NotificationCenter.default.addObserver(self, selector: #selector(ChatViewController.keyboardWillHide(_ :)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         //Firebaseからデータをフェッチしてくる
+        fetchChatData()
         
+        //セルのハイライトを消す
+        tableView.separatorStyle = .none
     }
     
     //キーボードを上げる
@@ -144,6 +147,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
+    //Firebaseからデータをフェッチしてくる
     func fetchChatData() {
         //データベース名
         let fetchDataRef = Database.database().reference().child("chats")
@@ -153,8 +157,13 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             let snapShotData = snapShot.value as AnyObject
             let sender = snapShotData.value(forKey: "sender")
             let text = snapShotData.value(forKey: "message")
+            //Messageクラスの実態に取得したデータを設定し、配列に追加する
             let message = Message()
             message.message = text as! String
+            message.sender = sender as! String
+            self.chatArray.append(message)
+            //デリゲートメソッドを再度呼び出し
+            self.tableView.reloadData()
         }
     }
     
