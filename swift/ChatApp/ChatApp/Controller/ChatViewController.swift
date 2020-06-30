@@ -10,7 +10,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     //スクリーンのサイズを取得
     let screanSize = UIScreen.main.bounds.size
     //チャットを格納する配列
-    var chatArray = [Message]()
+    var chatArray = [MessageModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -158,7 +158,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             let sender = snapShotData.value(forKey: "sender")
             let text = snapShotData.value(forKey: "message")
             //Messageクラスの実態に取得したデータを設定し、配列に追加する
-            let message = Message()
+            let message = MessageModel()
             message.message = text as! String
             message.sender = sender as! String
             self.chatArray.append(message)

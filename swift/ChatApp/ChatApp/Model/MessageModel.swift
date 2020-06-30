@@ -1,6 +1,6 @@
 import Foundation
 
-class Message {
+class MessageModel {
     //送信者
     var sender: String = ""
     //メッセージ内容
