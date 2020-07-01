@@ -20,6 +20,8 @@
 		E960E5D824A880AE006AE715 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E960E5D624A880AE006AE715 /* CustomCell.swift */; };
 		E960E5D924A880AE006AE715 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E960E5D724A880AE006AE715 /* CustomCell.xib */; };
 		E960E5DD24AC05E1006AE715 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E960E5DC24AC05E1006AE715 /* MessageModel.swift */; };
+		E960E5DF24AD4BD3006AE715 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E960E5DE24AD4BD3006AE715 /* GoogleService-Info.plist */; };
+		E960E5E124AD4CEE006AE715 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = E960E5E024AD4CEE006AE715 /* loading.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		E960E5D624A880AE006AE715 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomCell.swift; path = ChatApp/Controller/CustomCell.swift; sourceTree = SOURCE_ROOT; };
 		E960E5D724A880AE006AE715 /* CustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CustomCell.xib; path = ChatApp/Controller/CustomCell.xib; sourceTree = SOURCE_ROOT; };
 		E960E5DC24AC05E1006AE715 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
+		E960E5DE24AD4BD3006AE715 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E960E5E024AD4CEE006AE715 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +100,9 @@
 				E960E5CD24A7D2B4006AE715 /* Controller */,
 				E960E5CC24A7D2AD006AE715 /* View */,
 				E9141E8524A7784E0052B72B /* LaunchScreen.storyboard */,
+				E960E5E024AD4CEE006AE715 /* loading.json */,
 				E9141E8824A7784E0052B72B /* Info.plist */,
+				E960E5DE24AD4BD3006AE715 /* GoogleService-Info.plist */,
 			);
 			path = ChatApp;
 			sourceTree = "<group>";
@@ -195,6 +201,8 @@
 			files = (
 				E9141E8724A7784E0052B72B /* LaunchScreen.storyboard in Resources */,
 				E9141E8424A7784E0052B72B /* Assets.xcassets in Resources */,
+				E960E5E124AD4CEE006AE715 /* loading.json in Resources */,
+				E960E5DF24AD4BD3006AE715 /* GoogleService-Info.plist in Resources */,
 				E960E5D924A880AE006AE715 /* CustomCell.xib in Resources */,
 				E9141E8224A778450052B72B /* Main.storyboard in Resources */,
 			);
