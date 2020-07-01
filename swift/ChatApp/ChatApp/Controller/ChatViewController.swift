@@ -111,11 +111,20 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         if cell.userNameLabel.text == Auth.auth().currentUser?.email as! String {
             //import ChameleonFramework
             cell.messageLabel.backgroundColor = UIColor.flatGreen()
+            cell.messageLabel.layer.cornerRadius = 20
+            cell.messageLabel.layer.masksToBounds = true
         } else {
             cell.messageLabel.backgroundColor = UIColor.flatBlue()
+            cell.messageLabel.layer.cornerRadius = 20
+            cell.messageLabel.layer.masksToBounds = true
         }
             
         return cell
+    }
+    
+    //セルの高さを返す
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
     
     @IBAction func sendAction(_ sender: Any) {
@@ -125,6 +134,13 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         messageTextField.isEnabled = false
         //ボタンを無効
         sendButton.isEnabled = false
+        
+        //送信できるメッセージの文字数を制限
+        if messageTextField.text!.count > 30 {
+            print("入力できる文字数は30文字までです")
+            
+            return
+        }
         
         //Firebase
         let chatDB = Database.database().reference().child("chats")
