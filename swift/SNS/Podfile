@@ -6,13 +6,13 @@ target 'SNS' do
   use_frameworks!
 
   # Pods for SNS
-pod 'Firebase'
-pod 'Firebase/Database'
-pod 'SVProgressHUD'
-pod 'Firebase/Messaging'
-pod 'SDWebImage'
-pod 'Firebase/Core'
-pod 'Firebase/Storage'
-pod 'Firebase/Auth'
+  pod 'Firebase'
+  pod 'Firebase/Database'
+  pod 'SVProgressHUD'
+  pod 'Firebase/Messaging'
+  pod 'SDWebImage'
+  pod 'Firebase/Core'
+  pod 'Firebase/Storage'
+  pod 'Firebase/Auth'
 
 end
