@@ -149,6 +149,9 @@
                                 <rect key="frame" x="320" y="680" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="camera"/>
+                                <connections>
+                                    <action selector="photeAction:" destination="hJP-nA-Wxb" eventType="touchUpInside" id="EhK-jj-igG"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -156,7 +159,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="fxP-dK-6Qe"/>
                     <connections>
-                        <outlet property="cameraButton" destination="2m4-Xm-ECL" id="JSn-bi-yhp"/>
+                        <outlet property="cameraButton" destination="2m4-Xm-ECL" id="knc-mb-2Bk"/>
                         <outlet property="timeLine" destination="zQ0-Gf-xem" id="cDf-WG-7N5"/>
                     </connections>
                 </viewController>
