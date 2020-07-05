@@ -71,7 +71,6 @@ class inputViewController: UIViewController, UIImagePickerControllerDelegate, UI
         self.present(alert, animated: true, completion: nil)
     }
 
-    
     //カメラを立ち上げる
     func camera() {
         let sourceType:  UIImagePickerController.SourceType = .camera
