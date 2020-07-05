@@ -15,6 +15,7 @@
 		E960E5F824AE9C3A006AE715 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E960E5F724AE9C3A006AE715 /* Assets.xcassets */; };
 		E960E5FB24AE9C3A006AE715 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E960E5F924AE9C3A006AE715 /* LaunchScreen.storyboard */; };
 		E960E60624B0363C006AE715 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E960E60524B0363C006AE715 /* GoogleService-Info.plist */; };
+		E960E60824B17DE7006AE715 /* inputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E960E60724B17DE7006AE715 /* inputViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		E960E5FA24AE9C3A006AE715 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E960E5FC24AE9C3A006AE715 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E960E60524B0363C006AE715 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E960E60724B17DE7006AE715 /* inputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inputViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				E960E5EE24AE9C2B006AE715 /* AppDelegate.swift */,
 				E960E5F024AE9C2B006AE715 /* SceneDelegate.swift */,
 				E960E5F224AE9C2B006AE715 /* ViewController.swift */,
+				E960E60724B17DE7006AE715 /* inputViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 				E960E5F324AE9C2B006AE715 /* ViewController.swift in Sources */,
 				E960E5EF24AE9C2B006AE715 /* AppDelegate.swift in Sources */,
 				E960E5F124AE9C2B006AE715 /* SceneDelegate.swift in Sources */,
+				E960E60824B17DE7006AE715 /* inputViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
