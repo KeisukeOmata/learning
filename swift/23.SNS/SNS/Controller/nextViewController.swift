@@ -143,4 +143,17 @@ class nextViewController: UIViewController, UITableViewDelegate, UITableViewData
         picker.dismiss(animated: true, completion: nil)
     }
     
+    //画像選択 or 写真撮影後に呼ばれる
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        selectedImage = info[.originalImage] as! UIImage
+        //先に受け渡し先のVCにストーリーボードIDをふる
+        let postVC = self.storyboard?.instantiateViewController(identifier: "Post") as! postViewController
+        //受け渡し先で変数selectedImageUIImageを宣言しておく
+        postVC.selectedImageUIImage = selectedImage
+        //画面遷移
+        self.navigationController?.pushViewController(postVC, animated: true)
+        //ピッカーを閉じる
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
 }
