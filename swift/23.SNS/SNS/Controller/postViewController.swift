@@ -1,4 +1,5 @@
 import UIKit
+import Firebase
 
 class postViewController: UIViewController {
 
@@ -38,7 +39,21 @@ class postViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
+    //送信ボタンを押した時
     @IBAction func post(_ sender: Any) {
+        //FIrebaseのDB名を決める
+        let DB = Database.database().reference().child("post").childByAutoId()
+        //ストレージサーバー
+        let storage = Storage.storage().reference(forURL: "")
+        //フォルダを作る
+        let icon = DB.child("icon").childByAutoId().key
+        let content = DB.child("content").childByAutoId().key
+        
+        let iconURL = storage.child("icon").child("\(String(describing: icon!)).jpg")
+        let contentURL = storage.child("content").child("\(String(describing: content!)).jpg")
+        
+        var iconData: Data = Data()
+        var contentData: Data = Data()
     }
     
 }
