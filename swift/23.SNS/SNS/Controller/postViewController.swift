@@ -54,6 +54,18 @@ class postViewController: UIViewController {
         
         var iconData: Data = Data()
         var contentData: Data = Data()
+        
+        if userImageImageView.image != nil {
+            iconData = userImageImageView.image?.jpegData(compressionQuality: 0.01) as! Data
+        }
+        
+        if userImageImageView.image != nil {
+            iconData = userImageImageView.image?.jpegData(compressionQuality: 0.01) as! Data
+        }
+        
+        if contentImageView.image != nil {
+            iconData = contentImageView.image?.jpegData(compressionQuality: 0.01) as! Data
+        }
     }
     
 }
