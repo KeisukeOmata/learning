@@ -2,6 +2,12 @@ import UIKit
 //キャッシュを扱う
 import SDWebImage
 import Firebase
+//カメラの使用許可
+import Photos
+
+//Info.plist
+//Privacy - Photo Library Usage Description
+//Privacy - Camera Usage Description
 
 //テーブルビューで使うプロトコル
 //UITableViewDelegatem
@@ -29,6 +35,19 @@ class nextViewController: UIViewController, UITableViewDelegate, UITableViewData
         timeLine.delegate = self
         timeLine.dataSource = self
         
+        PHPhotoLibrary.requestAuthorization { (status) in
+            switch(status) {
+            case .authorized:
+                print("許可されています")
+            case .denied:
+                print("許可されていません")
+            case .notDetermined:
+                print("notDetermined")
+            case .restricted:
+                print("restricted")
+            }
+        }
+        
         //前ページで保存した値を呼び出す
         //"userName"
         if UserDefaults.standard.object(forKey: "userName") != nil {
@@ -44,13 +63,42 @@ class nextViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
+    //画面を呼び出す度に呼ばれる
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //投稿を取得する
+        fetch()
+    }
+    
     //セクションの中のセルの数
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return contentsArray.count
     }
     
+    //セルがタップされたとき
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        userName = contentsArray[indexPath.row].userNameString
+        profileImage = contentsArray[indexPath.row].profileImageString
+        contentImage = contentsArray[indexPath.row].contentImageString
+        comment = contentsArray[indexPath.row].commentString
+        createDate = contentsArray[indexPath.row].postDateString
+        
+        //show画面へ移動
+        performSegue(withIdentifier: "show", sender: nil)
+    }
+    
+    //didSelectRowAtで設定した値をshow画面へ渡す
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let showVC = segue.destination as! showViewController
+        showVC.userName = userName
+        showVC.profileImage = profileImage
+        showVC.contentImage = contentImage
+        showVC.comment = comment
+        showVC.date = createDate
+    }
+    
     //セルを構築する
-    //indexPathは配列の数だけインクリメントされる
+    //indexPathは配列の数だけ0からインクリメントされる
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = timeLine.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
@@ -157,6 +205,7 @@ class nextViewController: UIViewController, UITableViewDelegate, UITableViewData
         picker.dismiss(animated: true, completion: nil)
     }
     
+    //投稿を取得する
     func fetch() {
         //最新の100件を取得する
         let ref = Database.database().reference().child("post").queryLimited(toLast: 100).queryOrdered(byChild: "postDate").observe(.value) { (snapShot) in
@@ -172,7 +221,19 @@ class nextViewController: UIViewController, UITableViewDelegate, UITableViewData
                         let contents = postData["contents"] as? String
                         let comment = postData["comment"] as? String
                         let postDate = postData["postDate"] as? CLong
+                        let timeString = self.timeStamp(serverTimeStamp: postDate!)
+                        
+                        self.contentsArray.append(Contents(userNameString: userName!, profileImageString: userProfileImage!, contentImageString: contents!, commentString: comment!, postDateString: timeString))
                     }
+                }
+                
+                //テーブルビューを再読み込み
+                self.timeLine.reloadData()
+                
+                //画面の下まで移動する
+                let indexPath = IndexPath(row: self.contentsArray.count - 1, section: 0)
+                if self.contentsArray.count >= 5 {
+                    self.timeLine.scrollToRow(at: indexPath, at: .bottom, animated: true)
                 }
             }
         }
@@ -181,7 +242,12 @@ class nextViewController: UIViewController, UITableViewDelegate, UITableViewData
     //Firebaseに登録されている時間を変換する
     //CLong型を渡し、String型を返す
     func timeStamp(serverTimeStamp: CLong) -> String {
-        
+        let time = serverTimeStamp / 1000
+        let date = Date(timeIntervalSince1970: TimeInterval(time))
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        formatter.timeStyle = .medium
+        return formatter.string(from: date)
     }
     
 }

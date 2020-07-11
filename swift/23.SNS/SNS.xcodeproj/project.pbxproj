@@ -19,6 +19,7 @@
 		E960E60A24B19348006AE715 /* nextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E960E60924B19348006AE715 /* nextViewController.swift */; };
 		E960E60C24B1B5EA006AE715 /* Contents.swift in Sources */ = {isa = PBXBuildFile; fileRef = E960E60B24B1B5EA006AE715 /* Contents.swift */; };
 		E960E60E24B3E59F006AE715 /* postViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E960E60D24B3E59F006AE715 /* postViewController.swift */; };
+		E960E61024B98FD4006AE715 /* showViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E960E60F24B98FD4006AE715 /* showViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		E960E60924B19348006AE715 /* nextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nextViewController.swift; sourceTree = "<group>"; };
 		E960E60B24B1B5EA006AE715 /* Contents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contents.swift; sourceTree = "<group>"; };
 		E960E60D24B3E59F006AE715 /* postViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postViewController.swift; sourceTree = "<group>"; };
+		E960E60F24B98FD4006AE715 /* showViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				E960E60724B17DE7006AE715 /* inputViewController.swift */,
 				E960E60924B19348006AE715 /* nextViewController.swift */,
 				E960E60D24B3E59F006AE715 /* postViewController.swift */,
+				E960E60F24B98FD4006AE715 /* showViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				E960E5F324AE9C2B006AE715 /* ViewController.swift in Sources */,
 				E960E60C24B1B5EA006AE715 /* Contents.swift in Sources */,
 				E960E5EF24AE9C2B006AE715 /* AppDelegate.swift in Sources */,
+				E960E61024B98FD4006AE715 /* showViewController.swift in Sources */,
 				E960E5F124AE9C2B006AE715 /* SceneDelegate.swift in Sources */,
 				E960E60E24B3E59F006AE715 /* postViewController.swift in Sources */,
 				E960E60A24B19348006AE715 /* nextViewController.swift in Sources */,
