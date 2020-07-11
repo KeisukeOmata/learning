@@ -27,6 +27,7 @@ class postViewController: UIViewController {
             userImageUIImage = UIImage(data: userImageData)!
         }
         
+        //ユーザーネームなどを表示する
         userImageImageView.image = userImageUIImage
         userNameLabel.text = userNameString
         contentImageView.image = selectedImageUIImage
@@ -59,13 +60,48 @@ class postViewController: UIViewController {
             iconData = userImageImageView.image?.jpegData(compressionQuality: 0.01) as! Data
         }
         
-        if userImageImageView.image != nil {
-            iconData = userImageImageView.image?.jpegData(compressionQuality: 0.01) as! Data
+        if contentImageView.image != nil {
+            contentData = contentImageView.image?.jpegData(compressionQuality: 0.01) as! Data
         }
         
-        if contentImageView.image != nil {
-            iconData = contentImageView.image?.jpegData(compressionQuality: 0.01) as! Data
+        //投稿をデータベースに登録する
+        let upload = contentURL.putData(contentData, metadata: nil) { (metaData, error) in
+            if error != nil {
+                print(error)
+                return
+            }
+            
+            let upload2 = iconURL.putData(iconData, metadata: nil) { (metaData, error) in
+                if error != nil {
+                    print(error)
+                    return
+                }
+            }
+            
+            contentURL.downloadURL { (url, error) in
+                if url != nil {
+                    iconURL.downloadURL { (url2, error) in
+                        let timeLine = ["userName": self.userNameString as Any,
+                                        //absoluteStringでURL型からString型へキャスト
+                                        "userProfileImage": url2?.absoluteString as Any,
+                                        "contents": url?.absoluteString as Any,
+                                        "comment": self.commentTextView.text as Any,
+                                        "postDate": ServerValue.timestamp()]
+                                        as [String: Any]
+                        //データベースにアップデートをかける
+                        DB.updateChildValues(timeLine)
+                        
+                        //アップデート後、元の画面へ戻る
+                        //モーダルの場合はdismiss
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                }
+            }
         }
+        
+        //閉じる
+        upload.resume()
+        self.dismiss(animated: true, completion: nil)
     }
     
 }
