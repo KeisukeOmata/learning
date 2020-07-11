@@ -1,6 +1,7 @@
 import UIKit
 //キャッシュを扱う
 import SDWebImage
+import Firebase
 
 //テーブルビューで使うプロトコル
 //UITableViewDelegatem
@@ -154,6 +155,33 @@ class nextViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.navigationController?.pushViewController(postVC, animated: true)
         //ピッカーを閉じる
         picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func fetch() {
+        //最新の100件を取得する
+        let ref = Database.database().reference().child("post").queryLimited(toLast: 100).queryOrdered(byChild: "postDate").observe(.value) { (snapShot) in
+            //Arrayを初期化
+            self.contentsArray.removeAll()
+            //DataSnapshot型
+            if let snapShot = snapShot.children.allObjects as? [DataSnapshot] {
+                //それぞれの値を取得する
+                for snap in snapShot {
+                    if let postData = snap.value as? [String: Any] {
+                        let userName = postData["userName"] as? String
+                        let userProfileImage = postData["userProfileImage"] as? String
+                        let contents = postData["contents"] as? String
+                        let comment = postData["comment"] as? String
+                        let postDate = postData["postDate"] as? CLong
+                    }
+                }
+            }
+        }
+    }
+    
+    //Firebaseに登録されている時間を変換する
+    //CLong型を渡し、String型を返す
+    func timeStamp(serverTimeStamp: CLong) -> String {
+        
     }
     
 }
