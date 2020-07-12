@@ -1,7 +1,7 @@
 import UIKit
 import Firebase
 
-class postViewController: UIViewController {
+class postViewController: UIViewController, UITextViewDelegate {
 
     var selectedImageUIImage = UIImage()
     var userNameString = String()
@@ -12,9 +12,18 @@ class postViewController: UIViewController {
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var contentImageView: UIImageView!
     @IBOutlet weak var commentTextView: UITextView!
+    @IBOutlet weak var sendButton: UIButton!
+    let screenSize = UIScreen.main.bounds.size
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        commentTextView.delegate = self
+        
+        //キーボードを上げる
+        NotificationCenter.default.addObserver(self, selector: #selector(postViewController.keyboardWillShow(_ :)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(postViewController.keyboardWillHide(_ :)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         //アプリ内に保存されているユーザー名を呼び出す
         if UserDefaults.standard.object(forKey: "userName") != nil {
@@ -33,6 +42,39 @@ class postViewController: UIViewController {
         contentImageView.image = selectedImageUIImage
     }
     
+    //キーボードを表示する
+    @objc func keyboardWillShow(_ notification:NSNotification){
+        let keyboardHeight = ((notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as Any) as AnyObject).cgRectValue.height
+              
+        commentTextView.frame.origin.y = screenSize.height - keyboardHeight - commentTextView.frame.height
+        sendButton.frame.origin.y = screenSize.height - keyboardHeight - sendButton.frame.height
+    }
+
+    //キーボードを非表示にする
+    @objc func keyboardWillHide(_ notification:NSNotification){
+        commentTextView.frame.origin.y = screenSize.height - commentTextView.frame.height
+        sendButton.frame.origin.y = screenSize.height - sendButton.frame.height
+          
+        guard let rect = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue,
+        let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval else{return}
+          
+        UIView.animate(withDuration: duration) {
+            let transform = CGAffineTransform(translationX: 0, y: 0)
+            self.view.transform = transform
+        }
+    }
+    
+    //キーボードを閉じる
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        commentTextView.resignFirstResponder()
+    }
+          
+    //テキストフィールドを閉じる
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
     //ナビゲーションバーを非表示にする
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -45,7 +87,8 @@ class postViewController: UIViewController {
         //FIrebaseのDB名を決める
         let DB = Database.database().reference().child("post").childByAutoId()
         //ストレージサーバー
-        let storage = Storage.storage().reference(forURL: "")
+        //URLはFirebaseのアプリ内「Storage」
+        let storage = Storage.storage().reference(forURL: "gs://sns-swift.appspot.com")
         //フォルダを作る
         let icon = DB.child("icon").childByAutoId().key
         let content = DB.child("content").childByAutoId().key
@@ -67,13 +110,13 @@ class postViewController: UIViewController {
         //投稿をデータベースに登録する
         let upload = contentURL.putData(contentData, metadata: nil) { (metaData, error) in
             if error != nil {
-                print(error)
+                print(error as Any)
                 return
             }
             
             let upload2 = iconURL.putData(iconData, metadata: nil) { (metaData, error) in
                 if error != nil {
-                    print(error)
+                    print(error as Any)
                     return
                 }
             }
