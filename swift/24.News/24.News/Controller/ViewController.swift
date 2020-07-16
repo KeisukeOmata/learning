@@ -16,6 +16,23 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         scrollScrollVIew.isPagingEnabled = true
         //スクロールビューのサイズとテキストの設定を行う
         func scroll()
+        //Lottieを使ってアニメーションビューを表示する
+        for i in 0...4 {
+            //AnimationVIewクラス
+            let animationAnimationView = AnimationView()
+            //アニメーションにjsonを設定
+            let animation = Animation.named(jsonArray[i])
+            animationAnimationView.frame = CGRect(
+                                                //アニメーションビューの画面左上からのx座標
+                                                x: CGFloat(i) * view.frame.size.width,
+                                                //アニメーションビューの画面左上からのy座標
+                                                y: 0,
+                                                //アニメーションビューの横幅
+                                                width: view.frame.size.width,
+                                                //アニメーションビューの高さ
+                                                height: view.frame.size.height
+                                            )
+        }
     }
     
     //ナビゲーションバーを非表示にする
@@ -31,7 +48,9 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         //スクロールビューのサイズを決める
         //5枚表示するのでwidthに＊5
         scrollScrollVIew.contentSize = CGSize(
+                                            //スクロールビューの横幅
                                             width: view.frame.size.width * 5,
+                                            //スクロールビューの高さ
                                             height: scrollScrollVIew.frame.size.height
                                         )
         
@@ -39,11 +58,13 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         for i in 0...4 {
             let label = UILabel(
                             frame: CGRect(
-                                //xとyは画面サイズ
+                                //テキストの画面左上からのx座標
                                 x: CGFloat(i) * view.frame.size.width,
+                                //テキストの画面左上からのy座標
                                 y: view.frame.size.height / 3,
-                                //widthとheightはスクロールビューのサイズ
+                                //テキストの横幅
                                 width: scrollScrollVIew.frame.size.width,
+                                //テキストの高さ
                                 height: scrollScrollVIew.frame.size.height
                             )
                         )
