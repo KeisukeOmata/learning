@@ -15,12 +15,12 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         //スクロールビューを有効にする
         scrollScrollVIew.isPagingEnabled = true
         //スクロールビューのサイズとテキストの設定を行う
-        func scroll()
+        scroll()
         //Lottieを使ってアニメーションビューを表示する
         for i in 0...4 {
             //AnimationVIewクラス
             let animationAnimationView = AnimationView()
-            //アニメーションにjsonを設定
+            //アニメーションを作成
             let animation = Animation.named(jsonArray[i])
             animationAnimationView.frame = CGRect(
                                                 //アニメーションビューの画面左上からのx座標
@@ -32,6 +32,16 @@ class ViewController: UIViewController, UIScrollViewDelegate {
                                                 //アニメーションビューの高さ
                                                 height: view.frame.size.height
                                             )
+            //作成したアニメーションをアニメーションビューに設定
+            animationAnimationView.animation = animation
+            //アニメーションビューの表示範囲
+            animationAnimationView.contentMode = .scaleAspectFill
+            //アニメーションビューのループを設定
+            animationAnimationView.loopMode = .loop
+            //アニメーションビューを再生
+            animationAnimationView.play()
+            //スクロールビューにアニメーションビューを設定
+            scrollScrollVIew.addSubview(animationAnimationView)
         }
     }
     
