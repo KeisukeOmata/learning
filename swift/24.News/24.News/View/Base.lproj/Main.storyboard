@@ -44,10 +44,10 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="109.82142857142857"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="ydn-Z1-bxP">
             <objects>
-                <viewController id="s2L-yQ-Rfz" sceneMemberID="viewController">
+                <viewController id="s2L-yQ-Rfz" customClass="LoginViewController" customModule="_4_News" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kbV-Tx-Tcu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
