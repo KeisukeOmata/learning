@@ -22,6 +22,10 @@ class Tab1TableViewController: UITableViewController, SegementSlideContentScroll
         //画像をテーブルビューの下に置く
         self.tableView.backgroundView = imageUIImageView
         
+        //XMLパース
+        let urlString = "https://news.yahoo.co.jp/pickup/rss.xml"
+        let urlURL = URL(string: urlString)
+
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
