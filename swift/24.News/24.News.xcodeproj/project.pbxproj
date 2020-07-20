@@ -23,6 +23,7 @@
 		E960E64324C4382F006AE715 /* movie.mov in Resources */ = {isa = PBXBuildFile; fileRef = E960E64224C4382F006AE715 /* movie.mov */; };
 		E960E64724C43954006AE715 /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E960E64624C43954006AE715 /* IndexViewController.swift */; };
 		E960E64924C449AB006AE715 /* Tab1TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E960E64824C449AB006AE715 /* Tab1TableViewController.swift */; };
+		E960E64D24C662AE006AE715 /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = E960E64C24C662AE006AE715 /* Items.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		E960E64224C4382F006AE715 /* movie.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = movie.mov; sourceTree = "<group>"; };
 		E960E64624C43954006AE715 /* IndexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
 		E960E64824C449AB006AE715 /* Tab1TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab1TableViewController.swift; sourceTree = "<group>"; };
+		E960E64C24C662AE006AE715 /* Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 		E960E63124BBD7F8006AE715 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E960E64C24C662AE006AE715 /* Items.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				E960E63F24BBD911006AE715 /* ViewController.swift in Sources */,
 				E960E61E24BB465F006AE715 /* AppDelegate.swift in Sources */,
 				E960E62024BB465F006AE715 /* SceneDelegate.swift in Sources */,
+				E960E64D24C662AE006AE715 /* Items.swift in Sources */,
 				E960E64724C43954006AE715 /* IndexViewController.swift in Sources */,
 				E960E64924C449AB006AE715 /* Tab1TableViewController.swift in Sources */,
 			);
