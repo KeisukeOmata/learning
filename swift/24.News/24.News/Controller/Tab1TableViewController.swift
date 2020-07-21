@@ -1,12 +1,14 @@
 import UIKit
 import SegementSlide
 
+//SegementSlideContentScrollViewDelegate => スクロールビューで使う
+//XMLParserDelegate => XMLパーサーで使う
 class Tab1TableViewController: UITableViewController, SegementSlideContentScrollViewDelegate, XMLParserDelegate {
     
     //XMLParserのインスタンス
     var parserXMLParser = XMLParser()
     //パース中の現在の要素を格納する
-    var elementString: String!
+    var parserString: String!
     //Itemsクラスの配列
     var itemsItems = [Items]()
 
@@ -66,13 +68,66 @@ class Tab1TableViewController: UITableViewController, SegementSlideContentScroll
         //UITableViewを親に持つと使える
         //subtitleで2行
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Cell")
-        //UIImageビューを表示するため、セルを透明にする
-        cell.backgroundColor = .clear
-        
         //Itemsクラスの配列を展開する
         let item = self.itemsItems[indexPath.row]
         
+        //UIImageビューを表示するため、セルを透明にする
+        cell.backgroundColor = .clear
+        
+        //1行目
+        //セルにItemsクラスの値を設定する
+        cell.textLabel?.text = item.titleString
+        //セルのテキストのフォントを設定する
+        cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 15.5)
+        cell.textLabel?.textColor = .white
+        //セルのテキストの表示行数を設定する
+        cell.textLabel?.numberOfLines = 3
+        
+        //2行目
+        //セルにItemsクラスの値を設定する
+        cell.detailTextLabel?.text = item.urlString
+        //セルのテキストのフォントを設定する
+        cell.detailTextLabel?.textColor = .white
+        
         return cell
     }
+    
+    //XMLパーサー
+    func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
+        //パース中の現在の要素を格納する変数を初期化
+        parserString = nil
+        //elementNameは引数
+        //"item"はXMLの要素
+        if elementName == "item" {
+            //XMLに"item"があれば、Itemsクラスを初期化して配列に追加する
+            //値の設定は以下のfoundCharactersで行う
+            self.itemsItems.append(Items())
+        } else {
+            //XMLに"item"がなければ、パース用の変数に格納
+            parserString = elementName
+        }
+    }
+    
+    func parser(_ parser: XMLParser, foundCharacters string: String) {
+        if self.itemsItems.count > 0 {
+            //Itemsクラスの配列が1以上あれば、変数に配列の-1番目を格納する
+            let currentItem = self.itemsItems[self.itemsItems.count - 1]
+            
+            switch self.parserString {
+            case "title":
+                //stringはfoundCharactersの引数
+                currentItem.titleString = string
+            case "link":
+                //stringはfoundCharactersの引数
+                currentItem.urlString = string
+            case "pubDate":
+                //stringはfoundCharactersの引数
+                currentItem.dateString = string
+            default:
+                break
+            }
+        }
+    }
+    
     
 }
