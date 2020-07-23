@@ -1,30 +1,34 @@
-//
-//  WebViewController.swift
-//  24.News
-//
-//  Created by 小俣圭佑 on 2020/07/23.
-//  Copyright © 2020 KeisukeOmata. All rights reserved.
-//
-
 import UIKit
+import WebKit
 
-class WebViewController: UIViewController {
+//WKUIDelegate
+//Webコンテンツの読み込みに使う
+class WebViewController: UIViewController, WKUIDelegate {
+
+    var webViewWKWebView = WKWebView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        //ウェブビューのサイズを決める
+        webViewWKWebView.frame = CGRect(
+                                        x: 0,
+                                        y: 0,
+                                        //view = 画面と同じ
+                                        width: view.frame.size.width,
+                                        height: view.frame.size.height - 50
+                                    )
+        //ビューにウェブビューを設定する
+        view.addSubview(webViewWKWebView)
+        //TableViewControllerで設定したkey値"url"で呼び出す
+        let urlString = UserDefaults.standard.object(forKey: "url")
+        //URL型にキャスト
+        //元の型はAny型なのでas! String
+        let urlURL = URL(string: urlString as! String)
+        //URLRequest型にキャスト
+        let requestURLRequest = URLRequest(url: urlURL!)
+        //WKWebViewにURLを読み込ませる
+        webViewWKWebView.load(requestURLRequest)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

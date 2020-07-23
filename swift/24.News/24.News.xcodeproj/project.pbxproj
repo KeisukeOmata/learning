@@ -24,6 +24,7 @@
 		E960E64724C43954006AE715 /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E960E64624C43954006AE715 /* IndexViewController.swift */; };
 		E960E64924C449AB006AE715 /* Tab1TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E960E64824C449AB006AE715 /* Tab1TableViewController.swift */; };
 		E960E64D24C662AE006AE715 /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = E960E64C24C662AE006AE715 /* Items.swift */; };
+		E96F91D224C9B7C10006FDC5 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96F91D124C9B7C10006FDC5 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		E960E64624C43954006AE715 /* IndexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
 		E960E64824C449AB006AE715 /* Tab1TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab1TableViewController.swift; sourceTree = "<group>"; };
 		E960E64C24C662AE006AE715 /* Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
+		E96F91D124C9B7C10006FDC5 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 				E960E64024C282C0006AE715 /* LoginViewController.swift */,
 				E960E64624C43954006AE715 /* IndexViewController.swift */,
 				E960E64824C449AB006AE715 /* Tab1TableViewController.swift */,
+				E96F91D124C9B7C10006FDC5 /* WebViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				E960E64D24C662AE006AE715 /* Items.swift in Sources */,
 				E960E64724C43954006AE715 /* IndexViewController.swift in Sources */,
 				E960E64924C449AB006AE715 /* Tab1TableViewController.swift in Sources */,
+				E96F91D224C9B7C10006FDC5 /* WebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -142,7 +142,17 @@ class Tab1TableViewController: UITableViewController, SegementSlideContentScroll
     
     //webViewControllerにURLを渡して表示する
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        <#code#>
+        //WebViewControllerクラスの実態
+        let webViewController = WebViewController()
+        //モーダルで遷移するときの切り替わり方
+        webViewController.modalTransitionStyle = .crossDissolve
+        //Itemsクラスの配列を展開
+        let item = itemsItems[indexPath.row]
+        //URLを渡す
+        //webViewControllerで表示する際にkey"url"を使う
+        UserDefaults.standard.set(item.urlString, forKey: "url")
+        //webViewControllerに遷移
+        present(webViewController, animated: true, completion: nil)
     }
     
 }
