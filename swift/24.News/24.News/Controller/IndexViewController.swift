@@ -37,11 +37,11 @@ class IndexViewController: SegementSlideViewController {
         
         return headerUIImageView
     }
-
+    
     //タブのタイトルを設定する
-    override var titlesInSwitcher: [String] {
-        return ["TAB1", "TAB2", "TAB3", "TAB4", "TAB5", "TAB6"]
-    }
+      override var titlesInSwitcher: [String] {
+          return ["TAB1", "TAB2", "TAB3", "TAB4", "TAB5", "TAB6"]
+      }
 
     //タブ毎に呼ぶコントローラーを設定する
     override func segementSlideContentViewController(at index: Int) -> SegementSlideContentScrollViewDelegate? {
@@ -62,4 +62,5 @@ class IndexViewController: SegementSlideViewController {
             return Tab1TableViewController()
         }
     }
+    
 }
