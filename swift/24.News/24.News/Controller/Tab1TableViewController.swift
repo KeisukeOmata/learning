@@ -129,5 +129,20 @@ class Tab1TableViewController: UITableViewController, SegementSlideContentScroll
         }
     }
     
+    //XMLの終了タグで呼ばれる
+    func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
+        self.parserString = nil
+    }
+    
+    //パーサーの終了時に呼ばれる
+    func parserDidEndDocument(_ parser: XMLParser) {
+        //テーブルビューをリロードする
+        self.tableView.reloadData()
+    }
+    
+    //webViewControllerにURLを渡して表示する
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        <#code#>
+    }
     
 }
