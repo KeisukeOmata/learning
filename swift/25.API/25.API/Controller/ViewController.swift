@@ -49,16 +49,16 @@ class ViewController: SegementSlideDefaultViewController {
         switch index {
         case 0:
             return Tab1ViewController()
-//        case 1:
-//            return Tab2ViewController()
-//        case 2:
-//            return Tab3ViewController()
-//        case 3:
-//            return Tab4ViewController()
-//        case 4:
-//            return Tab5ViewController()
-//        case 5:
-//            return Tab6ViewController()
+        case 1:
+            return Tab2ViewController()
+        case 2:
+            return Tab3ViewController()
+        case 3:
+            return Tab4ViewController()
+        case 4:
+            return Tab5ViewController()
+        case 5:
+            return Tab6ViewController()
         default:
             return Tab1ViewController()
         }
