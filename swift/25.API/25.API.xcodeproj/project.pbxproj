@@ -16,6 +16,7 @@
 		E95DE4E624CAACB000029B8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E95DE4E424CAACB000029B8C /* LaunchScreen.storyboard */; };
 		E97462D724CAAE3F00F5426E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E97462D624CAAE3F00F5426E /* GoogleService-Info.plist */; };
 		E9B05C5D24CAB47200C0E078 /* Tab1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B05C5C24CAB47200C0E078 /* Tab1ViewController.swift */; };
+		E9B05C5F24CAB9EA00C0E078 /* JsonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B05C5E24CAB9EA00C0E078 /* JsonData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		E95DE4E724CAACB000029B8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E97462D624CAAE3F00F5426E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E9B05C5C24CAB47200C0E078 /* Tab1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab1ViewController.swift; sourceTree = "<group>"; };
+		E9B05C5E24CAB9EA00C0E078 /* JsonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 		E97462D924CAAEB100F5426E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E9B05C5E24CAB9EA00C0E078 /* JsonData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E95DE4DE24CAACA000029B8C /* ViewController.swift in Sources */,
+				E9B05C5F24CAB9EA00C0E078 /* JsonData.swift in Sources */,
 				E95DE4DA24CAACA000029B8C /* AppDelegate.swift in Sources */,
 				E9B05C5D24CAB47200C0E078 /* Tab1ViewController.swift in Sources */,
 				E95DE4DC24CAACA000029B8C /* SceneDelegate.swift in Sources */,
