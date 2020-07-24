@@ -6,11 +6,11 @@ target '24.News' do
   use_frameworks!
 
   # Pods for 24.News
-  //アニメーション
+  # アニメーション
   pod 'lottie-ios'
-  //セグメントコントローラー
+  # セグメントコントローラー
   pod 'SegementSlide'
-  //通知
+  # 通知
   pod 'ImpressiveNotifications'
 
 end
