@@ -10,25 +10,26 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="_4_News" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7S-34-EiJ">
-                                <rect key="frame" x="300" y="100" width="87" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="スキップ"/>
-                                <connections>
-                                    <segue destination="s2L-yQ-Rfz" kind="show" identifier="next" id="xpQ-yS-7wz"/>
-                                </connections>
-                            </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Geo-9Y-GS4">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <viewLayoutGuide key="contentLayoutGuide" id="4if-pX-Lv4"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="s7F-dz-S03"/>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7S-34-EiJ">
+                                <rect key="frame" x="300" y="100" width="87" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="スキップ"/>
+                                <connections>
+                                    <segue destination="s2L-yQ-Rfz" kind="show" id="aTm-Id-Dn3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -38,13 +39,13 @@
                         <outlet property="scrollScrollVIew" destination="Geo-9Y-GS4" id="yJy-q7-uqt"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="109.82142857142857"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="ydn-Z1-bxP">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W7C-Vb-iif" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="s2L-yQ-Rfz" customClass="LoginViewController" customModule="_4_News" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kbV-Tx-Tcu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -65,6 +66,7 @@
                                 </state>
                                 <connections>
                                     <action selector="login:" destination="s2L-yQ-Rfz" eventType="touchUpInside" id="7DF-iP-gDc"/>
+                                    <segue destination="Kd3-cU-cll" kind="show" id="Ii9-UE-3UL"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -72,11 +74,7 @@
                         <viewLayoutGuide key="safeArea" id="VCe-DT-t1g"/>
                     </view>
                     <navigationItem key="navigationItem" id="6G1-ZU-lzL"/>
-                    <connections>
-                        <segue destination="Kd3-cU-cll" kind="show" id="lkU-14-kXY"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W7C-Vb-iif" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1789.8550724637682" y="109.82142857142857"/>
         </scene>

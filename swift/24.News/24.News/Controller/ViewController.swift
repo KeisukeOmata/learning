@@ -1,6 +1,9 @@
 import UIKit
 import Lottie
 
+//画面遷移はボタンをコントローラーにドラッグしてShow
+//スクロールビューの下段にボタンをおくことで上にくる
+
 //UIScrollViewDelegate
 //スクロールビューで使う
 class ViewController: UIViewController, UIScrollViewDelegate {
