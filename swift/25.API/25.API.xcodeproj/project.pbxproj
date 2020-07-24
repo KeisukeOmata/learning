@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2D91E029B0678FD610FE4743 /* Pods_25_API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C3B69D97BB9A364EBCF8A2 /* Pods_25_API.framework */; };
+		E952435C24CAE1C000E27B08 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E952435B24CAE1C000E27B08 /* WebViewController.swift */; };
 		E95DE4DA24CAACA000029B8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95DE4D924CAACA000029B8C /* AppDelegate.swift */; };
 		E95DE4DC24CAACA000029B8C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95DE4DB24CAACA000029B8C /* SceneDelegate.swift */; };
 		E95DE4DE24CAACA000029B8C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95DE4DD24CAACA000029B8C /* ViewController.swift */; };
@@ -23,6 +24,7 @@
 		00AD9A7C555EFDC775E07AF6 /* Pods-25.API.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-25.API.release.xcconfig"; path = "Target Support Files/Pods-25.API/Pods-25.API.release.xcconfig"; sourceTree = "<group>"; };
 		22C3B69D97BB9A364EBCF8A2 /* Pods_25_API.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_25_API.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A35C126B0117545E565ED87 /* Pods-25.API.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-25.API.debug.xcconfig"; path = "Target Support Files/Pods-25.API/Pods-25.API.debug.xcconfig"; sourceTree = "<group>"; };
+		E952435B24CAE1C000E27B08 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		E95DE4D624CAACA000029B8C /* 25.API.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 25.API.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E95DE4D924CAACA000029B8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E95DE4DB24CAACA000029B8C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				E95DE4DB24CAACA000029B8C /* SceneDelegate.swift */,
 				E95DE4DD24CAACA000029B8C /* ViewController.swift */,
 				E9B05C5C24CAB47200C0E078 /* Tab1ViewController.swift */,
+				E952435B24CAE1C000E27B08 /* WebViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E95DE4DE24CAACA000029B8C /* ViewController.swift in Sources */,
+				E952435C24CAE1C000E27B08 /* WebViewController.swift in Sources */,
 				E9B05C5F24CAB9EA00C0E078 /* JsonData.swift in Sources */,
 				E95DE4DA24CAACA000029B8C /* AppDelegate.swift in Sources */,
 				E9B05C5D24CAB47200C0E078 /* Tab1ViewController.swift in Sources */,

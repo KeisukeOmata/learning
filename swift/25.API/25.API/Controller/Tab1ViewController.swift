@@ -24,7 +24,10 @@ class Tab1ViewController: UITableViewController, SegementSlideContentScrollViewD
     var youtubeURLStringArray = [String]()
     //JsonDataクラス内のchannelTitleを格納する配列
     var channelTitleStringArray = [String]()
-
+    //セルに表示する行数
+    var cellLines: Int = 5
+    //取得する動画の数(-1する)
+    var numberOfVideos: Int = 4
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,38 +36,57 @@ class Tab1ViewController: UITableViewController, SegementSlideContentScrollViewD
         getData()
     }
     
-//    //SegementSlideContentScrollViewDelegateに必要
-//    @objc var scrollView: UIScrollView {
-//        return tableView
-//    }
-//
-//    //セクションの数
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        return 1
-//    }
-//
-//    //1セクション中のセルの数
-//   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//       //JsonDataクラスの配列の数分セルを返す
-//       return titleStringArray.count
-//   }
-//
-//    //セルの高さを決める
-//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        //画面の高さを5分割
-//        return view.frame.size.height / 5
-//    }
-//
-//    //セルを作成する
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        <#code#>
-//    }
+    //SegementSlideContentScrollViewDelegateに必要
+    @objc var scrollView: UIScrollView {
+        return tableView
+    }
+
+    //セクションの数
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
+    //1セクション中のセルの数
+   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+       //JsonDataクラスの配列の数分セルを返す
+       return titleStringArray.count
+   }
+
+    //セルの高さを決める
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        //画面の高さを5分割
+        return view.frame.size.height / 5
+    }
+
+    //セルを作成する
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //subtitleでタイトル(textLabel)と見出し(detailTextLabel)
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Cell")
+        //セルに設定する画像
+        let imageURL = URL(string: self.imageURLStringArray[indexPath.row] as String)!
+
+        //セルのハイライトをなくす
+        cell.selectionStyle = .none
+        //画像をセルに設定する
+        cell.imageView?.sd_setImage(with: imageURL, completed: nil)
+        //タイトルをセルに設定する
+        cell.textLabel?.text = self.titleStringArray[indexPath.row]
+        //日時をセルの見出しに設定する
+        cell.detailTextLabel?.text = self.publishedAtStringArray[indexPath.row]
+        //フォントサイズをオートで設定する
+        cell.textLabel?.adjustsFontSizeToFitWidth = true
+        cell.detailTextLabel?.adjustsFontSizeToFitWidth = true
+        //行数を設定する
+        cell.textLabel?.numberOfLines = cellLines
+        cell.detailTextLabel?.numberOfLines = cellLines
+        return cell
+    }
 
     //APIを叩く
     func getData() {
         //1.リクエストを作成する
         //maxResultsは取得件数
-        let urlText = "https://www.googleapis.com/youtube/v3/search?key=&q=猫&part=snippet&maxResults=2&order=date"
+        let urlText = "https://www.googleapis.com/youtube/v3/search?key=&q=猫&part=snippet&maxResults=5&order=date"
         //日本語を含む検索ワードをURLに変換する
         let urlURL = urlText.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
@@ -76,8 +98,7 @@ class Tab1ViewController: UITableViewController, SegementSlideContentScrollViewD
             
             switch responce.result {
             case .success:
-                //40件取得する設定
-                for i in 0...1 {
+                for i in 0...self.numberOfVideos {
                     //JSON型のインスタンスに取得結果を設定
                     let jsonJSON = JSON(responce.data as Any)
                     //videoIdを取得
@@ -93,7 +114,8 @@ class Tab1ViewController: UITableViewController, SegementSlideContentScrollViewD
                     let imageURLString = jsonJSON["items"][i]["snippet"]["thumbnails"]["default"]["url"].string
                     print(imageURLString as Any)
                     //youtubeURLを取得
-                    let youtubeURL = "https://www.youtube.com/watch?v=\(videoIdString)"
+                    //オプショナルが付いてしまうため「！」を付与
+                    let youtubeURL = "https://www.youtube.com/watch?v=\(videoIdString!)"
                     print(youtubeURL)
                     //channelTitleを取得
                     let channelTitleString = jsonJSON["items"][i]["snippet"]["channelTitle"].string
@@ -116,6 +138,23 @@ class Tab1ViewController: UITableViewController, SegementSlideContentScrollViewD
             //テーブルビューを再読み込み
             self.tableView.reloadData()
         }
+    }
+    
+    //セルがタップされたときの処理
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //セルがタップされたときの添字
+        let thisNumber = indexPath.row
+        //webViewControllerクラスのインスタンス
+        let webViewController = WebViewController()
+        //タップされた動画のURL
+        let thisURL = youtubeURLStringArray[thisNumber]
+
+        print("タップされたセルのURL")
+        print(thisURL)
+        //タップされた動画のURLをアプリ内に設定する
+        UserDefaults.standard.set(thisURL, forKey: "url")
+        //WebViewControllerに遷移する
+        present(webViewController, animated: true, completion: nil)
     }
     
 }
