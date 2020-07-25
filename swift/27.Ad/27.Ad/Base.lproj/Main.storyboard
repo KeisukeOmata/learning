@@ -16,9 +16,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="49B-2O-cED">
-                                <rect key="frame" x="168" y="493" width="91" height="30"/>
+                                <rect key="frame" x="168" y="493" width="91" height="76"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="next:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0aq-9o-6hd"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QHx-1c-zez" customClass="GADBannerView">
                                 <rect key="frame" x="53" y="708" width="320" height="100"/>
@@ -50,11 +53,17 @@
                                 <rect key="frame" x="137" y="232" width="141" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="課金"/>
+                                <connections>
+                                    <action selector="buy:" destination="hvw-5q-9eF" eventType="touchUpInside" id="QGu-3n-W9S"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eA9-oy-jcP">
                                 <rect key="frame" x="137" y="370" width="141" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="リストア"/>
+                                <connections>
+                                    <action selector="restore:" destination="hvw-5q-9eF" eventType="touchUpInside" id="CFg-tf-JhF"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
