@@ -24,16 +24,35 @@ class Tab3ViewController: UITableViewController, SegementSlideContentScrollViewD
     var youtubeURLStringArray = [String]()
     //JsonDataクラス内のchannelTitleを格納する配列
     var channelTitleStringArray = [String]()
+    //UIRefreshControlクラスのインスタンス
+    let refreshUIRefreshControl = UIRefreshControl()
     //セルに表示する行数
-    var cellLines: Int = 5
+    var cellLines: Int = 3
     //取得する動画の数(-1する)
     var numberOfVideos: Int = 4
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //tableViewにUIRefreshControlを設定する
+        //更新時に呼ばれる
+        tableView.refreshControl = refreshUIRefreshControl
+        //更新時の処理(refresh)を設定する
+        refreshUIRefreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         //APIを叩く
         getData()
+        //tableViewを更新する
+        tableView.reloadData()
+    }
+    
+    //更新時の処理
+    @objc func refresh() {
+        //APIを叩く
+        getData()
+        //tableViewを更新する
+        tableView.reloadData()
+        //インジケーターを停止する
+        refreshUIRefreshControl.endRefreshing()
     }
     
     //SegementSlideContentScrollViewDelegateに必要
@@ -68,7 +87,13 @@ class Tab3ViewController: UITableViewController, SegementSlideContentScrollViewD
         //セルのハイライトをなくす
         cell.selectionStyle = .none
         //画像をセルに設定する
-        cell.imageView?.sd_setImage(with: imageURL, completed: nil)
+        //cell.imageView?.sd_setImage(with: imageURL, completed: nil)
+        cell.imageView?.sd_setImage(with: imageURL, completed: { (image, error, _, _) in
+            if error == nil {
+                //画像表示の高速化
+                cell.setNeedsLayout()
+            }
+        })
         //タイトルをセルに設定する
         cell.textLabel?.text = self.titleStringArray[indexPath.row]
         //日時をセルの見出しに設定する
@@ -86,7 +111,7 @@ class Tab3ViewController: UITableViewController, SegementSlideContentScrollViewD
     func getData() {
         //1.リクエストを作成する
         //maxResultsは取得件数
-        let urlText = "https://www.googleapis.com/youtube/v3/search?key=&q=シカ&part=snippet&maxResults=5&order=date"
+        let urlText = "https://www.googleapis.com/youtube/v3/search?key=&q=ベンガルトラ&part=snippet&maxResults=5&order=date"
         //日本語を含む検索ワードをURLに変換する
         let urlURL = urlText.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
