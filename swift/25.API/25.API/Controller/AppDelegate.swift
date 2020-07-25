@@ -5,9 +5,9 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     //通知を送る時間
-    let hours = 19
+    let hours = 12
     //通知を送る分
-    let minute = 00
+    let minute = 12
     //通知許可フラグ
     var notificationPermissionFlg = true
     //初回フラグ
@@ -59,6 +59,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let request = UNNotificationRequest(identifier: "uuid", content: content, trigger: trgUNNotificationTrigger)
         //通知を設定する
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+    }
+    
+    //バックグラウンドで通知を呼ぶ
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        timeNotification()
     }
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
