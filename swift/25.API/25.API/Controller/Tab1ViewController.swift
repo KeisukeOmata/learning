@@ -112,7 +112,7 @@ class Tab1ViewController: UITableViewController, SegementSlideContentScrollViewD
     func getData() {
         //1.リクエストを作成する
         //maxResultsは取得件数
-        let urlText = "https://www.googleapis.com/youtube/v3/search?key=AIzaSyAH5UpNxNGdYIqB9myGos8f17CEpv11Xvs&q=猫&part=snippet&maxResults=5&order=date"
+        let urlText = "https://www.googleapis.com/youtube/v3/search?key=&q=猫&part=snippet&maxResults=5&order=date"
         //日本語を含む検索ワードをURLに変換する
         let urlURL = urlText.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
