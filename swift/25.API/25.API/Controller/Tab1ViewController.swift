@@ -25,7 +25,7 @@ class Tab1ViewController: UITableViewController, SegementSlideContentScrollViewD
     //JsonDataクラス内のchannelTitleを格納する配列
     var channelTitleStringArray = [String]()
     //UIRefreshControlクラスのインスタンス
-    let refresh = UIRefreshControl()
+    let refreshUIRefreshControl = UIRefreshControl()
     //セルに表示する行数
     var cellLines: Int = 3
     //取得する動画の数(-1する)
@@ -36,9 +36,9 @@ class Tab1ViewController: UITableViewController, SegementSlideContentScrollViewD
         
         //tableViewにUIRefreshControlを設定する
         //更新時に呼ばれる
-        tableView.refreshControl = refresh
+        tableView.refreshControl = refreshUIRefreshControl
         //更新時の処理(refresh)を設定する
-        refresh.addTarget(self, action: #selector(update), for: .valueChanged)
+        refreshUIRefreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         //APIを叩く
         getData()
         //tableViewを更新する
@@ -46,14 +46,14 @@ class Tab1ViewController: UITableViewController, SegementSlideContentScrollViewD
     }
     
     //更新時の処理
-    @objc func update() {
+    @objc func refresh() {
         print("リフレッシュ！")
         //APIを叩く
         getData()
         //tableViewを更新する
         tableView.reloadData()
         //インジケーターを停止する
-        refresh.endRefreshing()
+        refreshUIRefreshControl.endRefreshing()
     }
     
     //SegementSlideContentScrollViewDelegateに必要
