@@ -14,8 +14,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            //LandmarkList.swiftをルートに設定する
-            window.rootViewController = UIHostingController(rootView: LandmarkList())
+            window.rootViewController = UIHostingController(
+                //LandmarkList.swiftをルートに設定する
+                rootView: LandmarkList()
+                    //UserDataオブジェクトを必ず持たせる
+                    //アプリ全体で使用する必要があるようなデータ
+                    .environmentObject(UserData())
+            )
             self.window = window
             window.makeKeyAndVisible()
         }
