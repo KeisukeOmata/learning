@@ -1,7 +1,13 @@
 import SwiftUI
 import CoreLocation
 
-struct Landmark: Hashable, Codable {
+//Hashableプロトコル
+//その型の値を元にハッシュ値が計算可能であることを表す型
+//Codableプロトコル
+//API通信等で取得したJSONやプロパティリストを任意のデータ型に変換する
+//Identifiableプロトコル
+//idという変数を持っていることを示すプロトコル
+struct Landmark: Hashable, Codable, Identifiable {
     var id: Int
     var name: String
     fileprivate var imageName: String
