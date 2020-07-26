@@ -15,8 +15,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             window.rootViewController = UIHostingController(
-                //LandmarkList.swiftをルートに設定する
-                rootView: LandmarkList()
+                //ルート画面の設定
+                rootView: CategoryHome()
                     //UserDataオブジェクトを必ず持たせる
                     //アプリ全体で使用する必要があるようなデータ
                     .environmentObject(UserData())
