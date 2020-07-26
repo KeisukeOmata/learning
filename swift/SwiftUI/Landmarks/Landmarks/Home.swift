@@ -15,6 +15,8 @@ struct CategoryHome: View {
     }
     
     //状態管理を行う
+    @EnvironmentObject var userData: UserData
+    //状態管理を行う
     //ユーザー情報を表示する
     @State var showingProfile = false
     //ユーザー情報を表示するボタン
@@ -60,7 +62,9 @@ struct CategoryHome: View {
             .navigationBarItems(trailing: profileButton)
             //モーダルでユーザー情報を表示する
             .sheet(isPresented: $showingProfile) {
-                Text("User Profile")
+                //ProfileHost.swift
+                ProfileHost()
+                    .environmentObject(self.userData)
             }
         }
     }
