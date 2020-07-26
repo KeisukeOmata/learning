@@ -1,9 +1,11 @@
 import SwiftUI
 
 struct CircleImage: View {
+    //引数にimageを取る
+    var image: Image
+    
     var body: some View {
-        //画像の名前
-        Image("turtlerock")
+        image
             //円形
             .clipShape(Circle())
             //縁取り
@@ -13,8 +15,10 @@ struct CircleImage: View {
     }
 }
 
+//プレビュー画面
 struct CircleImage_Previews: PreviewProvider {
     static var previews: some View {
-        CircleImage()
+        //引数imageに画像の名前を渡す
+        CircleImage(image: Image("turtlerock"))
     }
 }
