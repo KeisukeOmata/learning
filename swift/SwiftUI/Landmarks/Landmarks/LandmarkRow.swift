@@ -14,6 +14,14 @@ struct LandmarkRow: View {
             Text(landmark.name)
             //間隔を開ける
             Spacer()
+            //お気に入りの判定
+            //isFavoriteがtrueであれば星を表示
+            if landmark.isFavorite {
+                //システムイメージ(https://developer.apple.com/design/human-interface-guidelines/sf-symbols/overview/)
+                Image(systemName: "star.fill")
+                    .imageScale(.medium)
+                    .foregroundColor(.yellow)
+            }
         }
     }
 }
