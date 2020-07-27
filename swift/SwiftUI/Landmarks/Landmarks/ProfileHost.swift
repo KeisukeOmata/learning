@@ -20,7 +20,8 @@ struct ProfileHost: View {
             if self.mode?.wrappedValue == .inactive {
                 ProfileSummary(profile: userData.profile)
             } else {
-                Text("Profile Editor")
+                //ProfileEditor.swift
+                ProfileEditor(profile: $draftProfile)
             }
             //ProfileSummary.swift
             ProfileSummary(profile: draftProfile)
