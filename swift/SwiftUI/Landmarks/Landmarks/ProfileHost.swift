@@ -11,10 +11,17 @@ struct ProfileHost: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
-            //編集ボタン
             HStack {
+                //キャンセルボタン
+                if self.mode?.wrappedValue == .active {
+                    Button("Cancel") {
+                        self.draftProfile = self.userData.profile
+                        self.mode?.animation().wrappedValue = .inactive
+                    }
+                }
+                //間隔を開ける
                 Spacer()
-                
+                //編集ボタン
                 EditButton()
             }
             if self.mode?.wrappedValue == .inactive {
@@ -22,9 +29,15 @@ struct ProfileHost: View {
             } else {
                 //ProfileEditor.swift
                 ProfileEditor(profile: $draftProfile)
+                    .onAppear {
+                        self.draftProfile = self.userData.profile
+                    }
+                    .onDisappear {
+                        self.userData.profile = self.draftProfile
+                    }
             }
             //ProfileSummary.swift
-            ProfileSummary(profile: draftProfile)
+            //ProfileSummary(profile: draftProfile)
         }
         .padding()
     }

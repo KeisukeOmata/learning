@@ -53,7 +53,7 @@ struct LandmarkDetail: View {
                     }
                 }
                 //水平方向
-                HStack {
+                HStack(alignment: .top) {
                     //ランドマークがある場所の名前
                     Text(landmark.park)
                         .font(.subheadline)
@@ -70,15 +70,18 @@ struct LandmarkDetail: View {
             Spacer()
         }
         //ナビゲーションバーのタイトルを設定する
-        .navigationBarTitle(Text(landmark.name), displayMode: .inline)
+        //.navigationBarTitle(Text(landmark.name), displayMode: .inline)
     }
 }
 
 //プレビュー画面
 struct LandmarkDetail_Previews: PreviewProvider {
     static var previews: some View {
+        let userData = UserData()
+        return LandmarkDetail(landmark: userData.landmarks[0])
+            .environmentObject(userData)
         //引数landmarkにjsonの1つ目を渡す
-        LandmarkDetail(landmark: landmarkData[0])
-            .environmentObject(UserData())
+        //LandmarkDetail(landmark: landmarkData[0])
+            //.environmentObject(UserData())
     }
 }
