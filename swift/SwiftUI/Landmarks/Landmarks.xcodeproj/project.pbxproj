@@ -43,6 +43,7 @@
 		E9AC27C324D1AE75007E1D38 /* chilkoottrail.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E9AC27B524D1AE74007E1D38 /* chilkoottrail.jpg */; };
 		E9AC27C424D1AE75007E1D38 /* turtlerock.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E9AC27B624D1AE75007E1D38 /* turtlerock.jpg */; };
 		E9AC27C524D1AE75007E1D38 /* stmarylake.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E9AC27B724D1AE75007E1D38 /* stmarylake.jpg */; };
+		E9AC27C724D24282007E1D38 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AC27C624D24282007E1D38 /* PageViewController.swift */; };
 		E9AD1ECD24CC3D60009A3574 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AD1ECC24CC3D60009A3574 /* AppDelegate.swift */; };
 		E9AD1ECF24CC3D60009A3574 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AD1ECE24CC3D60009A3574 /* SceneDelegate.swift */; };
 		E9AD1ED124CC3D60009A3574 /* LandmarkDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AD1ED024CC3D60009A3574 /* LandmarkDetail.swift */; };
@@ -90,6 +91,7 @@
 		E9AC27B524D1AE74007E1D38 /* chilkoottrail.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chilkoottrail.jpg; sourceTree = "<group>"; };
 		E9AC27B624D1AE75007E1D38 /* turtlerock.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = turtlerock.jpg; sourceTree = "<group>"; };
 		E9AC27B724D1AE75007E1D38 /* stmarylake.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = stmarylake.jpg; sourceTree = "<group>"; };
+		E9AC27C624D24282007E1D38 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		E9AD1EC924CC3D60009A3574 /* Landmarks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Landmarks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9AD1ECC24CC3D60009A3574 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9AD1ECE24CC3D60009A3574 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				E9AC277924CD7EC0007E1D38 /* AnimationViews */,
 				E9AC277824CD7E71007E1D38 /* DrawingViews */,
 				E9AC271F24CD31D7007E1D38 /* Models */,
+				E9AC27C624D24282007E1D38 /* PageViewController.swift */,
 				E9AD1ECC24CC3D60009A3574 /* AppDelegate.swift */,
 				E9AD1ECE24CC3D60009A3574 /* SceneDelegate.swift */,
 				E9AC277A24CD7FBE007E1D38 /* Home.swift */,
@@ -321,6 +324,7 @@
 				E9AD1ECF24CC3D60009A3574 /* SceneDelegate.swift in Sources */,
 				E9AC274224CD48FB007E1D38 /* LandmarkList.swift in Sources */,
 				E9AC276924CD75D7007E1D38 /* BadgeSymbol.swift in Sources */,
+				E9AC27C724D24282007E1D38 /* PageViewController.swift in Sources */,
 				E9AC276B24CD7621007E1D38 /* RotatedBadgeSymbol.swift in Sources */,
 				E9AC278524CE4A22007E1D38 /* HikeBadge.swift in Sources */,
 				E9AC277B24CD7FBE007E1D38 /* Home.swift in Sources */,
