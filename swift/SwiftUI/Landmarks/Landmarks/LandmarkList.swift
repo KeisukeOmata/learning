@@ -42,17 +42,16 @@ struct LandmarkList: View {
 }
 
 //プレビュー画面
-struct LandmarkList_Previews: PreviewProvider {
+struct LandmarksList_Previews: PreviewProvider {
     static var previews: some View {
         //プレビューを機種毎に表示する
-        //ForEach(["iPad Pro (12.9-inch)", "iPhone XS Max"], id: \.self) { deviceName in
-            //LandmarkList()
-                //.environmentObject(UserData())
-                //.previewDevice(PreviewDevice(rawValue: deviceName))
-                //.previewDisplayName(deviceName)
-        NavigationView {
-            LandmarkList()
-                .environmentObject(UserData())
+        ForEach(["iPad Pro (12.9-inch)", "iPhone XS Max"], id: \.self) { deviceName in
+            NavigationView {
+                LandmarkList()
+                    .previewDevice(PreviewDevice(rawValue: deviceName))
+                    .previewDisplayName(deviceName)
+            }
         }
+        .environmentObject(UserData())
     }
 }

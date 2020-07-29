@@ -22,7 +22,11 @@ struct CategoryRow: View {
                     //itemsにはLandmarkクラスが入ってる
                     ForEach(self.items) { landmark in
                         //LandmarkDetail.swiftへ画面遷移
-                        NavigationLink(destination: LandmarkDetail(landmark: landmark)) {
+                        NavigationLink(
+                            destination: LandmarkDetail(
+                                landmark: landmark
+                            )
+                        ) {
                             //画面表示を以下で作成する
                             CategoryItem(landmark: landmark)
                         }
@@ -63,7 +67,8 @@ struct CategoryRow_Previews: PreviewProvider {
     static var previews: some View {
         CategoryRow(
             categoryName: landmarkData[0].category.rawValue,
-            items: Array(landmarkData.prefix(3))
+            items: Array(landmarkData.prefix(4))
         )
+        .environmentObject(UserData())
     }
 }
