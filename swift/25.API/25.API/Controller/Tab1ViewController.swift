@@ -88,7 +88,7 @@ class Tab1ViewController: UITableViewController, SegementSlideContentScrollViewD
         //セルのハイライトをなくす
         cell.selectionStyle = .none
         //画像をセルに設定する
-        //cell.imageView?.sd_setImage(with: imageURL, completed: nil)
+        cell.imageView?.sd_setImage(with: imageURL, completed: nil)
         cell.imageView?.sd_setImage(with: imageURL, completed: { (image, error, _, _) in
             if error == nil {
                 //画像表示の高速化
@@ -112,7 +112,7 @@ class Tab1ViewController: UITableViewController, SegementSlideContentScrollViewD
     func getData() {
         //1.リクエストを作成する
         //maxResultsは取得件数
-        let urlText = "https://www.googleapis.com/youtube/v3/search?key=&q=猫&part=snippet&maxResults=5&order=date"
+        let urlText = "https://www.googleapis.com/youtube/v3/search?key=AIzaSyC-Fvc7agPAXh_ymUWdK6c7SpD0j93QaKQ&q=猫&part=snippet&maxResults=5&order=date"
         //日本語を含む検索ワードをURLに変換する
         let urlURL = urlText.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
@@ -152,7 +152,7 @@ class Tab1ViewController: UITableViewController, SegementSlideContentScrollViewD
                     self.publishedAtStringArray.append(publishedAtString!)
                     self.titleStringArray.append(titleString!)
                     self.imageURLStringArray.append(imageURLString!)
-                    self.youtubeURLStringArray.append(youtubeURL)
+                    //self.youtubeURLStringArray.append(youtubeURL)
                     self.channelTitleStringArray.append(channelTitleString!)
                     print("json取得完了")
                 }
