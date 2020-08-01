@@ -5,7 +5,7 @@ struct LandmarkList: View {
     //@State var showFavoritesOnly = false
     //クラスで状態管理を行う場合
     @EnvironmentObject var userData: UserData
-
+    
     var body: some View {
         List {
             //トグルを表示し、showFavoritesOnlyのtrue, falseを切り替える

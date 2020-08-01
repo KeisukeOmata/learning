@@ -1,6 +1,14 @@
+/*
+See LICENSE folder for this sample’s licensing information.
+
+Abstract:
+Helpers for loading images and data.
+*/
+
 import Foundation
 import CoreLocation
 import SwiftUI
+import ImageIO
 
 let landmarkData: [Landmark] = load("landmarkData.json")
 let features = landmarkData.filter { $0.isFeatured }
@@ -60,3 +68,4 @@ final class ImageStore {
         return images.index(forKey: name)!
     }
 }
+
