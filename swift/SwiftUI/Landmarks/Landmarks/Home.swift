@@ -52,8 +52,8 @@ struct CategoryHome: View {
                 //画面いっぱいまで表示
                 .listRowInsets(EdgeInsets())
                 //LandmarkList.swiftへ遷移
-                NavigationLink(destination: LandmarkList { LandmarkDetail(landmark: $0) }) {
-                Text("See All")
+                NavigationLink(destination: LandmarkList()) {
+                    Text("See All")
                 }
             }
             //ナビゲーションバータイトル
