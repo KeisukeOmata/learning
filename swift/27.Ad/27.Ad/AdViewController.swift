@@ -55,7 +55,14 @@ class AdViewController: UIViewController {
         SwiftyStoreKit.verifyReceipt(using: appeValidator) { (result) in
             switch result {
             case .success(let receipt):
-                let purchaseResult = SwiftyStoreKit.verifyPurchase(productId: PRODUCT_ID, inReceipt: receipt)
+                //verifyPurchase => 購入
+                //verifySubscription => サブスクリプション
+                let purchaseResult = SwiftyStoreKit.verifyPurchase(
+                    productId: PRODUCT_ID,
+                    inReceipt: receipt
+                    //サブスクリプションの場合、自動更新か手動更新か
+                    //ofType: .autoRenewable, // or .nonRenewing(validDuration: 3600 * 24 * 31)
+                )
                 switch purchaseResult {
                 //購入済みの場合
                 case .purchased:
@@ -66,6 +73,12 @@ class AdViewController: UIViewController {
                 case .notPurchased:
                     UserDefaults.standard.set(nil, forKey: "boughtFlg")
                     break
+                //サブスクリプションの場合、期限切れのケース
+                //case .expired:
+                    //UserDefaults.standard.set(nil, forKey: "boughtFlg")
+                    //checkフラグを立て、どこかの画面でチェックする
+                    //UserDefaults.standard.set(nil, forKey: "check")
+                    //break
                 }
             case .error(let error):
                 break
