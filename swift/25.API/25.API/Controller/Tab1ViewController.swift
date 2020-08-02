@@ -38,7 +38,7 @@ class Tab1ViewController: UITableViewController, SegementSlideContentScrollViewD
         //更新時に呼ばれる
         tableView.refreshControl = refreshUIRefreshControl
         //更新時の処理(refresh)を設定する
-        refreshUIRefreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        tableView.refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
         //APIを叩く
         getData()
         //tableViewを更新する
@@ -112,7 +112,7 @@ class Tab1ViewController: UITableViewController, SegementSlideContentScrollViewD
     func getData() {
         //1.リクエストを作成する
         //maxResultsは取得件数
-        let urlText = "https://www.googleapis.com/youtube/v3/search?key=AIzaSyC-Fvc7agPAXh_ymUWdK6c7SpD0j93QaKQ&q=猫&part=snippet&maxResults=5&order=date"
+        let urlText = "https://www.googleapis.com/youtube/v3/search?key=&q=猫&part=snippet&maxResults=5&order=date"
         //日本語を含む検索ワードをURLに変換する
         let urlURL = urlText.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         

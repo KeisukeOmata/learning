@@ -1,4 +1,4 @@
-//Add New Constraintsよりオートレイアウトを設定できる
+//Add New Constraintsよりオートレイアウトを設定できる => 機種毎のずれをなくせる
 //Info.plist => Required device capabilities => Privacy - Camera Usage Description
 
 import UIKit

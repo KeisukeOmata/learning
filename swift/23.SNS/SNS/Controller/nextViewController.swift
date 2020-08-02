@@ -215,6 +215,7 @@ class nextViewController: UIViewController, UITableViewDelegate, UITableViewData
             if let snapShot = snapShot.children.allObjects as? [DataSnapshot] {
                 //それぞれの値を取得する
                 for snap in snapShot {
+                    //String型とAny型の辞書型
                     if let postData = snap.value as? [String: Any] {
                         let userName = postData["userName"] as? String
                         let userProfileImage = postData["userProfileImage"] as? String
