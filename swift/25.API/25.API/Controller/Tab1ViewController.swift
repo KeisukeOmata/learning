@@ -8,7 +8,7 @@ import SwiftyJSON
 //キャッシュを扱う
 import SDWebImage
 
-class Tab1ViewController: UITableViewController, SegementSlideContentScrollViewDelegate {
+class Tab1ViewController: UITableViewController, UITableViewDelegatem, UITableViewDataSource, SegementSlideContentScrollViewDelegate {
 
     //JsonDataクラスのインスタンス
     var jsonData = JsonData()
@@ -34,6 +34,8 @@ class Tab1ViewController: UITableViewController, SegementSlideContentScrollViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.delegate = self
+        tableView.dataSource = self
         //tableViewにUIRefreshControlを設定する
         //更新時に呼ばれる
         tableView.refreshControl = refreshUIRefreshControl
@@ -79,6 +81,7 @@ class Tab1ViewController: UITableViewController, SegementSlideContentScrollViewD
     }
 
     //セルを作成する
+    //-> UITableViewCell => 戻り値の型はUITableViewCell
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //subtitleでタイトル(textLabel)と見出し(detailTextLabel)
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Cell")
