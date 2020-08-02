@@ -69,6 +69,16 @@ class AdViewController: UIViewController {
                     UserDefaults.standard.set(1, forKey: "boughtFlg")
                     self.count = 1
                     break
+                    //コインやポイントの場合
+                    //if let bought = UserDefaults.standard.object(forKey: "bought") {
+                        //現在のコインやポイント数
+                        //var count = UserDefaults.standard.object(forKey: "bought")
+                        //購入したコインやポイント数を足す
+                        //count = count + n
+                        //UserDefaultsに設定し直す
+                        //UserDefaults.standard.set(count, forKey: "bought")
+                    //}
+                    //break
                 //未購入の場合
                 case .notPurchased:
                     UserDefaults.standard.set(nil, forKey: "boughtFlg")
