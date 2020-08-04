@@ -46,7 +46,7 @@
                                 </constraints>
                                 <state key="normal" title="次へ"/>
                                 <connections>
-                                    <action selector="next:" destination="BYZ-38-t0r" eventType="touchUpInside" id="X0b-Dp-mp7"/>
+                                    <action selector="next:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cJm-mk-Wxj"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -70,27 +70,39 @@
                     <navigationItem key="navigationItem" id="fUJ-V7-gog"/>
                     <connections>
                         <outlet property="imageUIImageView" destination="v0P-bK-bxL" id="LUD-Bu-HXP"/>
-                        <segue destination="OA7-wi-gxD" kind="presentation" identifier="next" id="VMu-S8-13v"/>
+                        <segue destination="OA7-wi-gxD" kind="presentation" identifier="next" id="F2D-5I-8Eq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="852.17391304347836" y="109.82142857142857"/>
         </scene>
-        <!--View Controller-->
+        <!--Next View Controller-->
         <scene sceneID="Psf-CU-flA">
             <objects>
-                <viewController id="OA7-wi-gxD" sceneMemberID="viewController">
+                <viewController id="OA7-wi-gxD" customClass="NextViewController" customModule="learning" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VIN-5E-OWS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L61-jn-fh9">
+                                <rect key="frame" x="186" y="198" width="42" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="1hE-dL-u5z"/>
                     </view>
+                    <connections>
+                        <outlet property="labelUILabel" destination="L61-jn-fh9" id="dmp-be-eSI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ubF-AC-HM9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1608" y="113"/>
+            <point key="canvasLocation" x="1607.2463768115942" y="112.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6nH-xv-BFV">
