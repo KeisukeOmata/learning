@@ -58,9 +58,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     //1.設置したbuttonなどからctrを押しながら次のビューへドラッグ&ドロップ => コード書かなくてもok
     //2.画面上部のViewControllerアイコンからctrを押しながら次のビューへドラッグ&ドロップして以下記載
     @IBAction func next(_ sender: Any) {
-        //関数の中で呼ぶ
+        //SegueのIdentifierに"next"を設定しておく
         performSegue(withIdentifier: "next", sender: nil)
     }
+    
     //次のページに値を受け渡す
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nextVC = segue.destination as! NextViewController
