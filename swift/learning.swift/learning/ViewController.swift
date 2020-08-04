@@ -13,7 +13,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+
+/////////////////////////////////////////////////////////////////////
+//カメラ
+/////////////////////////////////////////////////////////////////////
     @IBAction func Camera(_ sender: Any) {
         //カメラが利用できるかを確認
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
@@ -48,6 +51,21 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         //ピッカーを閉じる
         dismiss(animated: true, completion: nil)
     }
+
+/////////////////////////////////////////////////////////////////////
+//画面遷移
+/////////////////////////////////////////////////////////////////////
+    //1.設置したbuttonなどからctrを押しながら次のビューへドラッグ&ドロップ => コード書かなくてもok
+    //2.画面上部のViewControllerアイコンからctrを押しながら次のビューへドラッグ&ドロップして以下記載
+    @IBAction func next(_ sender: Any) {
+        //関数の中で呼ぶ
+        performSegue(withIdentifier: "next", sender: nil)
+    }
+    //次のページに値を受け渡す
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextVC = segue.destination as! NextViewController
+        let hoge: Int = 1
+        nextVC.fuga = hoge
+    }
     
 }
-

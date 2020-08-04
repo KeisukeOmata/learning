@@ -1,11 +1,3 @@
-//
-//  SceneDelegate.swift
-//  learning
-//
-//  Created by 小俣圭佑 on 2020/08/02.
-//  Copyright © 2020 KeisukeOmata. All rights reserved.
-//
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
