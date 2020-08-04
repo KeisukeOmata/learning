@@ -46,7 +46,7 @@
                                 </constraints>
                                 <state key="normal" title="次へ"/>
                                 <connections>
-                                    <segue destination="OA7-wi-gxD" kind="presentation" id="xez-0r-ze4"/>
+                                    <action selector="next:" destination="BYZ-38-t0r" eventType="touchUpInside" id="X0b-Dp-mp7"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -70,6 +70,7 @@
                     <navigationItem key="navigationItem" id="fUJ-V7-gog"/>
                     <connections>
                         <outlet property="imageUIImageView" destination="v0P-bK-bxL" id="LUD-Bu-HXP"/>
+                        <segue destination="OA7-wi-gxD" kind="presentation" identifier="next" id="VMu-S8-13v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -81,7 +82,7 @@
             <objects>
                 <viewController id="OA7-wi-gxD" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VIN-5E-OWS">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="1hE-dL-u5z"/>
