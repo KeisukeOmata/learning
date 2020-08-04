@@ -2,7 +2,7 @@ import UIKit
 
 class NextViewController: UIViewController {
     
-    var fuga: Int = 0
+    var fuga = Int()
 
     override func viewDidLoad() {
         super.viewDidLoad()
