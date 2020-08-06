@@ -1,3 +1,6 @@
+左のナビゲータエリアを表示する
+Cmd + 0
+---------------------------------------------
 CocoaPods
 
 sudo jem install cocoapods
