@@ -92,11 +92,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WqT-va-Kwm">
+                                <rect key="frame" x="200" y="485" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="pushButton:" destination="OA7-wi-gxD" eventType="touchUpInside" id="r6X-el-4k3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="1hE-dL-u5z"/>
                     </view>
                     <connections>
+                        <outlet property="buttonUIButton" destination="WqT-va-Kwm" id="Qyc-Mk-vYk"/>
                         <outlet property="labelUILabel" destination="L61-jn-fh9" id="dmp-be-eSI"/>
                     </connections>
                 </viewController>
