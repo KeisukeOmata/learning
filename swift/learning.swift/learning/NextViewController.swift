@@ -2,11 +2,13 @@ import UIKit
 
 class NextViewController: UIViewController {
     
+    //前のViewから渡された値を格納する
     var fuga = Int()
     //配列を宣言する
     var photoArrayUIImage = [UIImage]()
-    @IBOutlet weak var buttonUIButton: UIButton!
     @IBOutlet weak var labelUILabel: UILabel!
+    //@IBAction func pushButton
+    @IBOutlet weak var buttonUIButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
