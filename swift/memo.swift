@@ -74,6 +74,58 @@ class ViewController: UIViewController, WKNavigationDelegate {
 func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
 }
 ---------------------------------------------
+クラス
+
+class Car{
+    var pre: Int = 0
+    var rear: Int = 0
+    
+    //初期化
+    init() {
+        pre = 0
+        rear = 0
+    }
+    
+    //呼ぶだけでprint
+    func drive() {
+        print("pre = \(pre)")
+        print("rear = \(rear)")
+    }
+    
+    //引数をprint
+    func move(toBack: String) {
+        print(toBack)
+    }
+    
+    //-> Int　戻り値の型
+    func add(num1: Int, num2: Int) -> Int {
+        return num1 + num2
+    }
+}
+
+class ViewController: UIViewController {
+
+    var car = Car()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        //Carクラスのインスタンスに値を設定する    
+        car.pre = 2
+        car.rear = 2
+    }
+
+    @IBAction func action(_ sender: Any) {
+        //driveメソッドを呼ぶ
+        car.drive()
+        //moveメソッドを呼ぶ
+        car.move(toBack: "進む")
+        //addメソッドを呼ぶ
+        let total = car.add(num1: car.pre, num2: car.rear)
+        print("合計は\(total)")
+    }
+    
+}
+---------------------------------------------
 継承
 
 Animalモデル
