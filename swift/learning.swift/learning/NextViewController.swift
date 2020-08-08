@@ -1,6 +1,7 @@
 import UIKit
 
-class NextViewController: UIViewController {
+//UITextFieldDelegate => テキストフィールドのプロトコル
+class NextViewController: UIViewController, UITextFieldDelegate {
     
     //前のViewから渡された値を格納する
     var fuga = Int()
@@ -18,9 +19,16 @@ class NextViewController: UIViewController {
     @IBOutlet weak var buttonUIButton: UIButton!
     //タイマーで表示する画像
     @IBOutlet weak var imageUIImage: UIImageView!
+    //テキストフィールド
+    //Secure Text Entryにチェックを入れると伏字になる
+    //開発機ではToggle Hardware Keyboardを選択するとキーボードが表示される
+    @IBOutlet weak var textUITextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //テキストフィールドのプロトコル
+        textUITextField.delegate = self
         
         //fugaは前のViewから渡された値
         labelUILabel.text = String(fuga)
@@ -69,6 +77,21 @@ class NextViewController: UIViewController {
         }
         //配列に格納された画像を表示
         imageUIImage.image = photoArrayUIImage[countInt]
+    }
+    
+/////////////////////////////////////////////////////////////////////
+//テキストフィールド
+/////////////////////////////////////////////////////////////////////
+    //キーボード以外をタッチすると閉じる
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
+    //テキストフィールドのプロトコル
+    //returnでテキストフィールドを閉じる
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
 }
