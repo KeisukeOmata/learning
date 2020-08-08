@@ -97,6 +97,12 @@
                                 <rect key="frame" x="87" y="72" width="240" height="240"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="text" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zCW-Sa-jLg">
+                                <rect key="frame" x="87" y="404" width="240" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L61-jn-fh9">
                                 <rect key="frame" x="186" y="643" width="42" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -112,6 +118,7 @@
                         <outlet property="buttonUIButton" destination="WqT-va-Kwm" id="Qyc-Mk-vYk"/>
                         <outlet property="imageUIImage" destination="2dc-sk-IWu" id="66h-dP-AX6"/>
                         <outlet property="labelUILabel" destination="L61-jn-fh9" id="Mcq-MP-6ez"/>
+                        <outlet property="textUITextField" destination="zCW-Sa-jLg" id="BXT-SE-GtY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ubF-AC-HM9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
