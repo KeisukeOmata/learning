@@ -49,6 +49,14 @@
                                     <action selector="next:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cJm-mk-Wxj"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T2d-Ru-OgB">
+                                <rect key="frame" x="330" y="802" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Navi"/>
+                                <connections>
+                                    <action selector="navi:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L5l-Nv-Gbm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -71,6 +79,7 @@
                     <connections>
                         <outlet property="imageUIImageView" destination="v0P-bK-bxL" id="LUD-Bu-HXP"/>
                         <segue destination="OA7-wi-gxD" kind="presentation" identifier="next" id="F2D-5I-8Eq"/>
+                        <segue destination="BmB-p4-K0X" kind="show" id="ThF-9R-TgK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -86,9 +95,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WqT-va-Kwm">
-                                <rect key="frame" x="184" y="528" width="46" height="30"/>
+                                <rect key="frame" x="176" y="528" width="62" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="タイマー"/>
                                 <connections>
                                     <action selector="pushButton:" destination="OA7-wi-gxD" eventType="touchUpInside" id="r6X-el-4k3"/>
                                 </connections>
@@ -110,6 +119,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UjF-dR-n5M">
+                                <rect key="frame" x="28" y="20" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="戻る"/>
+                                <connections>
+                                    <action selector="back:" destination="OA7-wi-gxD" eventType="touchUpInside" id="7Z3-8B-ies"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="1hE-dL-u5z"/>
@@ -124,6 +141,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ubF-AC-HM9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1607.2463768115942" y="112.5"/>
+        </scene>
+        <!--Navi View Controller-->
+        <scene sceneID="zsl-7J-thH">
+            <objects>
+                <viewController storyboardIdentifier="navi" id="BmB-p4-K0X" customClass="NaviViewController" customModule="learning" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7ek-ct-3Wm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="rEd-gz-YCQ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dTS-XW-Xe5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="50W-pl-KDD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="852" y="808"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6nH-xv-BFV">
