@@ -80,6 +80,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             //StoryboardID
             withIdentifier: "navi"
         ) as! NaviViewController
+        //値を受け渡す場合
+        //naviVC.hoge = fuga
         //画面遷移する
         navigationController?.pushViewController(naviVC, animated: true)
     }
