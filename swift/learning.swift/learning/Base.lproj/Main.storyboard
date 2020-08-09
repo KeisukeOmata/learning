@@ -149,10 +149,37 @@
                     <view key="view" contentMode="scaleToFill" id="7ek-ct-3Wm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yZW-NI-ehS">
+                                <rect key="frame" x="0.0" y="852" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="←" id="FmY-D5-7nH">
+                                        <connections>
+                                            <action selector="back:" destination="BmB-p4-K0X" id="tTz-ow-EVv"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="ziI-cp-B6L"/>
+                                    <barButtonItem title="→" id="mKS-oF-JXS">
+                                        <connections>
+                                            <action selector="next:" destination="BmB-p4-K0X" id="KMb-s1-3TC"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="fdN-oY-jey">
+                                <rect key="frame" x="197" y="131" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="rEd-gz-YCQ"/>
                     </view>
                     <navigationItem key="navigationItem" id="dTS-XW-Xe5"/>
+                    <connections>
+                        <outlet property="indicatorUIActivityIndicatorView" destination="fdN-oY-jey" id="8Hc-qv-713"/>
+                        <outlet property="toolBarUIToolbar" destination="yZW-NI-ehS" id="P7o-lg-IWo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="50W-pl-KDD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
