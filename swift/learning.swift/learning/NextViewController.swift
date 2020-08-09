@@ -26,7 +26,7 @@ class NextViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         //テキストフィールドのプロトコル
         textUITextField.delegate = self
         
@@ -43,7 +43,14 @@ class NextViewController: UIViewController, UITextFieldDelegate {
         //初期画像を表示
         imageUIImage.image = UIImage(named: "0")
     }
-
+    
+/////////////////////////////////////////////////////////////////////
+//前画面に戻る
+/////////////////////////////////////////////////////////////////////
+    @IBAction func back(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 /////////////////////////////////////////////////////////////////////
 //タイマー
 /////////////////////////////////////////////////////////////////////

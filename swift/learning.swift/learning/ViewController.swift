@@ -56,12 +56,12 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
 //画面遷移
 /////////////////////////////////////////////////////////////////////
     //1.設置したbuttonなどからctrを押しながら次のビューへドラッグ&ドロップ => コード書かなくてもok
-    //2.画面上部のViewControllerアイコンからctrを押しながら次のビューへドラッグ&ドロップして以下記載
+    //2.Segueで遷移(画面上部のViewControllerアイコンからctrを押しながら次のビューへドラッグ&ドロップして以下記載)
     @IBAction func next(_ sender: Any) {
         //SegueのIdentifierに"next"を設定しておく
         performSegue(withIdentifier: "next", sender: nil)
     }
-    
+
     //次のページに値を受け渡す
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nextVC = segue.destination as! NextViewController
@@ -70,5 +70,20 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         //次のViewでfugaを宣言しておき、値を受け渡す
         nextVC.fuga = hoge
     }
+    
+    //3.ナビゲーションコントローラーで遷移する
+    //Showで画面遷移するとナビゲーションコントローラーが使える
+    //Editor -> Embed In -> Navigation Controller
+    //StoryboardIDを設定した任意の画面に遷移(画面上部のViewControllerアイコンからctrを押しながら次のビューへドラッグ&ドロップして以下記載)
+    @IBAction func navi(_ sender: Any) {
+        let naviVC = storyboard?.instantiateViewController(
+            //StoryboardID
+            withIdentifier: "navi"
+        ) as! NaviViewController
+        //画面遷移する
+        navigationController?.pushViewController(naviVC, animated: true)
+    }
+    
+
     
 }
