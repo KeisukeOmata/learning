@@ -37,18 +37,30 @@ class NaviViewController: UIViewController, WKNavigationDelegate {
         let urlURL = URL(string: "https://www.google.co.jp")
         let urlURLRequest = URLRequest(url: urlURL!)
         webViewWKWebView.load(urlURLRequest)
+        
+        //インジケーターの設定
+        //インジケーターを中央に表示する
+        indicatorUIActivityIndicatorView.center = view.center
+        //インジケーターの色
+        indicatorUIActivityIndicatorView.color = .purple
+        //ビューに設定する
+        view.addSubview(indicatorUIActivityIndicatorView)
     }
     
     //WKNavigationDelegate
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
         print("読み込み開始")
+        //インジケーターのアニメーションを開始
         indicatorUIActivityIndicatorView.startAnimating()
     }
     
     //WKNavigationDelegate
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         print("読み込み完了")
+        //インジケーターのアニメーションを終了
         indicatorUIActivityIndicatorView.stopAnimating()
+        //インジケーターを非表示
+        indicatorUIActivityIndicatorView.hidesWhenStopped = true
     }
     
     //前のページへ
