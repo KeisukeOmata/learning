@@ -2,7 +2,6 @@
 //Bar Button Item
 //Fix Space Bar Button Item
 //Activity Indicator View
-
 import UIKit
 //Webビューを扱う
 import WebKit

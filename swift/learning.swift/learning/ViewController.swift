@@ -1,5 +1,6 @@
 //画面右下のAdd New Constraintsよりオートレイアウトを設定できる => 機種毎のずれをなくせる
 //Info.plist => Required device capabilities => Privacy - Camera Usage Description
+//ナビゲーションコントローラーに表示する文字はナビゲーションバーを押下、Back Buttonに入力で変更できる
 
 import UIKit
 
@@ -85,7 +86,13 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         //画面遷移する
         navigationController?.pushViewController(naviVC, animated: true)
     }
-    
 
+    @IBAction func table(_ sender: Any) {
+        let tableVC = storyboard?.instantiateViewController(
+            //StoryboardID
+            withIdentifier: "table"
+        ) as! TableViewController
+        navigationController?.pushViewController(tableVC, animated: true)
+    }
     
 }
