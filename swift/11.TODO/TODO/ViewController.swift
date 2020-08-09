@@ -32,17 +32,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
     //どの順番で実行されるか？
-    //セクションの数を確認
+    //セクションの数を決める
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    //セクションの中のセルの数を確認
+    //セクションの中のセルの数を決める
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return textArray.count
     }
     
     //セルの数だけcellForRowAt(セル構築)が呼ばれる
+    //セルの内容を決める
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //withIdentifierには、Table View Sellに付けたIdentifierを入れる
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
