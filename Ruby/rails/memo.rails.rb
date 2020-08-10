@@ -13,10 +13,20 @@ rails db:migrate
 rails g migration Addカラム名Toテーブル名 カラム名:データ型 カラム名:データ型
 rails g migration Removeカラム名Fromテーブル名 カラム名:型名
 rails db:migrate
-#必殺技
+#DBのリセット
 rails db:migrate:reset
 # ルーティングの確認
 rails routes
+# DBはコンソールから触る
+rails c
+# プライマリーキー
+Hoge.find(1)
+# それ以外のカラム
+Hoge.find_by(name: "fuga")
+# 複数レコード
+Hoge.where("cost > ?", 1000)
+# レコード追加
+Hoge.create(hoge: hoge, fuga: fuga)
 
 #refile
 gem "refile", require: "refile/rails", github: 'manfe/refile'
