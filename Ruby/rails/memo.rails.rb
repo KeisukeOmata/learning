@@ -6,7 +6,7 @@ rails g controller hoges new edit show index
 #rails g model Hoge name:stringでもよい 
 rails g model Hoge name:string
 マイグレーションファイルにカラムを追加
-raild db:create
+rails db:create
 rails db:migrate
 #カラムの追加と削除
 # rails g migration AddNameToPosts category:string body:text
@@ -54,7 +54,7 @@ rails db:migrate
 #ログイン画面
 rails g devise:views
 #コントローラー
-rails g devise:controllers admins
+rails g devise:controllers users
 
 #kaminari
 gem 'kaminari','~> 1.1.1'
