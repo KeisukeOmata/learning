@@ -54,7 +54,7 @@ rails db:migrate
 #ログイン画面
 rails g devise:views
 #コントローラー
-rails g devise:controllers admins
+rails g devise:controllers users
 
 #kaminari
 gem 'kaminari','~> 1.1.1'
