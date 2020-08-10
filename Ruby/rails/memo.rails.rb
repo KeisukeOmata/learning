@@ -6,7 +6,7 @@ rails g controller hoges new edit show index
 #rails g model Hoge name:stringでもよい 
 rails g model Hoge name:string
 マイグレーションファイルにカラムを追加
-raild db:create
+rails db:create
 rails db:migrate
 #カラムの追加と削除
 # rails g migration AddNameToPosts category:string body:text
