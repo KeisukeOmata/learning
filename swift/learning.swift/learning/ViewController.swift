@@ -7,9 +7,13 @@ import UIKit
 //カメラで使うデリゲート
 //UINavigationControllerDelegate
 //UIImagePickerControllerDelegate
-class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+//NextViewControllerで作成したプロトコル
+//CatchProtocol
+class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, CatchProtocol {
 
     @IBOutlet weak var imageUIImageView: UIImageView!
+    //プロトコルで値が受け渡されるラベル
+    @IBOutlet weak var protocolUILabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,6 +97,15 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             withIdentifier: "table"
         ) as! TableViewController
         navigationController?.pushViewController(tableVC, animated: true)
+    }
+
+/////////////////////////////////////////////////////////////////////
+//プロトコル
+/////////////////////////////////////////////////////////////////////
+    //プロトコル内で呼ばれる
+    //引数をラベルに表示
+    func catchData(count: Int) {
+        protocolUILabel.text = String(count)
     }
     
 }

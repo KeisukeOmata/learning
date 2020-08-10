@@ -1,5 +1,10 @@
 import UIKit
 
+//プロトコルを定義
+protocol CatchProtocol {
+    func catchData(count: Int)
+}
+
 //UITextFieldDelegate => テキストフィールドのプロトコル
 class NextViewController: UIViewController, UITextFieldDelegate {
     
@@ -23,6 +28,8 @@ class NextViewController: UIViewController, UITextFieldDelegate {
     //Secure Text Entryにチェックを入れると伏字になる
     //開発機ではToggle Hardware Keyboardを選択するとキーボードが表示される
     @IBOutlet weak var textUITextField: UITextField!
+    //プロトコルを変数化
+    var protocolCatchProtocol: CatchProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +55,9 @@ class NextViewController: UIViewController, UITextFieldDelegate {
 //前画面に戻る
 /////////////////////////////////////////////////////////////////////
     @IBAction func back(_ sender: Any) {
+        let count: Int = 2
+        //プロトコルを呼ぶ
+        protocolCatchProtocol?.catchData(count: count)
         dismiss(animated: true, completion: nil)
     }
     

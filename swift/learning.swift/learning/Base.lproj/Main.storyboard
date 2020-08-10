@@ -108,6 +108,13 @@
                                     <action selector="table:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eZj-VQ-yde"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOa-fh-83X">
+                                <rect key="frame" x="330" y="747" width="11" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -129,6 +136,7 @@
                     <navigationItem key="navigationItem" id="fUJ-V7-gog"/>
                     <connections>
                         <outlet property="imageUIImageView" destination="v0P-bK-bxL" id="LUD-Bu-HXP"/>
+                        <outlet property="protocolUILabel" destination="hOa-fh-83X" id="9KD-rc-3ap"/>
                         <segue destination="OA7-wi-gxD" kind="presentation" identifier="next" id="F2D-5I-8Eq"/>
                         <segue destination="BmB-p4-K0X" kind="show" id="ThF-9R-TgK"/>
                         <segue destination="VQm-7n-qd3" kind="show" identifier="" id="962-vy-qni"/>
