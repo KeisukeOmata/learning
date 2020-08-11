@@ -11,6 +11,7 @@ import UIKit
 //CatchProtocol
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, CatchProtocol {
 
+    var count: Int = 0
     @IBOutlet weak var imageUIImageView: UIImageView!
     //プロトコルで値が受け渡されるラベル
     @IBOutlet weak var protocolUILabel: UILabel!
@@ -70,6 +71,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     //次のページに値を受け渡す
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nextVC = segue.destination as! NextViewController
+        //プロトコルを設定
+        nextVC.delegate = self
         //数値型のhogeを宣言
         let hoge: Int = 1
         //次のViewでfugaを宣言しておき、値を受け渡す
@@ -104,7 +107,9 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
 /////////////////////////////////////////////////////////////////////
     //プロトコル内で呼ばれる
     //引数をラベルに表示
+    //prepare内で変数化したNextViewControllerに.delegate = selfを記載
     func catchData(count: Int) {
+        print(count)
         protocolUILabel.text = String(count)
     }
     
