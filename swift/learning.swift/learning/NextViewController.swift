@@ -29,7 +29,7 @@ class NextViewController: UIViewController, UITextFieldDelegate {
     //開発機ではToggle Hardware Keyboardを選択するとキーボードが表示される
     @IBOutlet weak var textUITextField: UITextField!
     //プロトコルを変数化
-    var protocolCatchProtocol: CatchProtocol?
+    var delegate: CatchProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +57,7 @@ class NextViewController: UIViewController, UITextFieldDelegate {
     @IBAction func back(_ sender: Any) {
         let count: Int = 2
         //プロトコルを呼ぶ
-        protocolCatchProtocol?.catchData(count: count)
+        delegate?.catchData(count: count)
         dismiss(animated: true, completion: nil)
     }
     
