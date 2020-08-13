@@ -4,6 +4,7 @@ git add README.md
 git commit -m "first commit"
 git remote add origin git@github.com:KeisukeOmata/hoge.git
 git push -u origin master
+----------------------------------
 git branch
 git branch omata
 git checkout omata
