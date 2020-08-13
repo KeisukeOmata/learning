@@ -13,7 +13,8 @@ rails db:migrate
 rails g migration Addカラム名Toテーブル名 カラム名:データ型 カラム名:データ型
 rails g migration Removeカラム名Fromテーブル名 カラム名:型名
 rails db:migrate
-#DBのリセット
+# DBのリセット
+# 読み込みはschemaファイルから行われる
 rails db:migrate:reset
 # ルーティングの確認
 rails routes
@@ -27,6 +28,10 @@ Hoge.find_by(name: "fuga")
 Hoge.where("cost > ?", 1000)
 # レコード追加
 Hoge.create(hoge: hoge, fuga: fuga)
+# seedファイルの読み込み
+rails db:seed
+# リセット
+rails db:seed:replant
 
 #refile
 gem "refile", require: "refile/rails", github: 'manfe/refile'

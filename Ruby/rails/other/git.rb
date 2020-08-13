@@ -1,7 +1,12 @@
+echo "# hoge" >> README.md
 git init
-git remote add origin git@github.com
-git pull origin master
+git add README.md
+git commit -m "first commit"
+git remote add origin git@github.com:KeisukeOmata/hoge.git
+git push -u origin master
 git branch
-git branch hoge
-git checkout hoge
-git push origin hoge
+git branch omata
+git checkout omata
+git add -A
+git commit -m "hoge"
+git push origin omata
