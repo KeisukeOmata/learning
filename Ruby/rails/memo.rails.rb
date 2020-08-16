@@ -33,7 +33,18 @@ rails db:seed
 # リセット
 rails db:seed:replant
 
-jsは app/javascript
+# jsファイル
+# app/javascript/packs/配下におく
+app/javascript/packs/hello.js
+# application.html.erbに以下記載
+<%= javascript_pack_tag 'hello', 'data-turbolinks-track': 'reload'
+# jsを編集する度にビルドしてくれる
+bin/webpack-dev-server
+
+# reactの導入
+rails new hoge --webpack=react
+# 既存アプリにreactを導入
+bin/rails webpacker:install:react
 
 #refile
 gem "refile", require: "refile/rails", github: 'manfe/refile'

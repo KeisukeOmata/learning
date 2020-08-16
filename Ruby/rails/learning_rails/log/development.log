@@ -1,0 +1,18 @@
+Started GET "/" for 10.0.2.2 at 2020-08-16 01:30:11 +0000
+Started GET "/" for 10.0.2.2 at 2020-08-16 01:30:11 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (19.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (18.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Rails::WelcomeController#index as HTML
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/vagrant/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendering /home/vagrant/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 62.3ms | Allocations: 489)
+  Rendered /home/vagrant/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 13.4ms | Allocations: 221)
+Completed 200 OK in 178ms (Views: 116.5ms | ActiveRecord: 0.0ms | Allocations: 3540)
+
+
+Completed 200 OK in 170ms (Views: 119.9ms | ActiveRecord: 0.0ms | Allocations: 2859)
+
+
