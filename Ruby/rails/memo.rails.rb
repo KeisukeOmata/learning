@@ -2,8 +2,9 @@ rails s -b 0.0.0.0
 localhost:3000
 
 rails new hoge
-rails g controller hoges new edit show index 
-#rails g model Hoge name:stringでもよい 
+rails g controller hoges index
+# config/routes.rb
+root 'hoges#index'
 rails g model Hoge name:string
 マイグレーションファイルにカラムを追加
 rails db:create
@@ -33,7 +34,18 @@ rails db:seed
 # リセット
 rails db:seed:replant
 
-jsは app/javascript
+# jsファイル
+# app/javascript/packs/配下におく
+app/javascript/packs/hello.js
+# application.html.erbに以下記載
+<%= javascript_pack_tag 'hello', 'data-turbolinks-track': 'reload'
+# jsを編集する度にビルドしてくれる
+bin/webpack-dev-server
+
+# reactの導入
+rails new hoge --webpack=react
+# 既存アプリにreactを導入
+bin/rails webpacker:install:react
 
 #refile
 gem "refile", require: "refile/rails", github: 'manfe/refile'

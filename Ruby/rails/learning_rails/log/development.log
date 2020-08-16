@@ -1,0 +1,110 @@
+Started GET "/" for 10.0.2.2 at 2020-08-16 01:30:11 +0000
+Started GET "/" for 10.0.2.2 at 2020-08-16 01:30:11 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (19.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (18.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Rails::WelcomeController#index as HTML
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/vagrant/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendering /home/vagrant/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 62.3ms | Allocations: 489)
+  Rendered /home/vagrant/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 13.4ms | Allocations: 221)
+Completed 200 OK in 178ms (Views: 116.5ms | ActiveRecord: 0.0ms | Allocations: 3540)
+
+
+Completed 200 OK in 170ms (Views: 119.9ms | ActiveRecord: 0.0ms | Allocations: 2859)
+
+
+Started GET "/" for 10.0.2.2 at 2020-08-16 04:28:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (6.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/vagrant/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 18.9ms | Allocations: 525)
+Completed 200 OK in 68ms (Views: 46.6ms | ActiveRecord: 0.0ms | Allocations: 1999)
+
+
+Started GET "/" for 10.0.2.2 at 2020-08-16 04:29:36 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/vagrant/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 12.1ms | Allocations: 187)
+Completed 200 OK in 17ms (Views: 15.1ms | ActiveRecord: 0.0ms | Allocations: 882)
+
+
+Started GET "/" for 10.0.2.2 at 2020-08-16 04:30:26 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (6.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/vagrant/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 11.6ms | Allocations: 329)
+Completed 200 OK in 69ms (Views: 28.9ms | ActiveRecord: 0.0ms | Allocations: 1910)
+
+
+Started GET "/" for 10.0.2.2 at 2020-08-16 04:36:15 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (6.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HogesController#index as HTML
+  Rendering hoges/index.html.erb within layouts/application
+  Rendered hoges/index.html.erb within layouts/application (Duration: 39.4ms | Allocations: 203)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /vagrant/learning/ruby/rails/learning_rails/public/packs
+[Webpacker] Hash: d5925fc4d6968af6201c
+Version: webpack 4.44.1
+Time: 20217ms
+Built at: 08/16/2020 4:36:48 AM
+                                     Asset        Size       Chunks                         Chunk Names
+    js/application-9afcbb5693aa87623e69.js     124 KiB  application  [emitted] [immutable]  application
+js/application-9afcbb5693aa87623e69.js.map     139 KiB  application  [emitted] [dev]        application
+          js/hello-8137ebd60e02b8fca734.js    3.86 KiB        hello  [emitted] [immutable]  hello
+      js/hello-8137ebd60e02b8fca734.js.map    3.51 KiB        hello  [emitted] [dev]        hello
+    js/hello_react-6a391d066a794537ca0d.js    1.05 MiB  hello_react  [emitted] [immutable]  hello_react
+js/hello_react-6a391d066a794537ca0d.js.map    1.21 MiB  hello_react  [emitted] [dev]        hello_react
+                             manifest.json  1000 bytes               [emitted]              
+Entrypoint application = js/application-9afcbb5693aa87623e69.js js/application-9afcbb5693aa87623e69.js.map
+Entrypoint hello_react = js/hello_react-6a391d066a794537ca0d.js js/hello_react-6a391d066a794537ca0d.js.map
+Entrypoint hello = js/hello-8137ebd60e02b8fca734.js js/hello-8137ebd60e02b8fca734.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 749 bytes {application} [built]
+[./app/javascript/packs/hello.js] 0 bytes {hello} [built]
+[./app/javascript/packs/hello_react.jsx] 1.07 KiB {hello_react} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 18 hidden modules
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 32618ms (Views: 32589.6ms | ActiveRecord: 0.0ms | Allocations: 20885)
+
+
+Started GET "/" for 10.0.2.2 at 2020-08-16 04:37:05 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HogesController#index as HTML
+  Rendering hoges/index.html.erb within layouts/application
+  Rendered hoges/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 5)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 198ms (Views: 197.0ms | ActiveRecord: 0.0ms | Allocations: 4969)
+
+
+Started GET "/" for 10.0.2.2 at 2020-08-16 04:37:08 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HogesController#index as HTML
+  Rendering hoges/index.html.erb within layouts/application
+  Rendered hoges/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 143ms (Views: 141.0ms | ActiveRecord: 0.0ms | Allocations: 4967)
+
+
+Started GET "/" for 10.0.2.2 at 2020-08-16 04:37:50 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HogesController#index as HTML
+  Rendering hoges/index.html.erb within layouts/application
+  Rendered hoges/index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 265)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 333ms (Views: 306.5ms | ActiveRecord: 0.0ms | Allocations: 9228)
+
+
