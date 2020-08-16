@@ -1,7 +1,7 @@
 rails s -b 0.0.0.0
 localhost:3000
 
-rails new hoge
+rails new hoge --skip-action-mailer --skip-action-mailbox --skip-action-text --skip-action-cable
 rails g controller hoges index
 # config/routes.rb
 root 'hoges#index'
@@ -199,3 +199,23 @@ rails _5.2.3_ hoge
 --------------------------------
 
 bin配下はbundle execが不要になる
+
+--------------------------------
+
+# vimのスワップファイル削除
+find . -name '.*.sw*'
+find . -name '.*.sw*'|xargs rm
+
+--------------------------------
+
+# シークレットの持ち方
+EDITOR="vi" rails credentials:edit
+--------------------
+github:
+        client_id: ""
+        client_secret: ""
+omniauth.rb
+--------------------
+provider :github,
+   Rails.application.credentials.github[:client_id],
+   Rails.application.credentials.github[:client_secret]
