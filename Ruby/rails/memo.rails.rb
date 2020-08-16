@@ -2,8 +2,9 @@ rails s -b 0.0.0.0
 localhost:3000
 
 rails new hoge
-rails g controller hoges new edit show index 
-#rails g model Hoge name:stringでもよい 
+rails g controller hoges index
+# config/routes.rb
+root 'hoges#index'
 rails g model Hoge name:string
 マイグレーションファイルにカラムを追加
 rails db:create
