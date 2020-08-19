@@ -70,13 +70,16 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
 
     //次のページに値を受け渡す
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let nextVC = segue.destination as! NextViewController
-        //プロトコルを設定
-        nextVC.delegate = self
-        //数値型のhogeを宣言
-        let hoge: Int = 1
-        //次のViewでfugaを宣言しておき、値を受け渡す
-        nextVC.fuga = hoge
+        //segueのidentifierによって受け渡す値を変える
+        if segue.identifier == "next" {
+            let nextVC = segue.destination as! NextViewController
+            //プロトコルを設定
+            nextVC.delegate = self
+            //数値型のhogeを宣言
+            let hoge: Int = 1
+            //次のViewでfugaを宣言しておき、値を受け渡す
+            nextVC.fuga = hoge
+        }
     }
     
     //3.ナビゲーションコントローラーで遷移する
