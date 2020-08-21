@@ -14,6 +14,10 @@ rails db:migrate
 rails g migration Addカラム名Toテーブル名 カラム名:データ型 カラム名:データ型
 rails g migration Removeカラム名Fromテーブル名 カラム名:型名
 rails db:migrate
+# 1つ前に戻す
+rails db:rollback
+# migrateされていないファイルを確認
+rails db:abort_if_pending_migrations
 # DBのリセット
 # 読み込みはschemaファイルから行われる
 rails db:migrate:reset
