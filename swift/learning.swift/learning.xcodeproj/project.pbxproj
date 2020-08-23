@@ -16,6 +16,8 @@
 		E957576024D98A7B00F9161B /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E957575F24D98A7B00F9161B /* NextViewController.swift */; };
 		E957576624E03DA600F9161B /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E957576524E03DA600F9161B /* TableViewController.swift */; };
 		E957576A24E0418800F9161B /* NaviViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E957576924E0418800F9161B /* NaviViewController.swift */; };
+		E9D3D38D24F26CA600F04B97 /* SoundModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D3D38C24F26CA600F04B97 /* SoundModel.swift */; };
+		E9D3D39124F2711200F04B97 /* DenyMP3Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D3D39024F2711200F04B97 /* DenyMP3Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		E957575F24D98A7B00F9161B /* NextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
 		E957576524E03DA600F9161B /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		E957576924E0418800F9161B /* NaviViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaviViewController.swift; sourceTree = "<group>"; };
+		E9D3D38C24F26CA600F04B97 /* SoundModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundModel.swift; sourceTree = "<group>"; };
+		E9D3D39024F2711200F04B97 /* DenyMP3Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DenyMP3Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,18 +66,44 @@
 		E916D30424D6457C009762F0 /* learning */ = {
 			isa = PBXGroup;
 			children = (
+				E95C793724F25F1B005B7392 /* Controller */,
+				E95C793624F25F15005B7392 /* View */,
+				E95C793524F25F0B005B7392 /* Model */,
+				E916D31324D64587009762F0 /* Info.plist */,
+			);
+			path = learning;
+			sourceTree = "<group>";
+		};
+		E95C793524F25F0B005B7392 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E9D3D38C24F26CA600F04B97 /* SoundModel.swift */,
+				E9D3D39024F2711200F04B97 /* DenyMP3Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E95C793624F25F15005B7392 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E916D30B24D6457C009762F0 /* Main.storyboard */,
+				E916D30E24D64587009762F0 /* Assets.xcassets */,
+				E916D31024D64587009762F0 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E95C793724F25F1B005B7392 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
 				E916D30524D6457C009762F0 /* AppDelegate.swift */,
 				E916D30724D6457C009762F0 /* SceneDelegate.swift */,
 				E916D30924D6457C009762F0 /* ViewController.swift */,
 				E957575F24D98A7B00F9161B /* NextViewController.swift */,
 				E957576924E0418800F9161B /* NaviViewController.swift */,
 				E957576524E03DA600F9161B /* TableViewController.swift */,
-				E916D30B24D6457C009762F0 /* Main.storyboard */,
-				E916D30E24D64587009762F0 /* Assets.xcassets */,
-				E916D31024D64587009762F0 /* LaunchScreen.storyboard */,
-				E916D31324D64587009762F0 /* Info.plist */,
 			);
-			path = learning;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,7 +181,9 @@
 				E957576624E03DA600F9161B /* TableViewController.swift in Sources */,
 				E957576024D98A7B00F9161B /* NextViewController.swift in Sources */,
 				E916D30624D6457C009762F0 /* AppDelegate.swift in Sources */,
+				E9D3D38D24F26CA600F04B97 /* SoundModel.swift in Sources */,
 				E957576A24E0418800F9161B /* NaviViewController.swift in Sources */,
+				E9D3D39124F2711200F04B97 /* DenyMP3Model.swift in Sources */,
 				E916D30824D6457C009762F0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

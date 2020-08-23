@@ -104,6 +104,17 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         ) as! TableViewController
         navigationController?.pushViewController(tableVC, animated: true)
     }
+    
+    //4.タグで管理する
+    //あらかじめボタンにtagを設定しておく
+    //複数のボタンをこのアクションを紐づける
+    // @IBAction func next(_ sender: Any) {
+    //     if (sender as AnyObject).tag == 1 {
+    //     } else if (sender as AnyObject).tag == 2 {
+    //     } else if (sender as AnyObject).tag == 3 {
+    //     } else {
+    //     }
+    // }
 
 /////////////////////////////////////////////////////////////////////
 //プロトコル
@@ -117,3 +128,17 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
     
 }
+
+/////////////////////////////////////////////////////////////////////
+//アプリの中にデータを保存する
+/////////////////////////////////////////////////////////////////////
+// hoge: Int = 0
+// UserDefaults.standard.set(hoge, forKey: "fuga")
+
+// if UserDefaults.standard.object(forKey: "fuga") != nil {
+//     piyo = UserDefaults.standard.object(forKey: "fuga") as! Int
+// }
+
+//アプリ内のデータを削除
+// UserDefaults.standard.removeObject(forKey: "fuga"")
+
