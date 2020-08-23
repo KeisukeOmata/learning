@@ -77,16 +77,18 @@ func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
 ---------------------------------------------
 クラス
 
-class Car{
-    var pre: Int = 0
-    var rear: Int = 0
+class CarModel {
+    //プロパティ
+    var pre: Int
+    var rear: Int
     
-    //初期化
-    init() {
-        pre = 0
-        rear = 0
+    //初期化時、引数をプロパティに設定
+    init(pre: Int, rear: Int) {
+        pre = pre
+        rear = rear
     }
     
+    //メソッド
     //呼ぶだけでprint
     func drive() {
         print("pre = \(pre)")
@@ -104,18 +106,35 @@ class Car{
     }
 }
 
+//CarModelクラスを配列で持つCarsListクラス
+class CarsList {
+    //プロパティ
+    var list = [CarModel]()
+    //初期化時、プロパティを設定
+    init() {
+        list.append(CarModel(pre: 1, rear: 1))
+        list.append(CarModel(pre: 2, rear: 2))
+        list.append(CarModel(pre: 3, rear: 3))
+        list.append(CarModel(pre: 4, rear: 4))
+        list.append(CarModel(pre: 5, rear: 5))
+    }
+}
+--------------
 class ViewController: UIViewController {
 
-    var car = Car()
+    //インスタンス作成時に初期値を渡す
+    var car = Car(pre: 1, rear: 1)
+    ////CarModelクラスを配列で持つCarsListクラスのインスタンス
+    let carsList = CarsList()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //Carクラスのインスタンスに値を設定する    
-        car.pre = 2
-        car.rear = 2
     }
 
     @IBAction func action(_ sender: Any) {
+        //インスタンスのプロパティを設定する    
+        car.pre = 2
+        car.rear = 2
         //driveメソッドを呼ぶ
         car.drive()
         //moveメソッドを呼ぶ
@@ -124,8 +143,12 @@ class ViewController: UIViewController {
         let total = car.add(num1: car.pre, num2: car.rear)
         print("合計は\(total)")
     }
-    
+
+    //CarsListクラスを配列で持つインスタンスのプロパティ"list"の1番目
+    print(carsList.list[0].pre)
+
 }
+
 ---------------------------------------------
 継承
 
@@ -136,11 +159,12 @@ class Animal {
     }
 }
 
-Dogモデル
+// Animalモデルを継承したDogモデル
 class Dog: Animal {
 
     //親クラスのメソッドを呼び出す
     override func bless() {
+        //親クラスのメソッドを呼び出すときはsuper.が必要
         super.bless()
         bark()
     }
@@ -149,12 +173,23 @@ class Dog: Animal {
         print("ワン")
     }
 }
+
 ---------------------------------------------
 indexPath => 0からインクリメント
+
 ---------------------------------------------
 クラス名と変数名を同一にするとエラー(再帰的な問題?)
 クラスは先頭大文字、変数は先頭小文字にするなど
+
 ---------------------------------------------
-//アプリ内のデータを削除
-UserDefaults.standard.removeObject(forKey: "キー値")
----------------------------------------------
+実機テスト
+
+1.iPhoneを繋ぎ、デバックのデバイスは実機を選択する
+2.エラーが発生するので、Fix issue => add
+3.Sign Up
+4.Xcode => Preferences => Accounts 左下の「+」=> Add Apple ID
+5.View Details => iOS Developmentの横にあるCreate => Done
+6.runすると再度エラーになる
+7.Personal Team => Choose
+8.実機で設定 => 一般 => プロファイル
+9.Apple ID名をタップ => 信頼
