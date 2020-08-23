@@ -19,8 +19,9 @@ rails db:rollback
 # migrateされていないファイルを確認
 rails db:abort_if_pending_migrations
 # DBのリセット
-# 読み込みはschemaファイルから行われる
 rails db:migrate:reset
+# モデルの削除
+rails destroy model hoge
 # ルーティングの確認
 rails routes
 # DBはコンソールから触る
