@@ -118,6 +118,9 @@ app/assets/javascripts/application.jsを編集
 gem install nokogiri -- --use-system-libraries
 bundle config build.nokogiri --use-system-libraries
 
+# sassc 2.4.0がインストールできないとき
+gem install sassc -- --disable-march-tune-nativa
+
 --------------------------------
 
 # Node.jsのアップデート
