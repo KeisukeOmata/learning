@@ -25,8 +25,8 @@ config.active_support.deprecation = :stderr
 ↓
 config.active_support.deprecation = :silence
 --------------------------------
-rails db:migrate RAILS_ENV=test
 #テスト実行
+rails db:migrate RAILS_ENV=test
 bundle exec rspec spec/ --format documentation
 
 
