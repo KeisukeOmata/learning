@@ -1,7 +1,7 @@
 rails s -b 0.0.0.0
 localhost:3000
 
-rails new hoge --skip-action-mailer --skip-action-mailbox --skip-action-text --skip-action-cable
+rails new hoge --database=mysql --skip-test --skip-action-mailer --skip-action-mailbox --skip-action-text --skip-action-cable
 rails g controller hoges index
 # config/routes.rb
 root 'hoges#index'
