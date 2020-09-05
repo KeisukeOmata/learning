@@ -35,6 +35,8 @@ services:
       MYSQL_USERNAME: app
       MYSQL_PASSWORD: password
       MYSQL_HOST: mysql
+      # Rollbarのトークン
+      ROLLBAR_ACCESS_TOKEN:
     ports:
       - "3000:3000"
     depends_on:
