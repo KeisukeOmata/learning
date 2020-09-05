@@ -30,4 +30,8 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  database: appdb
+  host: <%= ENV["MYSQL_HOST"] %>
+  port: <%= ENV["MYSQL_PORT"] %>
+  username: <%= ENV["MYSQL_USERNAME"] %>
+  password: <%= ENV["MYSQL_PASSWORD"] %>

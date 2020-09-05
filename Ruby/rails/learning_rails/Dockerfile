@@ -13,6 +13,8 @@
 # -p 3000:3000 \
 # learning_rails
 
+# コンテナを使う場合はログを標準出力に変更する(config/environments/production.rb)
+
 # Node.jsダウンロード用ビルドステージ
 FROM ruby:2.6.6 AS nodejs
 
