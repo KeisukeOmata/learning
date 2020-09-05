@@ -1,20 +1,3 @@
-# docker build -t learning_rails .
-# docker run -p 3000:3000 learning_rails
-# マウントキャッシュを使う場合
-# DOCKER_BUILDKIT=1 docker build -t learning_rails -f Dockerfile-buildkit .
-
-# 開発環境用の場合
-# docker volume create learning_rails_bundle
-# docker volume create learning_rails_node_modules
-# docker run -i -t \
-# -v $(pwd):/app:cached \
-# -v learning_rails_bundle:/app/vendor/bundle \
-# -v learning_rails_node_modules:/app/node_modules \
-# -p 3000:3000 \
-# learning_rails
-
-# コンテナを使う場合はログを標準出力に変更する(config/environments/production.rb)
-
 # Node.jsダウンロード用ビルドステージ
 FROM ruby:2.6.6 AS nodejs
 
