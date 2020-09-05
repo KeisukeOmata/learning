@@ -1,20 +1,3 @@
-# 複数のコンテナイメージを組み合わせる
-# docker-compose up -d mysql
-# docker-compose exec mysql mysql -u root -p
-# CREATE database appdb CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin;
-# CREATE database appdb_test CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin;
-# GRANT ALL on appdb.* TO app@'%' IDENTIFIED BY 'password';
-# GRANT ALL on appdb_test.* TO app@'%';
-# database.ymlを更新
-# 起動
-# docker_compose run --service-ports app
-# 停止
-# docker_compose down
-# bundle install
-# yarn install
-# bin/rails s -b 0.0.0.0
-# bin/rails db:migrate
-
 version: "3"
 services:
   mysql:
