@@ -11,3 +11,7 @@ git checkout omata
 git add -A
 git commit -m "hoge"
 git push origin omata
+----------------------------------
+# gitignoreに追加する前にpushしてしまった場合
+# キャッシュ削除
+git rm -r --cached .
