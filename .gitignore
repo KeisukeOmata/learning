@@ -8,13 +8,13 @@
 /Ruby/rails/learning_rails/db/*.sqlite3-*
 /Ruby/rails/learning_rails/log/*
 /Ruby/rails/learning_rails/tmp/*
-/Ruby/rails/learning_rails/log/.keep
-/Ruby/rails/learning_rails/tmp/.keep
+!/Ruby/rails/learning_rails/log/.keep
+!/Ruby/rails/learning_rails/tmp/.keep
 /Ruby/rails/learning_rails/tmp/pids/*
 /Ruby/rails/learning_rails/tmp/pids/
 /Ruby/rails/learning_rails/tmp/pids/.keep
 /Ruby/rails/learning_rails/storage/*
-/Ruby/rails/learning_rails/storage/.keep
+!/Ruby/rails/learning_rails/storage/.keep
 /Ruby/rails/learning_rails/public/assets
 /Ruby/rails/learning_rails.byebug_history
 /Ruby/rails/learning_rails/public/packs
