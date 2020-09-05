@@ -28,6 +28,7 @@ test:
   <<: *default
   database: appdb_test
 
+# 本番環境では環境変数で渡す
 production:
   <<: *default
   database: appdb
