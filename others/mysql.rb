@@ -9,11 +9,15 @@ mysql.server start --skip-grant-tables
 mysql.server stop
 #root実行
 mysql -uroot
+# docker-composeでの起動
+docker-compose exec mysql mysql -u root -p
 ------------------------------------
 # DB作成
 CREATE DATABASE hoge;
 # DB一覧
 show databases;
+# DB削除
+drop database hoge;
 # 使用するDBを選択
 USE Hoge
 # select文

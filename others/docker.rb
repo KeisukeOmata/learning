@@ -2,6 +2,8 @@
 docker attach コンテナID
 # コンテナから抜ける(デタッチ)
 Ctrl + Q + P
+# コンテナ起動
+docker start コンテナID
 ----------------------------
 # コンテナ一覧
 docker ps -a
@@ -12,6 +14,8 @@ docker rm -f コンテナID
 docker images
 # イメージ削除
 docker rmi -f イメージID
+# <none>一括削除
+docker image prune
 ----------------------------
 # コンテナの再起動
 docker-compose restart
@@ -21,14 +25,17 @@ docker-compose start
 docker-compose stop
 ----------------------------
 # docker-composeの作成
+# イメージも作成される
 # 複数のコンテナイメージを組み合わせる
 # up => コンテナの作成と開始
 docker-compose up -d mysql
+# mysql起動
 docker-compose exec mysql mysql -u root -p
-CREATE database appdb CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin;
-CREATE database appdb_test CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin;
-GRANT ALL on appdb.* TO app@'%' IDENTIFIED BY 'password';
-GRANT ALL on appdb_test.* TO app@'%';
+CREATE database hoge CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin;
+CREATE database hoge_test CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin;
+GRANT ALL on appdb.* TO hoge@'%' IDENTIFIED BY 'password';
+GRANT ALL on appdb_test.* TO hoge@'%';
+# gem 'mysql2', '>=0.4.4'
 # database.ymlを更新
 # run => コンテナの作成と開始、引数で指定したサービスのコンテナ内でコマンドを実行
 docker-compose run --service-ports app
@@ -37,19 +44,19 @@ yarn install
 bin/rails db:migrate
 bin/rails s -b 0.0.0.0
 ----------------------------
-# コンテナの作成とログイン
-docker run -it コンテナ名
-# ポートを指定
-docker run -p 3000:3000 コンテナ名
-----------------------------
-# イメージ作成
-docker build -t イメージ名 .
-# マウントキャッシュを使う場合
-DOCKER_BUILDKIT=1 docker build -t イメージ名 -f Dockerfile-buildkit .
+# # コンテナの作成とログイン
+# docker run -it コンテナ名
+# # ポートを指定
+# docker run -p 3000:3000 コンテナ名
+# ----------------------------
+# # イメージ作成
+# docker build -t イメージ名 .
+# # マウントキャッシュを使う場合
+# DOCKER_BUILDKIT=1 docker build -t イメージ名 -f Dockerfile-buildkit .
 ----------------------------
 # 開発環境用の場合
-docker volume create learning_rails_bundle
-docker volume create learning_rails_node_modules
+docker volume create fav_map_rails_bundle
+docker volume create fav_map_rails_node_modules
 docker run -i -t \
 -v $(pwd):/app:cached \
 -v learning_rails_bundle:/app/vendor/bundle \
