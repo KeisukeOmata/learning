@@ -15,3 +15,7 @@ git push origin omata
 # gitignoreに追加する前にpushしてしまった場合
 # キャッシュ削除
 git rm -r --cached .
+----------------------------------
+# コミットを間違えた時
+# 1つ前に戻す
+git reset --soft HEAD^
