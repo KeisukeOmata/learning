@@ -227,3 +227,11 @@ source ~/.bash_profile
 <%= link_to 'hoge', edit_user_path(@hoge)
 # コントローラーで指定する
 <%= link_to 'hoge', controller: :hoges, action: :edit, id: 1234
+--------------------------------
+# CSRF(クロスサイトリクエストフォージェリ)
+formヘルパーではGET以外でセキュリティトークンが必須になっている
+# Mass Assignment機能の脆弱性
+ストロングパラメータ
+# XSS(クロスサイトスクリプティング)
+CSP(コンテンツセキュリティポリシー)
+config/initializers/content_security_policy.rb
