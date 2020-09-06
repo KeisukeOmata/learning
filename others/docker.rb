@@ -4,6 +4,8 @@ docker attach コンテナID
 Ctrl + Q + P
 # コンテナ起動
 docker start コンテナID
+# コンテナ停止
+docker stop コンテナID
 ----------------------------
 # コンテナ一覧
 docker ps -a

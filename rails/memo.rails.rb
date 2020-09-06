@@ -1,7 +1,10 @@
 rails s -b 0.0.0.0
 localhost:3000
+ルーティング→コントローラー(モデルからデータ取得)→ビュー→ルーティング
 --------------------------------
-rails new hoge --database=mysql --skip-test --skip-action-mailer --skip-action-mailbox --skip-action-text --skip-action-cable
+rails new hoge --database=mysql --skip-test --skip-action-mailer --skip-action-mailbox --skip-action-text --skip-action-cable --skip-active-storage
+# apiモード
+rails new hoge --api
 rails g controller hoges index
 # config/routes.rb
 root 'hoges#index'
@@ -220,3 +223,7 @@ vim ~/.bash_profile
 export HOGE_DATABASE_PASSWORD='hogehoge'
 source ~/.bash_profile
 --------------------------------
+# ルーティングで指定する
+<%= link_to 'hoge', edit_user_path(@hoge)
+# コントローラーで指定する
+<%= link_to 'hoge', controller: :hoges, action: :edit, id: 1234
