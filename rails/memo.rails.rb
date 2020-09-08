@@ -5,6 +5,10 @@ localhost:3000
 rails new hoge --database=mysql --skip-test --skip-action-mailer --skip-action-mailbox --skip-action-text --skip-action-cable --skip-active-storage
 # apiモード
 rails new hoge --api
+# react
+rails new hoge --webpacker=react
+# reactを後から導入
+rails webpacker:install:react
 rails g controller hoges index
 # config/routes.rb
 root 'hoges#index'
