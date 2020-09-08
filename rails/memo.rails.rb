@@ -99,6 +99,15 @@ rails g kaminari:views default
 config.default_per_page = 5
 --------------------------------
 #bootstrap
+# rails6.0
+# .scssファイルに以下を記載
+@import "~bootstrap/scss/bootstrap";
+yarn add bootstrap
+yarn add jquery popper.js
+# application.jsに以下を記載
+require("jquery");
+require("bootstrap");
+# rails5.2
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'jquery-rails'
 bundle install
