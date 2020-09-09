@@ -231,6 +231,7 @@ vim ~/.bash_profile
 export HOGE_DATABASE_PASSWORD='hogehoge'
 source ~/.bash_profile
 --------------------------------
+# link_to
 # ルーティングで指定する
 <%= link_to 'hoge', edit_user_path(@hoge)
 # コントローラーで指定する
@@ -243,3 +244,24 @@ formヘルパーではGET以外でセキュリティトークンが必須にな�
 # XSS(クロスサイトスクリプティング)
 CSP(コンテンツセキュリティポリシー)
 config/initializers/content_security_policy.rb
+--------------------------------
+# rails6.0でloaderを使う
+# rails-erb-loader => js内でerbを使える
+rails webpacker:install:erb
+config/webpack/environment.jsが更新される
+# rails6.0でpluginを使う
+# ProvidePlugin => requireをせずにライブラリを参照できる
+bin/yarn add jquery
+config/webpack/plugins/provide.jsを作成
+------------------
+const webpack = require('webpack')
+module.exports = new webpack.ProvidePlugin({
+  $: 'jquery',
+  jquery: 'jquery'
+});
+------------------
+config/webpack/environment.jsに以下を追記
+------------------
+const provide = require('./plugins/provide')
+environment.plugins.prepend('provide', provide)
+------------------
