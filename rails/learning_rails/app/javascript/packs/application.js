@@ -15,3 +15,13 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+// //turbolinks:load
+// //最初の画面表示とターボリンクスが呼ばれる度に出力
+// document.addEventListener("turbolinks:load", function () {
+//   console.log("ターボリンクス")
+// })
+// // $(document).readyを使いたい場合
+// $(document).on('turbolinks:load', function() {
+//   console.log("ターボリンクス");
+// });

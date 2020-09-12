@@ -1,8 +1,10 @@
 rails s -b 0.0.0.0
 localhost:3000
 ルーティング→コントローラー(モデルからデータ取得)→ビュー→ルーティング
+# デプロイ前は必須
+rials assets:precompile
 --------------------------------
-rails new hoge --database=mysql --skip-test --skip-action-mailer --skip-action-mailbox --skip-action-text --skip-action-cable --skip-active-storage
+rails new hoge --database=mysql --skip-turbolinks --skip-test --skip-action-mailer --skip-action-mailbox --skip-action-text --skip-action-cable --skip-active-storage
 # apiモード
 rails new hoge --api
 # react
