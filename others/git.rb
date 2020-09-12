@@ -19,3 +19,8 @@ git rm -r --cached .
 # コミットを間違えた時
 # 1つ前に戻す
 git reset --soft HEAD^
+----------------------------------
+# 更新したファイルを確認
+git status
+# 差分確認
+git diff
