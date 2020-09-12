@@ -1,0 +1,10 @@
+# 定型処理を定義する
+# タスクの一覧を表示する
+# rake -T
+# タスクを実行する
+# rake task_name
+
+desc "タスクの説明"
+task :task_name do
+  puts "Hello, Rake!"
+end

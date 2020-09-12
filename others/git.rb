@@ -24,3 +24,6 @@ git reset --soft HEAD^
 git status
 # 差分確認
 git diff
+----------------------------------
+# ローカルで削除したファイルをcommitに含める
+git rm 
