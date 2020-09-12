@@ -22,3 +22,6 @@ cd ~/.rbenv
 git pull origin master
 cd ~/.rbenv/plugins/ruby-build
 git pull origin master
+----------------------------
+# 変数の値がnilなら変数に代入するが、nilでなければ代入しない
+||=
