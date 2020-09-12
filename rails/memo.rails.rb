@@ -313,3 +313,8 @@ class AddIndexToUsersEmail < ActiveRecord::Migration[5.1]
 end
 ------------------
 --------------------------------
+# ssl(https)接続を強制する
+config/environments/production.rb
+------------------
+config.force_ssl = true
+------------------
