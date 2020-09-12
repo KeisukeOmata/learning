@@ -1,8 +1,10 @@
 rails s -b 0.0.0.0
+# jsを編集する度にビルドしてくれる
+bin/webpack-dev-server
 localhost:3000
 ルーティング→コントローラー(モデルからデータ取得)→ビュー→ルーティング
 # デプロイ前は必須
-rials assets:precompile
+bin/rails assets:precompile
 --------------------------------
 rails new hoge --database=mysql --skip-turbolinks --skip-test --skip-action-mailer --skip-action-mailbox --skip-action-text --skip-action-cable --skip-active-storage
 # apiモード
@@ -56,8 +58,6 @@ rails db:seed:replant
 app/javascript/packs/hello.js
 # application.html.erbに以下記載
 <%= javascript_pack_tag 'hello', 'data-turbolinks-track': 'reload'
-# jsを編集する度にビルドしてくれる
-bin/webpack-dev-server
 --------------------------------
 #refile
 gem "refile", require: "refile/rails", github: 'manfe/refile'
@@ -267,3 +267,6 @@ config/webpack/environment.jsに以下を追記
 const provide = require('./plugins/provide')
 environment.plugins.prepend('provide', provide)
 ------------------
+# action cable
+# アクションケーブル用のファイル作成
+bin/rails g channel room speak
