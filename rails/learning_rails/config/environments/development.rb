@@ -1,4 +1,9 @@
 Rails.application.configure do
+  # メールをファイルとして保存する
+  config.action_mailer.delivery_method = :file
+  # ファイル保存パスの設定
+  config.action_mailer.file_settings = { location: Rails.root.join('log/mails') }
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on

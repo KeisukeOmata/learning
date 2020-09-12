@@ -267,6 +267,10 @@ config/webpack/environment.jsに以下を追記
 const provide = require('./plugins/provide')
 environment.plugins.prepend('provide', provide)
 ------------------
-# action cable
+# Action Cable
 # アクションケーブル用のファイル作成
 bin/rails g channel room speak
+
+# Action Mailer
+# アクションメーラー用のファイル作成
+bin/rails g mailer UserMailer
