@@ -43,6 +43,8 @@ GRANT ALL on appdb_test.* TO hoge@'%';
 docker-compose run --service-ports app
 bundle install
 yarn install
+apt update; apt -y upgrade
+apt install vim apt-utils
 bin/rails db:migrate
 bin/rails s -b 0.0.0.0
 ----------------------------
