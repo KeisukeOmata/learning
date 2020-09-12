@@ -303,3 +303,13 @@ before_save { self.email = email.downcase }
 VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
 validates :email, presence: true, length: { maximum: 255 }, uniqueness: { case_sensitive: false }, format: { with: VALID_EMAIL_REGEX }
 --------------------------------
+# インデックスを後から追加する
+rails g migration add_index_to_users_email
+------------------
+class AddIndexToUsersEmail < ActiveRecord::Migration[5.1]
+   def change
+     add_index :users, :email, unique: true
+   end
+end
+------------------
+--------------------------------
