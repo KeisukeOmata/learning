@@ -13,10 +13,16 @@ rails new hoge --api
 rails new hoge --webpacker=react
 # reactを後から導入
 rails webpacker:install:react
-rails g controller hoges index
+# コントローラーの作成
+bin/rails g controller hoges index
+# コントローラーの削除
+bin/rails destroy  controller hoges index
 # config/routes.rb
 root 'hoges#index'
-rails g model Hoge name:string
+# モデルの作成
+bin/rails g model Hoge name:string
+# モデルの削除
+bin/rails destroy model Hoge
 マイグレーションファイルにカラムを追加
 rails db:create
 rails db:migrate
@@ -267,10 +273,25 @@ config/webpack/environment.jsに以下を追記
 const provide = require('./plugins/provide')
 environment.plugins.prepend('provide', provide)
 ------------------
+--------------------------------
 # Action Cable
 # アクションケーブル用のファイル作成
 bin/rails g channel room speak
-
+------------------
+app/controllers/rooms_controller.rb 
+app/javascript/channels/room_channel.js
+app/channels/room_channel.rb 
+--------------------------------
 # Action Mailer
 # アクションメーラー用のファイル作成
 bin/rails g mailer UserMailer
+------------------
+app/controllers/users_controller.rb
+app/mailers/application_mailer.rb 
+app/mailers/user_mailer.rb 
+app/views/user_mailer/welcome.html.erb 
+app/views/user_mailer/welcome.text.erb
+config/environment.rb
+config/environments/development.rb 
+test/mailers/previews/user_mailer_preview.rb 
+--------------------------------
