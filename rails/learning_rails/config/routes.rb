@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :users
   get 'rooms/show'
   root 'hoges#index'
   get 'hoges/index'
