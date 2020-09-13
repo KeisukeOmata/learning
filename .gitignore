@@ -2,6 +2,7 @@
 /others/c/a.out
 /rails/learning_rails/config/master.key
 /rails/learning_rails/config/database.yml
+/rails/learning_rails/config/credentials.yml.enc 
 /rails/learning_rails/.bundle
 /rails/learning_rails/db/*.sqlite3
 /rails/learning_rails/db/*.sqlite3-journal
