@@ -321,12 +321,17 @@ test/mailers/previews/user_mailer_preview.rb
 --------------------------------
 # Active Job
 bin/rails g job async_log
+gem 'sidekiq'
+# sudo apt-get install redis
+# 起動
+# sudo systemctl start redis-server
 docker pull redis
 docker run -p 6379:6379 redis
 bin/rails c
 AsyncLogJob.perform_later(message: "from sidekiq")
 bin/bundle exec sidekiq
+AsyncLog.last
 ------------------
 app/jobs/async_log_job.rb
-gem 'sidekiq'
-config/environments/production.rb
+config/application.rb
+config/routes.rb

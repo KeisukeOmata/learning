@@ -59,3 +59,6 @@ gem 'mysql2', '>= 0.4.4'
 # bin/rails g rollbar
 # docker-composeを修正
 gem 'rollbar'
+
+# jobの永続化
+gem 'sidekiq'

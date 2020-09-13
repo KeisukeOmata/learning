@@ -1,0 +1,6 @@
+:queues:
+  - default
+  # 複数ジョブ
+  - async_log
+  # Action meiler
+  - mailers
