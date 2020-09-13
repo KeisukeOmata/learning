@@ -383,3 +383,5 @@ app/controllers/users_controller.rb
 app/models/user.rb
 app/views/users/_form.html.erb
 app/views/users/show.html.erb
+--------------------------------
+# Action Mailbox
