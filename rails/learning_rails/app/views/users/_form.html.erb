@@ -21,6 +21,13 @@
     <%= form.text_field :email %>
   </div>
 
+  <div class="field">
+    <%= form.label :portrait %>
+    <!-- ダイレクトアップロード -->
+    <!-- multiple: trueで複数ファイル -->
+    <%= form.file_field :portrait, direct_upload: true, multiple: true %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
