@@ -1,11 +1,11 @@
 # コンテナに入る(アタッチ)
-docker attach コンテナID
+docker attach
 # コンテナから抜ける(デタッチ)
 Ctrl + Q + P
 # コンテナ起動
-docker start コンテナID
+docker start
 # コンテナ停止
-docker stop コンテナID
+docker stop
 ----------------------------
 # コンテナ一覧
 docker ps -a
@@ -18,6 +18,8 @@ docker images
 docker rmi -f イメージID
 # <none>一括削除
 docker image prune
+# イメージの取得
+docker pull
 ----------------------------
 # コンテナの再起動
 docker-compose restart
@@ -71,3 +73,7 @@ learning_rails
 # コンテナを使う場合はログを標準出力に変更する(config/environments/production.rb)
 config.logger = ActiveSupport::Logger.new($stdout)
 $stdout.sync = true
+----------------------------
+# redis
+docker pull redis
+docker run -p 6379:6379 redis
