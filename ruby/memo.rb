@@ -25,3 +25,22 @@ git pull origin master
 ----------------------------
 # 変数の値がnilなら変数に代入するが、nilでなければ代入しない
 ||=
+--------------------------------
+# 三項演算子
+params[:user] == 'hoge' ? remember(user) : forget(user)
+
+if params[:user] == 'hoge'
+  remember(user)
+else
+  forget(user)
+end
+
+# 値を代入するときに使う
+fuga = params[:user] == 'hoge' ? remember(user) : forget(user)
+
+# 三項演算子をメソッドの戻り値にする
+def piyo
+  do_stuff
+  do_stuff_return == 'hoge' ? remember(user) : forget(user)
+end
+--------------------------------
