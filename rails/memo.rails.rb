@@ -223,7 +223,7 @@ find . -name '.*.sw*'
 find . -name '.*.sw*'|xargs rm
 --------------------------------
 # シークレットの持ち方
-EDITOR="vi" rails credentials:edit
+EDITOR="vi" bin/rails credentials:edit
 --------------------
 github:
         client_id: ""
@@ -274,27 +274,6 @@ const provide = require('./plugins/provide')
 environment.plugins.prepend('provide', provide)
 ------------------
 --------------------------------
-# Action Cable
-# アクションケーブル用のファイル作成
-bin/rails g channel room speak
-------------------
-app/controllers/rooms_controller.rb 
-app/javascript/channels/room_channel.js
-app/channels/room_channel.rb 
---------------------------------
-# Action Mailer
-# アクションメーラー用のファイル作成
-bin/rails g mailer UserMailer
-------------------
-app/controllers/users_controller.rb
-app/mailers/application_mailer.rb 
-app/mailers/user_mailer.rb 
-app/views/user_mailer/welcome.html.erb 
-app/views/user_mailer/welcome.text.erb
-config/environment.rb
-config/environments/development.rb 
-test/mailers/previews/user_mailer_preview.rb 
---------------------------------
 # メールアドレスの正規表現
 VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
 # メールアドレスのバリデーション
@@ -318,3 +297,36 @@ config/environments/production.rb
 ------------------
 config.force_ssl = true
 ------------------
+--------------------------------
+# Action Cable
+# アクションケーブル用のファイル作成
+bin/rails g channel room speak
+------------------
+app/controllers/rooms_controller.rb 
+app/javascript/channels/room_channel.js
+app/channels/room_channel.rb 
+--------------------------------
+# Action Mailer
+# アクションメーラー用のファイル作成
+bin/rails g mailer UserMailer
+------------------
+app/controllers/users_controller.rb
+app/mailers/application_mailer.rb 
+app/mailers/user_mailer.rb 
+app/views/user_mailer/welcome.html.erb 
+app/views/user_mailer/welcome.text.erb
+config/environment.rb
+config/environments/development.rb 
+test/mailers/previews/user_mailer_preview.rb 
+--------------------------------
+# Active Job
+bin/rails g job async_log
+docker pull redis
+docker run -p 6379:6379 redis
+bin/rails c
+AsyncLogJob.perform_later(message: "from sidekiq")
+bin/bundle exec sidekiq
+------------------
+app/jobs/async_log_job.rb
+gem 'sidekiq'
+config/environments/production.rb
