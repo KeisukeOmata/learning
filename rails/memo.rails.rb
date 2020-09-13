@@ -353,3 +353,33 @@ AsyncLog.last
 app/jobs/async_log_job.rb
 config/application.rb
 config/routes.rb
+--------------------------------
+# Active Strage
+bin/rails active_storage:install
+# モデル
+has_one_attached :portrait
+# 複数枚の場合
+has_many_attached :portrait
+# new
+<div class="field">
+   <%= form.label :portrait %
+   <!-- ダイレクトアップロード -->
+   <!-- multiple: trueで複数ファイル -->
+   <%= form.file_field :portrait, direct_upload: true, multiple: true %
+</div>
+# ストロングパラメーター
+params.require(:user).permit(:name, :email, portrait: [])
+# Gemfile
+gem 'image_processing', '~> 1.2'
+# show
+<p>
+  <strong>Image:</strong>
+  <% @user.portrait.each do |image| %
+    <%= image_tag image.variant(resize_to_limit: [100, 100]) %
+  <% end %>
+</p>
+------------------
+app/controllers/users_controller.rb
+app/models/user.rb
+app/views/users/_form.html.erb
+app/views/users/show.html.erb

@@ -10,5 +10,12 @@
   <%= @user.email %>
 </p>
 
+<p>
+  <strong>Image:</strong>
+  <% @user.portrait.each do |image| %>
+    <%= image_tag image.variant(resize_to_limit: [100, 100]) %>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
