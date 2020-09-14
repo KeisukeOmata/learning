@@ -383,3 +383,27 @@ app/controllers/users_controller.rb
 app/models/user.rb
 app/views/users/_form.html.erb
 app/views/users/show.html.erb
+--------------------------------
+# Action Mailbox
+bin/rails action_mailbox:install
+bin/rails db:migrate
+EDITOR="vim" bin/rails credentials:edit
+------------------
+action_mailbox:
+   ingress_passeord: hoge
+------------------
+# 環境変数でも代用可能
+# vim ~/.bash_profile
+# ------------------
+# RAILS_INBOUND_EMAIL_PASSWORD=''
+# ------------------
+# クラスを作る
+bin/rails g mailbox comments
+# クラスに処理を記載
+# Web UI
+http://localhost:3000/rails/conductor/action_mailbox/inbound_emails/new
+Board.first.comments.map(&:body)
+------------------
+config/environments/production.rb
+app/mailboxes/application_mailbox.rb
+app/mailboxes/comments_mailbox.rb
