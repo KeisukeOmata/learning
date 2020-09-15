@@ -5,8 +5,8 @@ require_relative 'application'
 Rails.application.initialize!
 
 # EDITOR="vim" bin/rails credentials:edit
-# smtp_user_name=''
-# smtp_password=''
+# smtp_user_name:
+# smtp_password:
 Rails.application.configure do
   config.action_mailer.smtp_settings = {
     user_name: Rails.application.credentials.smtp_user_name,
