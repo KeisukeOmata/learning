@@ -327,6 +327,12 @@ app/channels/room_channel.rb
 # Action Mailer
 # アクションメーラー用のファイル作成
 bin/rails g mailer UserMailer
+EDITOR="vim" bin/rails credentials:edit
+------------------
+# sendgrid
+   smtp_user_name:
+   smtp_password:
+------------------
 ------------------
 app/controllers/users_controller.rb
 app/mailers/application_mailer.rb 
