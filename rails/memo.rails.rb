@@ -413,3 +413,9 @@ Board.first.comments.map(&:body)
 config/environments/production.rb
 app/mailboxes/application_mailbox.rb
 app/mailboxes/comments_mailbox.rb
+--------------------------------
+# Action Text
+bin/rails action_text:install
+bin/rails db:migrate
+モデルに has_rich_text :hoge を記載
+コントローラーでは.with_rich_text_nameを使う

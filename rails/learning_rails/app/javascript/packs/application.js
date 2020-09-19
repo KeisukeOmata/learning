@@ -25,3 +25,5 @@ require("channels")
 // $(document).on('turbolinks:load', function() {
 //   console.log("ターボリンクス");
 // });
+require("trix")
+require("@rails/actiontext")

@@ -4,7 +4,8 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    # Action TextではAllだとN+1問題が発生するため、with_rich_text_content
+    @users = User.with_rich_text_name
   end
 
   # GET /users/1
@@ -72,6 +73,7 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
+      # Active Storageで複数枚アップロードする場合は、配列で持たせる
       params.require(:user).permit(:name, :email, portrait: [])
     end
 end
