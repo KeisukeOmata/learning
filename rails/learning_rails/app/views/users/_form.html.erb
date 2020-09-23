@@ -25,8 +25,9 @@
   <div class="field">
     <%= form.label :portrait %>
     <!-- ダイレクトアップロード -->
+    <!-- direct_upload: true -->
     <!-- multiple: trueで複数ファイル -->
-    <%= form.file_field :portrait, direct_upload: true, multiple: true %>
+    <%= form.file_field :portrait, multiple: true %>
   </div>
 
   <div class="actions">
