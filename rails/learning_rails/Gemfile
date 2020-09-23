@@ -62,3 +62,6 @@ gem 'rollbar'
 
 # jobの永続化
 gem 'sidekiq'
+
+# Active Storageのバリデーション
+gem 'active_storage_validations'
