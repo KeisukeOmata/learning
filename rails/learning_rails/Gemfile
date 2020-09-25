@@ -65,3 +65,5 @@ gem 'sidekiq'
 
 # Active Storageのバリデーション
 gem 'active_storage_validations'
+
+gem 'redis', '4.2.2'

@@ -224,6 +224,7 @@ DEPENDENCIES
   mysql2 (>= 0.4.4)
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.2)
+  redis (= 4.2.2)
   rollbar
   sass-rails (>= 6)
   selenium-webdriver
