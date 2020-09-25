@@ -215,6 +215,16 @@ rails -v
 gem list rails 
 # railsコマンドは最新版を実行するため、バージョン指定方法
 rails _5.2.3_ hoge
+
+# rails6のアップデート
+gem 'rails', '~> 6.0'
+bundle update rails
+gem "webpacker"
+bundle install
+rails webpacker:install
+# エラーが発生する場合はyarn add hoge
+bin/rails assets:precompile
+config/application.jsのconfig.load_defaultsを6.0に変更
 --------------------------------
 bin配下はbundle execが不要になる
 --------------------------------
@@ -255,7 +265,7 @@ config/initializers/content_security_policy.rb
 --------------------------------
 # rails6.0でloaderを使う
 # rails-erb-loader => js内でerbを使える
-rails webpacker:install:erb
+bin/rails webpacker:install:erb
 config/webpack/environment.jsが更新される
 # rails6.0でpluginを使う
 # ProvidePlugin => requireをせずにライブラリを参照できる
