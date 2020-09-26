@@ -6,7 +6,7 @@ services:
       - "6379:6379"
     command: [redis-server]
     volumes:
-      - ./data/redis:/data
+      - redis-data:/data
 
   mysql:
     image: mysql/mysql-server:5.7
@@ -44,4 +44,6 @@ volumes:
   learning_rails_bundle:
     driver: local
   learning_rails_node_modules:
+    driver: local
+  redis-data:
     driver: local
