@@ -1,0 +1,18 @@
+version: "3.7"
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - learning_react_bundle:/app/vendor/bundle
+      - learning_react_node_modules:/app/node_modules
+
+volumes:
+  learning_react_bundle:
+    driver: local
+  learning_react_node_modules:
+    driver: local
