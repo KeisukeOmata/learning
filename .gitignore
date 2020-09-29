@@ -23,4 +23,18 @@
 /rails/learning_railsyarn-debug.log*
 /rails/learning_rails.yarn-integrity
 
-swift/learning.swift/learning.xcodeproj/project.xcworkspace/xcuserdata/omatakeisuke.xcuserdatad/UserInterfaceState.xcuserstate
+/swift/learning.swift/learning.xcodeproj/project.xcworkspace/xcuserdata/omatakeisuke.xcuserdatad/UserInterfaceState.xcuserstate
+
+/react/learning.react/node_modules
+/react/learning.react/.pnp
+/react/learning.react.pnp.js
+/react/learning.react/coverage
+/react/learning.react/build
+/react/learning.react/.DS_Store
+/react/learning.react/.env.local
+/react/learning.react/.env.development.local
+/react/learning.react/.env.test.local
+/react/learning.react/.env.production.local
+/react/learning.react/npm-debug.log*
+/react/learning.react/yarn-debug.log*
+/react/learning.react/yarn-error.log*
