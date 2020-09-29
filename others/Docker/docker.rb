@@ -16,7 +16,7 @@ gem 'mysql2', '>=0.4.4'
 # 5.database.ymlを更新
 # 6.appイメージとコンテナの作成
 docker-compose run --service-ports app
-# 7.各種ダウンロード
+# 7.各種インストール
 bundle install
 yarn install
 apt update; apt -y upgrade
@@ -30,6 +30,28 @@ bin/rails db:migrate
 # http://localhost:8080/
 bundle exec puma -b unix:///app/sockets/puma.sock
 # bin/rails s -b 0.0.0.0
+----------------------------
+# ローカルを汚さないreactの環境構築
+# 1.Dockerfileを作成
+# 2.イメージ作成
+docker build -t react .
+# 3.コンテナ作成
+docker run -it react
+# 4.reactアプリの作成
+npx create-react-app learning
+# 5.コンテナからローカルにアプリをコピー
+docker cp コンテナid:app/learning ローカルのパス/learning
+# 6.docker-compose.ymlを作成
+# 7.appイメージとコンテナの作成
+docker-compose run --service-ports app
+# 8.各種インストール
+bundle install
+yarn install
+apt update; apt -y upgrade
+# vimのインストール
+apt-get update;apt-get install vim
+# 9.起動
+npm start
 ----------------------------
 # コンテナに入る(アタッチ)
 docker attach
