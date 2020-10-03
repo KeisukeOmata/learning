@@ -31,7 +31,7 @@ bin/rails db:migrate
 bundle exec puma -b unix:///app/sockets/puma.sock
 # bin/rails s -b 0.0.0.0
 ----------------------------
-# ローカルを汚さないreactの環境構築
+# reactの環境構築
 # 1.Dockerfileを作成
 # 2.イメージ作成
 docker build -t react .
@@ -112,6 +112,11 @@ docker pull
 # コンテナを使う場合はログを標準出力に変更する(config/environments/production.rb)
 config.logger = ActiveSupport::Logger.new($stdout)
 $stdout.sync = true
+----------------------------
+# railsの環境変数
+EDITOR="vim" bin/rails credentials:edit
+# 使い方
+Rails.application.credentials.rollbar[:ROLLBAR_ACCESS_TOKEN]
 ----------------------------
 # Dockerのインストール
 # 古いDockerを削除
