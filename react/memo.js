@@ -14,7 +14,7 @@ export default class {
     this.red = r;
     this.green = g;
     this.blue = b;
-  }
+  };
 
   // メソッド
   // メソッドの中でプロパティを使うにはthisが必要
@@ -22,7 +22,7 @@ export default class {
     return '<p>RED: ' + this.red + '</p>'
       + '<p>GREEN:' + this.green + '</p>'
       + '<p>BLUE: ' + this.blue + '</p>';
-  }
+  };
 };
 ーーーーーーーーーーーーーー
 // newClass.js
@@ -35,7 +35,7 @@ export default class extends object {
     return '<p>new RED: ' + this.red + '</p>'
       + '<p>new GREEN:' + this.green + '</p>'
       + '<p>new BLUE: ' + this.blue + '</p>';
-  }
+  };
 };
 ーーーーーーーーーーーーーー
 // index.html
