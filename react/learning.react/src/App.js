@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './App.css';
 
 class App extends Component {
+  // mainをレンダー
   render() {
     let title = "hoge";
     let url = "https://github.com/KeisukeOmata/learning";
@@ -115,41 +116,6 @@ class App extends Component {
       return <p style={props.style}>hello, {props.name}, {num}</p>;
     }
 
-    // クラス
-    class Square extends React.Component {
-      // プロパティ
-      x = 0;
-      y = 0;
-      width = 0;
-      height = 0;
-      color = "white";
-      classStyle = {};
-
-      // コンストラクタ
-      // 引数はpropsに格納されている
-      constructor(props){
-        super(props);
-        this.x = props.x;
-        this.y = props.y;
-        this.width = props.w;
-        this.height = props.h;
-        this.color = props.c;
-        this.classStyle = {
-          backgroundColor: this.color,
-          position: "absolute",
-          left: this.x + "px",
-          top: this.y + "px",
-          width: this.width + "px",
-          height: this.height + "px"
-        };
-      };
-
-      // コンポーネントクラスにはrenderが必須
-      render() {
-        return <div style={this.classStyle}></div>;
-      };
-    };
-
     let main = (event) => {
     // 1秒毎に処理を実施
     // setInterval(() => {
@@ -212,9 +178,6 @@ class App extends Component {
               {/* コンポーネント */}
               <HogeComponent name="hoge" style={componentStyle1} number="100" />
               <HogeComponent name="fuga" style={componentStyle2} number="200" />
-              {/* クラス */}
-              <Square x="100" y="100" w="100" h="100" c="cyan" />
-              <Square x="150" y="150" w="100" h="100" c="magenta" />
             </div>
           :
             <div>
