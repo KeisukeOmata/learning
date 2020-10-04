@@ -5,5 +5,5 @@ export default class extends object {
     return '<p>new RED: ' + this.red + '</p>'
       + '<p>new GREEN:' + this.green + '</p>'
       + '<p>new BLUE: ' + this.blue + '</p>';
-  }
+  };
 };
