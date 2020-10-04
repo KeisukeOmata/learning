@@ -7,5 +7,23 @@
 <body>
   <h1>React</h1>
   <div id="root">wait...</div>
+
+  <h1>Class</h1>
+  <div id="class"></div>
+  <div id="class2"></div>
+
+  <script type="module">
+    import object from '../class.js';
+    import newObject from './newClass.js';
+
+    // オブジェクトを初期化
+    let object1 = new object(255, 200, 200);
+    // オブジェクトのプロパティを呼ぶ
+    document.getElementById("class").innerHTML = object1.print();
+
+    let object2 = new newObject(0, 150, 200);
+    // 継承元のメソッドを上書きする
+    document.getElementById("class2").innerHTML = object2.print();
+  </script>
 </body>
 </html>

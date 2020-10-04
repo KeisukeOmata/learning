@@ -13,7 +13,7 @@ let url = "https://github.com/KeisukeOmata/learning";
 let flg = true;
 
 // jsxを返す関数
-let print = function (msg, size, color) {
+function print(msg, size, color) {
   const style = {
     fontSize: size + "pt",
     fontWeight: '700',
@@ -79,6 +79,7 @@ const ddStyle = {
 //   // ポインターを表示する
 //   cursor: "pointer"
 // };
+// フォーム
 let message = "名前を入力してください"
 let formValue = "";
 const formStyle = {
@@ -89,10 +90,33 @@ const formValueStyle = {
   fontSize: "20pt",
   padding: "5px 10px"
 }
-
 let change = (event) => {
   formValue = event.target.value;
   message = "hello " + formValue + "!";
+}
+
+// コンポーネントを表示
+const componentStyle1 = {
+  fontSize: "30pt",
+  fontWeight:"bold",
+  padding: "15px",
+  color:"white",
+  backgroundColor:"darkblue"
+}
+const componentStyle2 = {
+  fontSize: "30pt",
+  fontWeight:"bold",
+  padding: "15px",
+  color:"white",
+  backgroundColor:"darkred"
+}
+// コンポーネントは大文字で始める
+function Component(props) {
+  let num = 0;
+  for (let i = 1; i <= props.number; i++) {
+    num += i
+  }
+  return <p style={props.style}>hello, {props.name}, {num}</p>;
 }
 
 let action = (event) => {
@@ -153,6 +177,8 @@ let action = (event) => {
           <button  onClick={action} style={formValueStyle}>
             Click
           </button>
+          <Component name="hoge" style={componentStyle1} number="100" />
+          <Component name="fuga" style={componentStyle2} number="200"/>
         </div>
       :
         <div>
