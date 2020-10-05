@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
+// Stateコンポーネント
 class State extends Component {
 
   // // ボタンをクリックするとカウントアップ

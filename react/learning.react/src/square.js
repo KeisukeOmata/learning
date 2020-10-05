@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-// クラス
+// Squareコンポーネント
 class Square extends Component {
   // プロパティ
   x = 0;
