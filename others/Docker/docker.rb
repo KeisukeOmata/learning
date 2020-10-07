@@ -44,14 +44,12 @@ docker cp コンテナid:app/learning ローカルのパス/learning
 # 6.docker-compose.ymlを作成
 # 7.appイメージとコンテナの作成
 docker-compose run --service-ports app
-# 8.各種インストール
-bundle install
-yarn install
-apt update; apt -y upgrade
-# vimのインストール
-apt-get update;apt-get install vim
+# 8.webpackの依存関係で怒られるので.envに以下を記載
+-----------------
+SKIP_PREFLIGHT_CHECK=true
+-----------------
 # 9.起動
-npm start
+yarn start
 ----------------------------
 # コンテナに入る(アタッチ)
 docker attach
