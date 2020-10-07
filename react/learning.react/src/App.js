@@ -111,9 +111,11 @@ class App extends Component {
     // コンポーネントは大文字で始める
     function HogeComponent(props) {
       let num = 0;
+      // コンポーネントに渡されたプロパティはpropsで扱う
       for (let i = 1; i <= props.number; i++) {
         num += i
       }
+      // コンポーネントに渡されたプロパティはpropsで扱う
       return <p style={props.style}>hello, {props.name}, {num}</p>;
     }
 
@@ -177,6 +179,7 @@ class App extends Component {
                 Click
               </button>
               {/* コンポーネント */}
+              {/* コンポーネントに渡すプロパティ */}
               <HogeComponent name="hoge" style={componentStyle1} number="100" />
               <HogeComponent name="fuga" style={componentStyle2} number="200" />
             </div>
