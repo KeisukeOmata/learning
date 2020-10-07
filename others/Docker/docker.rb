@@ -18,10 +18,10 @@ gem 'mysql2', '>=0.4.4'
 docker-compose run --service-ports app
 # 7.各種インストール
 bundle install
-yarn install
-apt update; apt -y upgrade
-# vimのインストール
-apt-get update;apt-get install vim
+# yarn install
+# apt update; apt -y upgrade
+# # vimのインストール
+# apt-get update;apt-get install vim
 # assets:precompileでエラーが発生する場合はyarn add hoge
 bin/rails assets:precompile
 # 8.起動
@@ -34,17 +34,18 @@ bundle exec puma -b unix:///app/sockets/puma.sock
 # reactの環境構築
 # 1.Dockerfileを作成
 # 2.イメージ作成
-docker build -t react .
+docker build -t コンテナ名 .
 # 3.コンテナ作成
-docker run -it react
+docker run -it コンテナ名
 # 4.reactアプリの作成
-npx create-react-app learning
+npx create-react-app アプリ名
 # 5.コンテナからローカルにアプリをコピー
-docker cp コンテナid:app/learning ローカルのパス/learning
+docker cp コンテナid:app/アプリ名 ローカルのパス/付けたい名前
 # 6.docker-compose.ymlを作成
 # 7.appイメージとコンテナの作成
 docker-compose run --service-ports app
 # 8.webpackの依存関係で怒られるので.envに以下を記載
+vim .env
 -----------------
 SKIP_PREFLIGHT_CHECK=true
 -----------------
