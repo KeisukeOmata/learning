@@ -35,15 +35,21 @@ services:
       - redis
     volumes:
       - .:/app
-      - learning_rails_bundle:/app/vendor/bundle
-      - learning_rails_node_modules:/app/node_modules
+      - bundle:/app/vendor/bundle
+      - node_modules:/app/node_modules
+    command: >
+      bash -c "yarn install
+      && yarn add redux react-redux
+      && apt-get update
+      && apt-get install -y vim
+      && bash"
 
 volumes:
   mysql-data:
     driver: local
-  learning_rails_bundle:
+  bundle:
     driver: local
-  learning_rails_node_modules:
+  node_modules:
     driver: local
   redis-data:
     driver: local
