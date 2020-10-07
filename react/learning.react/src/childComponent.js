@@ -11,7 +11,7 @@ class ChildComponent extends Component {
   // レンダー
   render() {
     return <div>
-      {/* Messageコンポーネントにタイトルを渡す */}
+      {/* Messageコンポーネントにタイトルプロパティを渡す */}
       <Message title="Children!">
         文章1。文章2。文章3。
       </Message>
@@ -37,7 +37,7 @@ class Message extends Component {
     let sentenceArray2 = [];
 
     // .lengthで配列の要素数を取得
-    for (let i = 0; i < sentenceArray.length; i++) {
+    for(let i = 0; i < sentenceArray.length; i++) {
       // .trimで文字列の両橋の空白を削除
       // 配列の要素が''でなければsentenceArray2に追加
       if(sentenceArray[i].trim() != '') {
@@ -52,6 +52,7 @@ class Message extends Component {
 
     // リターン
     return <div>
+      {/* コンポーネントに渡されたプロパティはthis.propsで扱う */}
       <h2>{this.props.title}</h2>
       <ol>{lists}</ol>
     </div>;

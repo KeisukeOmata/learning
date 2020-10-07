@@ -20,8 +20,8 @@ class ListComponent extends Component {
 
   // レンダー
   render() {
-    // Listコンポーネントにタイトルと配列を渡す
     return <div>
+      {/* // Listコンポーネントにtitleとlistsプロパティを渡す */}
       <List title="タイトル" lists={this.lists} />
     </div>;
   }
@@ -39,16 +39,19 @@ class List extends Component {
 
   // レンダー
   render() {
+    // コンポーネントに渡されたプロパティはthis.propsで扱う
     let lists = this.props.lists;
     return (
       <div>
         {/* タイトルを描画 */}
+        {/* コンポーネントに渡されたプロパティはthis.propsで扱う */}
         <p style={this.titleStyle}>{this.props.title}</p>
         <ul>
           {/* // Itemコンポーネントに配列を渡す */}
           {lists.map((item) =>
             // numをインクリメント
             // valueに展開した配列の値を渡す
+            // Itemコンポーネントにnum, value, keyプロパティを渡す
             <Item num={this.num++} value={item} key={this.num} />
           )}
         </ul>
@@ -66,7 +69,7 @@ class Item extends Component {
     margin: "0px",
     padding: "0px",
   };
-  num = {
+  numStyle = {
     fontWeight: "bold",
     color: "blue"
   };
@@ -75,8 +78,9 @@ class Item extends Component {
   render(){
     return (
       <li style={this.listStyle}>
-        <span style={this.num}>[{this.props.num}]</span>
-        {/* valueにはListコンポーネントの配列の値が入っている */}
+        {/* コンポーネントに渡されたプロパティはthis.propsで扱う */}
+        <span style={this.numStyle}>[{this.props.num}]</span>
+        {/* valueプロパティにはListコンポーネントの配列の値が入っている */}
         {this.props.value}
       </li>
     );

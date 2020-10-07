@@ -19,7 +19,7 @@ class FormComponent extends Component {
   // レンダー
   render() {
     return <div>
-      {/* MessageコンポーネントにmaxlengthとonCheckを渡す */}
+      {/* MessageコンポーネントにmaxlengthとonCheckプロパティを渡す */}
       <Message maxlength="10" onCheck={this.alertMethod} />
     </div>;
   };
@@ -61,8 +61,10 @@ class Message extends Component {
   // そうでなければフォームの入力値を変数に代入する
   doCheck(e) {
     // maxlengthはMessageメソッド呼び出し時に渡される
+    // コンポーネントに渡されたプロパティはthis.propsで扱う
     if (e.target.value.length > this.props.maxlength) {
       // this.props.onCheckで、Messageメソッド呼び出し時に渡されたonCheck(alertMethod)メソッドを呼ぶ
+    // コンポーネントに渡されたプロパティはthis.propsで扱う
       this.props.onCheck(e);
     } else {
       // フォームの入力値を代入
