@@ -7,6 +7,8 @@ import State from './state';
 import ListComponent from './listComponent';
 import ChildComponent from './childComponent';
 import FormComponent from './formComponent';
+import SentenceContext from './sentenceContext';
+
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root'));
@@ -16,6 +18,7 @@ ReactDOM.render(<State />, document.getElementById('state'));
 ReactDOM.render(<ListComponent />, document.getElementById('listComponent'));
 ReactDOM.render(<ChildComponent />, document.getElementById('childComponent'));
 ReactDOM.render(<FormComponent />, document.getElementById('formComponent'));
+ReactDOM.render(<SentenceContext />, document.getElementById('sentenceContext'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
