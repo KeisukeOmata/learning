@@ -5,6 +5,8 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 // redux
 import ReduxSample from './reduxSample';
+import MemoRedux from './memoRedux';
+import MemoStore from './memo/store';
 import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 // コンポーネントクラス
@@ -45,7 +47,15 @@ function countReducer(state = countState, action) {
 // レデューサーを渡す
 let countStore = createStore(countReducer);
 
-// 表示をレンダリング
+ReactDOM.render(
+  // プロバイダー
+  // ストアを他のコンポーネントに渡す
+  <Provider store={MemoStore}>
+    <MemoRedux />
+  </Provider>,
+  document.getElementById('memo')
+);
+
 ReactDOM.render(
   // プロバイダー
   // ストアを他のコンポーネントに渡す
@@ -57,8 +67,8 @@ ReactDOM.render(
 
 // コンポーネントクラス
 ReactDOM.render(<App />, document.getElementById('root'));
-ReactDOM.render(<Square x="100" y="100" w="100" h="100" c="cyan" />, document.getElementById('square1'));
-ReactDOM.render(<Square x="150" y="150" w="100" h="100" c="magenta" />, document.getElementById('square2'));
+ReactDOM.render(<Square x="600" y="100" w="100" h="100" c="cyan" />, document.getElementById('square1'));
+ReactDOM.render(<Square x="650" y="150" w="100" h="100" c="magenta" />, document.getElementById('square2'));
 ReactDOM.render(<State />, document.getElementById('state'));
 ReactDOM.render(<ListComponent />, document.getElementById('listComponent'));
 ReactDOM.render(<ChildComponent />, document.getElementById('childComponent'));
