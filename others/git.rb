@@ -23,7 +23,17 @@ git reset --soft HEAD^
 # 更新したファイルを確認
 git status
 # 差分確認
-git diff
+git diff 
 ----------------------------------
 # ローカルで削除したファイルをcommitに含める
-git rm 
+git rm
+----------------------------------
+# ブランチの行き来
+# まずは今のブランチにコミット
+git commit
+# ブランチを切ってプルする
+git branch
+git checkout
+git pull
+# 再度移動するときはコミット
+git commit 
