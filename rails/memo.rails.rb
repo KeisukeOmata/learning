@@ -228,10 +228,6 @@ config/application.jsのconfig.load_defaultsを6.0に変更
 --------------------------------
 bin配下はbundle execが不要になる
 --------------------------------
-# vimのスワップファイル削除
-find . -name '.*.sw*'
-find . -name '.*.sw*'|xargs rm
---------------------------------
 # シークレットの持ち方
 EDITOR="vi" bin/rails credentials:edit
 --------------------
