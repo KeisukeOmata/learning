@@ -6,7 +6,6 @@
 // yarn build
 ーーーーーーーーーーーーーーーーーーーーーーーー
 // 関数コンポーネント
-// hook
 function Welcome(props) {
   return <h1>Hello, {props.name}</h1>;
 }
