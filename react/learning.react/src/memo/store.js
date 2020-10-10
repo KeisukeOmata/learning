@@ -2,7 +2,7 @@ import { createStore } from 'redux';
 
 // ステートの作成
 const initState = {
-  data: [{message:'サンプルです', created:new Date()}],
+  data: [],
   message: 'メッセージを入力してください:',
   mode: 'default',
   fdata: []
@@ -30,9 +30,12 @@ export function memoReducer(state = initState, action) {
 // レデュースアクション
 // メモ追加
 function addReduce(state, action) {
+  let newDate = new Date();
+  // Dateオブジェクトを保存できるように文字列に変換する
+  let getDate = newDate.getHours() + ':' + newDate.getMinutes() + ':' + newDate.getSeconds();
   let data = {
     message: action.message,
-    created: new Date()
+    created: getDate
   };
   // slice()でstateを配列として作成し直す
   // state.dataを更新して返しても反映されない
