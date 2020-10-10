@@ -29,9 +29,6 @@ class Item extends Component {
   };
 
   render(){
-    let propsDate = this.props.value.created;
-    let date = propsDate.getHours() + ':' + propsDate.getMinutes() + ':' + propsDate.getSeconds();
-    
     return (
       <tr>
         <th style={this.thStyle}>
@@ -44,7 +41,7 @@ class Item extends Component {
         </td>
         {/* 日時 */}
         <td style={this.dateStyle}>
-          {date}
+          {this.props.value.created}
         </td>
     </tr>
     );

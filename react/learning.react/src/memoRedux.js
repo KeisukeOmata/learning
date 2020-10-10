@@ -4,6 +4,7 @@ import Memo from './memo/memo';
 import AddForm from './memo/addForm';
 import FindForm from './memo/findForm';
 import DelForm from './memo/delForm';
+import PersistForm from './memo/persistForm';
 
 // MemoReduxコンポーネント
 class MemoRedux extends Component {
@@ -28,6 +29,9 @@ class MemoRedux extends Component {
               </td>
               <td style={this.tdStyle}>
                 <DelForm />
+              </td>
+              <td style={this.tdStyle}>
+                <PersistForm />
               </td>
             </tr>
           </tbody>

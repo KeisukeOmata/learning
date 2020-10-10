@@ -6,9 +6,14 @@ import * as serviceWorker from './serviceWorker';
 // redux
 import ReduxSample from './reduxSample';
 import MemoRedux from './memoRedux';
-import MemoStore from './memo/store';
+// import MemoStore from './memo/store';
 import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
+// データの永続化
+import MemoStore, { memoReducer } from './memo/store';
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+import { PersistGate } from 'redux-persist/integration/react';
 // コンポーネントクラス
 import Square from './square';
 import State from './state';
@@ -16,6 +21,45 @@ import ListComponent from './listComponent';
 import ChildComponent from './childComponent';
 import FormComponent from './formComponent';
 import SentenceContext from './sentenceContext';
+
+// パーシストの設定
+const persistConfig = {
+  key: 'memo',
+  storage: storage,
+  // stateの永続化するデータを設定
+  blacklist: ['message', 'mode', 'fdate'],
+  whitelist: ['data']
+};
+
+// パーシストレデューサーの作成
+// パーシストの設定とレデューサーを渡す
+// レデューサーはstore.jsで作成したものをmemoReducerとしてimportしている
+const persistedReducer = persistReducer(persistConfig, memoReducer);
+
+// ストアの作成
+// パーシストレデューサーを渡す
+let store = createStore(persistedReducer);
+// パーシスター(パーシストストア)の作成
+// 永続化されたストア
+// ストアを渡す
+let persistorStore = persistStore(store);
+
+// 表示をレンダリング
+ReactDOM.render(
+  // プロバイダー
+  // ストアを他のコンポーネントに渡す
+  <Provider store={store}>
+    {/* パーシストゲート */}
+    {/* ローディングが完了してからコンポーネントを表示する */}
+    {/* 値のローディング中の表示と、パーシスターを渡す */}
+    <PersistGate loading={<p>loading...</p>} persistor={persistorStore}>
+      <MemoRedux />
+    </PersistGate>
+  </Provider>,
+  document.getElementById('memo')
+);
+
+export default persistorStore;
 
 // ステートの作成
 let countState = {
@@ -46,15 +90,6 @@ function countReducer(state = countState, action) {
 // ストアを作成
 // レデューサーを渡す
 let countStore = createStore(countReducer);
-
-ReactDOM.render(
-  // プロバイダー
-  // ストアを他のコンポーネントに渡す
-  <Provider store={MemoStore}>
-    <MemoRedux />
-  </Provider>,
-  document.getElementById('memo')
-);
 
 ReactDOM.render(
   // プロバイダー
