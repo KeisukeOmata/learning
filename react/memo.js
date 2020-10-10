@@ -26,6 +26,9 @@ package.jsonを作成
 }
 ーーーーーーーーーーーーーー`
 // docker-compose run --service-ports app
+// /lib/redux-store.jsを配置
+// /pages/_app.jsを配置
+// /store.jsでcreateStoreにthunkMiddlewareを渡す
 // npm run dev
 ーーーーーーーーーーーーーーーーーーーーーーーー
 reactの環境構築
@@ -104,6 +107,7 @@ export default class extends object {
 // index.html
 ーーーーーーーーーーーーーー
 import object from './class.js';
+import _app from './learning.next/pages/_app.js'
 import newObject from './newClass.js';
 
 // オブジェクトを初期化
