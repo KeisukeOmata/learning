@@ -13,6 +13,9 @@ services:
       bash -c "npm install --save next
       && npm install --save react
       && npm install --save react-dom
+      && npm install --save redux
+      && npm install --save react-redux
+      && npm install --save redux-thunk
       && apt-get update
       && apt-get install -y vim
       && yarn install
