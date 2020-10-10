@@ -1,13 +1,13 @@
 import Link from 'next/link';
-import style from '../static/style';
+import Layout from '../components/layout';
 
-export default () => <div>
-  {style}
-  <h1>Next.js</h1>
-  <p>hello world</p>
-  <div>
-    <Link href="/other">
-      <button>next &gt;&gt;</button>
+export default () => (
+  <Layout header="次へ" title="トップページ">
+    <p>hello world</p>
+    <Link href="./other">
+      <button>
+        next &gt;&gt;
+      </button>
     </Link>
-  </div>
-</div>
+  </Layout>
+);
