@@ -1,9 +1,48 @@
-// アプリ作成
-// npx create-react-app アプリ名
-// アプリ起動
+アプリ作成
+//npx create-react-app アプリ名
+アプリ起動
 // yarn start
-// ビルド
+ビルド
 // yarn build
+
+nextアプリ起動
+// npm run dev
+ビルド
+// npm run build
+エクスポート
+// npm run export
+ーーーーーーーーーーーーーーーーーーーーーーーー
+nextの環境構築
+next用のdokerfile, docker-compose.ymlをフォルダに用意
+package.jsonを作成
+`ーーーーーーーーーーーーーー
+{
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export"
+  }
+}
+ーーーーーーーーーーーーーー`
+// docker-compose run --service-ports app
+// npm run dev
+ーーーーーーーーーーーーーーーーーーーーーーーー
+reactの環境構築
+// 1.Dockerfileを作成
+// 2.イメージ作成
+// docker build -t イメージ名 .
+// 3.コンテナ作成
+// docker run -it コンテナ名
+// 4.reactアプリの作成
+// npx create-react-app アプリ名
+// 5.コンテナからローカルにアプリをコピー
+// docker cp コンテナid:app/アプリ名 ローカルのパス/付けたい名前
+// 6.docker-compose.ymlを作成
+// 7.appイメージとコンテナの作成
+// docker-compose run --service-ports app
+// 8.起動
+// yarn start
 ーーーーーーーーーーーーーーーーーーーーーーーー
 // 関数コンポーネント
 function Welcome(props) {

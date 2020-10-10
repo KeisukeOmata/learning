@@ -27,22 +27,6 @@ bin/rails db:migrate
 bundle exec puma -b unix:///app/sockets/puma.sock
 # bin/rails s -b 0.0.0.0
 ----------------------------
-# reactの環境構築
-# 1.Dockerfileを作成
-# 2.イメージ作成
-docker build -t コンテナ名 .
-# 3.コンテナ作成
-docker run -it コンテナ名
-# 4.reactアプリの作成
-npx create-react-app アプリ名
-# 5.コンテナからローカルにアプリをコピー
-docker cp コンテナid:app/アプリ名 ローカルのパス/付けたい名前
-# 6.docker-compose.ymlを作成
-# 7.appイメージとコンテナの作成
-docker-compose run --service-ports app
-# 8.起動
-yarn start
-----------------------------
 # コンテナに入る(アタッチ)
 docker attach
 # コンテナから抜ける(デタッチ)
