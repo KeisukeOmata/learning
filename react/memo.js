@@ -1,16 +1,16 @@
-アプリ作成
-//npx create-react-app アプリ名
-アプリ起動
-// yarn start
-ビルド
-// yarn build
-
 nextアプリ起動
 // npm run dev
 ビルド
 // npm run build
 エクスポート
 // npm run export
+
+アプリ作成
+//npx create-react-app アプリ名
+アプリ起動
+// yarn start
+ビルド
+// yarn build
 ーーーーーーーーーーーーーーーーーーーーーーーー
 nextの環境構築
 next用のdokerfile, docker-compose.ymlをフォルダに用意
