@@ -1,3 +1,35 @@
+# docker-compose
+# 1.利用するイメージをpullしておく
+docker pull docker.elastic.co/elasticsearch/elasticsearch:7.9.1
+# 2.mysqlコンテナを作成し、バックグラウンドで起動
+docker-compose up -d mysql
+# 3.execコマンドで既に起動中のmysqlコンテナに対して、コマンド(mysql -u root -p)を実行する
+docker-compose exec mysql mysql -u root -p
+-------------------
+CREATE database appdb CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin;
+CREATE database appdb_test CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin;
+GRANT ALL on appdb.* TO app@'%' IDENTIFIED BY 'password';
+GRANT ALL on appdb_test.* TO app@'%';
+-------------------
+# 4.Gemを追加
+gem 'mysql2', '>=0.4.4'
+# 5.database.ymlを更新
+# 6.appイメージとコンテナの作成
+docker-compose run --service-ports app
+# 7.各種インストール
+yarn install
+apt-get update
+apt-get install -y vim
+bundle install
+# assets:precompileでエラーが発生する場合はyarn add hoge
+bin/rails assets:precompile
+# 8.起動
+bin/rails db:migrate
+# nginx
+# http://localhost:8080/
+bundle exec puma -b unix:///app/sockets/puma.sock
+# bin/rails s -b 0.0.0.0
+--------------------------------
 rails s -b 0.0.0.0
 # jsを編集する度にビルドしてくれる
 bin/webpack-dev-server

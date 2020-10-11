@@ -9,20 +9,6 @@ services:
     volumes:
       - .:/app
       - modules:/app/node_modules
-    command: >
-      bash -c "npm install --save redux
-      && npm install --save react-redux
-      && npm install --save-dev redux-devtools
-      && npm install --save redux-persist
-      && npm install --save redux-thunk
-      && npm install --save next
-      && npm install --save react
-      && npm install --save react-dom
-      && npm install --save firebase
-      && apt-get update
-      && apt-get install -y vim
-      && yarn install
-      && bash"
 
 volumes:
   modules:

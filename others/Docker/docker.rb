@@ -17,6 +17,9 @@ gem 'mysql2', '>=0.4.4'
 # 6.appイメージとコンテナの作成
 docker-compose run --service-ports app
 # 7.各種インストール
+yarn install
+apt-get update
+apt-get install -y vim
 bundle install
 # assets:precompileでエラーが発生する場合はyarn add hoge
 bin/rails assets:precompile
@@ -26,6 +29,69 @@ bin/rails db:migrate
 # http://localhost:8080/
 bundle exec puma -b unix:///app/sockets/puma.sock
 # bin/rails s -b 0.0.0.0
+----------------------------
+# reactの環境構築
+# 1.Dockerfileを作成
+# 2.イメージ作成
+docker build -t イメージ名 .
+# 3.コンテナ作成
+docker run -it コンテナ名
+# 4.reactアプリの作成
+npx create-react-app アプリ名
+# 5.コンテナからローカルにアプリをコピー
+docker cp コンテナid:app/アプリ名 ローカルのパス/付けたい名前
+# 6.docker-compose.ymlを作成
+# 7.appイメージとコンテナの作成
+docker-compose run --service-ports app
+# 8.各種インストール
+npm install --save redux
+npm install --save react-redux
+npm install --save-dev redux-devtools
+npm install --save redux-persist
+npm install --save redux-thunk
+npm install --save next
+npm install --save react
+npm install --save react-dom
+npm install --save firebase
+apt-get update
+apt-get install -y vim
+# yarn install
+# 9.起動
+yarn start
+----------------------------
+# nextの環境構築
+# 1.dokerfile, docker-compose.ymlをフォルダに用意
+# 2.package.jsonを作成
+ーーーーーーーーーーーーーー
+{
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export"
+  }
+}
+ーーーーーーーーーーーーーー
+# 3.コンテナ作成
+docker-compose run --service-ports app
+# 4./lib/redux-store.jsを配置
+# 5./pages/_app.jsを配置
+# 6./store.jsでcreateStoreにthunkMiddlewareを渡す
+# 7.各種ダウンロード
+npm install --save redux
+npm install --save react-redux
+npm install --save-dev redux-devtools
+npm install --save redux-persist
+npm install --save redux-thunk
+npm install --save next
+npm install --save react
+npm install --save react-dom
+npm install --save firebase
+apt-get update
+apt-get install -y vim
+yarn install
+# 8.起動
+npm run dev
 ----------------------------
 # コンテナに入る(アタッチ)
 docker attach
