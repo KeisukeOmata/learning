@@ -24,10 +24,10 @@ const Index = () => (
       </button>
     </Link>
     <Link
-      href="./calc"
+      href="./fire"
     >
       <button>
-        calc &gt;&gt;
+        firebase &gt;&gt;
       </button>
     </Link>
   </Layout>
