@@ -13,7 +13,7 @@ nextアプリ起動
 // yarn build
 ーーーーーーーーーーーーーーーーーーーーーーーー
 nextの環境構築
-next用のdokerfile, docker-compose.ymlをフォルダに用意
+dokerfile, docker-compose.ymlをフォルダに用意
 package.jsonを作成
 `ーーーーーーーーーーーーーー
 {
@@ -29,6 +29,19 @@ package.jsonを作成
 // /lib/redux-store.jsを配置
 // /pages/_app.jsを配置
 // /store.jsでcreateStoreにthunkMiddlewareを渡す
+各種インストール
+// npm install --save redux
+// npm install --save react-redux
+// npm install --save-dev redux-devtools
+// npm install --save redux-persist
+// npm install --save redux-thunk
+// npm install --save next
+// npm install --save react
+// npm install --save react-dom
+// npm install --save firebase
+// apt-get update
+// apt-get install -y vim
+起動
 // npm run dev
 ーーーーーーーーーーーーーーーーーーーーーーーー
 reactの環境構築
@@ -44,7 +57,20 @@ reactの環境構築
 // 6.docker-compose.ymlを作成
 // 7.appイメージとコンテナの作成
 // docker-compose run --service-ports app
-// 8.起動
+// 8.各種インストール
+// npm install --save redux
+// npm install --save react-redux
+// npm install --save-dev redux-devtools
+// npm install --save redux-persist
+// npm install --save redux-thunk
+// npm install --save next
+// npm install --save react
+// npm install --save react-dom
+// npm install --save firebase
+// apt-get update
+// apt-get install -y vim
+// yarn install
+// 9.起動
 // yarn start
 ーーーーーーーーーーーーーーーーーーーーーーーー
 // 関数コンポーネント
@@ -93,6 +119,7 @@ export default class {
 ーーーーーーーーーーーーーー
 // newClass.js
 ーーーーーーーーーーーーーー
+import { lookupService } from 'dns'
 // 継承
 import object from './class.js';
 export default class extends object {
@@ -118,4 +145,26 @@ document.getElementById("class").innerHTML = object1.print();
 let object2 = new newObject(0, 150, 200);
 // 継承元のメソッドを上書きする
 document.getElementById("class2").innerHTML = object2.print();
+ーーーーーーーーーーーーーーーーーーーーーーーー
+// react 環境変数の設定
+// 環境変数は.envに記載
+// 環境変数を呼び出したいファイル
+ーーーーーーーーーーーー
+import dotenv from "dotenv";
+
+dotenv.config(process.env.REACT_APP_API)
+ーーーーーーーーーーーー
+ーーーーーーーーーーーーーーーーーーーーーーーー
+// next.js 環境変数の設定
+// next.config.js
+ーーーーーーーーーーーー
+module.exports = {
+  env: {
+    REACT_APP_apiKey: 'hogehoge',
+  },
+}
+// 環境変数を呼び出したいファイル
+ーーーーーーーーーーーー
+process.env.REACT_APP_API
+ーーーーーーーーーーーー
 ーーーーーーーーーーーーーーーーーーーーーーーー
