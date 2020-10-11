@@ -26,14 +26,14 @@ class Counter extends Component {
   };
 
   reset() {
-    return this.props.dispatch({ type:'RESET' });
+    return this.props.dispatch({ type:'ZERO' });
   };
 
   render() {
     return (
       <div>
         <p>
-          {this.props.message}: {this.props.count}
+          {this.props.text}: {this.props.count}
         </p>
         <button
           style={this.counterStyle}
