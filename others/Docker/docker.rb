@@ -77,7 +77,7 @@ docker-compose run --service-ports app
 # 4./lib/redux-store.jsを配置
 # 5./pages/_app.jsを配置
 # 6./store.jsでcreateStoreにthunkMiddlewareを渡す
-# 7.各種ダウンロード
+# 7.各種インストール
 npm install --save redux
 npm install --save react-redux
 npm install --save-dev redux-devtools
