@@ -119,7 +119,6 @@ export default class {
 ーーーーーーーーーーーーーー
 // newClass.js
 ーーーーーーーーーーーーーー
-import { lookupService } from 'dns'
 // 継承
 import object from './class.js';
 export default class extends object {
