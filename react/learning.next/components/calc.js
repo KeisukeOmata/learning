@@ -29,7 +29,7 @@ class Calc extends Component {
     e.preventDefault();
   };
 
-  // エンター(keyCode == 13)が押下されたときdoActionメソッドを呼ぶ
+  // エンターが押下されたときdoActionメソッドを呼ぶ
   onKeyPress(e) {
     if (e.key == 'Enter') {
       this.doAction(e);
