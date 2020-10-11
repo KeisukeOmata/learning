@@ -3,7 +3,7 @@ import Counter from '../components/counter';
 import Layout from '../components/layout';
 import Image from '../static/image';
 
-export default () => (
+const Index = () => (
   <Layout
     header="次へ"
     title="トップページ"
@@ -11,7 +11,7 @@ export default () => (
     <p>
       hello world
     </p>
-    <Counter />
+    {/* <Counter /> */}
     <Image
       fileName="image.jpg"
       size="250"
@@ -23,5 +23,14 @@ export default () => (
         next &gt;&gt;
       </button>
     </Link>
+    <Link
+      href="./calc"
+    >
+      <button>
+        calc &gt;&gt;
+      </button>
+    </Link>
   </Layout>
 );
+
+export default Index;
