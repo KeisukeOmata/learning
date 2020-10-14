@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+// hooks
+import Hooks from './hooks';
 // redux
 import ReduxSample from './reduxSample';
 import MemoRedux from './memoRedux';
@@ -21,6 +23,9 @@ import ListComponent from './listComponent';
 import ChildComponent from './childComponent';
 import FormComponent from './formComponent';
 import SentenceContext from './sentenceContext';
+
+// hooks
+ReactDOM.render(<Hooks />, document.getElementById('hooks'));
 
 // パーシストの設定
 const persistConfig = {
