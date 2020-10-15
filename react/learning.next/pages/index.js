@@ -16,6 +16,7 @@ const Index = () => (
       fileName="image.jpg"
       size="250"
     />
+    <br></br>
     <Link
       href="./other"
     >
@@ -23,11 +24,36 @@ const Index = () => (
         next &gt;&gt;
       </button>
     </Link>
+    <br></br>
     <Link
       href="./fire"
     >
       <button>
         firebase &gt;&gt;
+      </button>
+    </Link>
+    <br></br>
+    <Link
+      href="./fireFind"
+    >
+      <button>
+        Find &gt;&gt;
+      </button>
+    </Link>
+    <br></br>
+    <Link
+      href="./fireAdd"
+    >
+      <button>
+        add &gt;&gt;
+      </button>
+    </Link>
+    <br></br>
+    <Link
+      href="./fireDel"
+    >
+      <button>
+        delete &gt;&gt;
       </button>
     </Link>
   </Layout>

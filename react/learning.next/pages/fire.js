@@ -5,12 +5,8 @@ import Sampledata from '../components/sampleData';
 const SampleData = () => (
   <Layout header="Fire" title="Sample data.">
     <Sampledata />
-    <Link
-      href="./"
-    >
-      <button>
-        home &gt;&gt;
-      </button>
+    <Link href="/">
+      <button>&lt;&lt; back</button>
     </Link>
   </Layout>
 );
