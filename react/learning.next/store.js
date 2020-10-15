@@ -15,23 +15,30 @@ var config = {
   measurementId: process.env.REACT_APP_measurementId
 };
 
+// Firebase初期化
 var fireapp;
 try {
-  firebase.initializeApp(config);
+  fireapp = firebase.initializeApp(config);
 } catch (error) {
   console.log(error.message);
 }
 export default fireapp;
 
-// ステート初期値
+// ステート初期化
 const initial = {
+  login: false,
+  username: '(click here!)',
+  email: '',
+  data: [],
+  items: []
 }
 
 // レデューサー
 function fireReducer(state = intitial, action) {
   switch (action.type) {
-    case 'TESTACTION':
-      return state;
+    case 'UPDATE_USER':
+      // アクションのvalueをそのまま返す
+      return action.value;
     default:
       return state;
   }
