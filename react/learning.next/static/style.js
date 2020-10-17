@@ -57,15 +57,50 @@ export default <style>{`
     text-align:left;
     padding:0px 20px;
     margin:0px;
-    border-bottom:1px solid gray;
   }
 
   td {
     font-size:14pt;
     font-weight:plain;
-    text-align:right;
+    text-align:left;
     padding:0px 20px;
     margin:0px;
+  }
+
+  .label {
+    font-size:14pt;
+    margin:20px 5px;
+  }
+
+  .login {
+    text-align:right;
+  }
+
+  .account {
+    cursor:pointer;
+    font-size:12pt;
+    padding:5px 10px;
+    color:gray;
+    border:2px solid lightgray;
+  }
+
+  fieldset {
+    margin:0px 0px 30px 0px;
+  }
+
+  input {
+    border: 0px solid white;
     border-bottom:1px solid gray;
+    font-size:14pt;
+  }
+
+  button {
+    font-size:14pt;
+    padding: 0px 20px;
+  }
+  
+  li {
+    font-size:14pt;
+    cursor:pointer;
   }
 `}</style>;
