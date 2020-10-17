@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 // hooks
+import UseReducer from './useReducer';
 import UseMemo from './useMemo';
 import UseRef from './useRef';
 import UseEffect from './useEffect';
@@ -28,6 +29,7 @@ import FormComponent from './formComponent';
 import SentenceContext from './sentenceContext';
 
 // hooks
+ReactDOM.render(<UseReducer />, document.getElementById('useReducer'));
 ReactDOM.render(<UseMemo />, document.getElementById('useMemo'));
 ReactDOM.render(<UseRef />, document.getElementById('useRef'));
 ReactDOM.render(<UseEffect />, document.getElementById('useEffect'));
