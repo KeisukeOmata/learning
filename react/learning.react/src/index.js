@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 // hooks
-import Hooks from './hooks';
+import UseState from './useState';
 // redux
 import ReduxSample from './reduxSample';
 import MemoRedux from './memoRedux';
@@ -25,7 +25,7 @@ import FormComponent from './formComponent';
 import SentenceContext from './sentenceContext';
 
 // hooks
-ReactDOM.render(<Hooks />, document.getElementById('hooks'));
+ReactDOM.render(<UseState />, document.getElementById('useState'));
 
 // パーシストの設定
 const persistConfig = {
