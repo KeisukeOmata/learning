@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 // hooks
+import UseRef from './useRef';
 import UseEffect from './useEffect';
 import UseState from './useState';
 // redux
@@ -26,6 +27,7 @@ import FormComponent from './formComponent';
 import SentenceContext from './sentenceContext';
 
 // hooks
+ReactDOM.render(<UseRef />, document.getElementById('useRef'));
 ReactDOM.render(<UseEffect />, document.getElementById('useEffect'));
 ReactDOM.render(<UseState />, document.getElementById('useState'));
 
