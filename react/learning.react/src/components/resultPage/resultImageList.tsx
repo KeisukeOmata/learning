@@ -1,7 +1,12 @@
-import React, { FC } from "react";
-import firebase from'../../firebase';
+import React, { FC, useState } from "react";
+import firebase from '../../firebase';
+import { TileDate } from "../../types/types";
 
 const ImageItemList: FC = () => {
+  // TileDate型のstate: dataとそれを設定するsetData関数
+  // stateの初期値は[]
+  const [data, setData] = useState<TileDate[]>([]);
+
   // asyncで非同期処理
   const getData = async (searchWord: string | undefined) => {
     const db = firebase.firestore();
@@ -16,6 +21,8 @@ const ImageItemList: FC = () => {
     snapShot.docs.map(doc => {
       temporaryData.push(doc.data());
     })
+    // temporaryDataをobjectの配列型からTileDateの配列型に変換してstateに設定
+    setData(temporaryData as TileDate[]);
   }
 
   return(
