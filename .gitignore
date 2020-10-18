@@ -38,3 +38,13 @@
 /react/learning.react/npm-debug.log*
 /react/learning.react/yarn-debug.log*
 /react/learning.react/yarn-error.log*
+/react/learning.react/.env
+
+/react/learning.next/.next
+/react/learning.next/.env
+/react/learning.next/.env.build
+/react/learning.next/node_modules
+/react/learning.next/npm-debug.log*
+/react/learning.next/yarn-debug.log*
+/react/learning.next/yarn-error.log*
+/react/learning.next/next.config.js

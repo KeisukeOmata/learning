@@ -1,9 +1,87 @@
-// アプリ作成
-// npx create-react-app アプリ名
-// アプリ起動
+nextアプリ起動
+// npm run dev
+ビルド
+// npm run build
+エクスポート
+// npm run export
+
+アプリ作成
+//npx create-react-app アプリ名
+アプリ起動
 // yarn start
-// ビルド
+ビルド
 // yarn build
+ーーーーーーーーーーーーーーーーーーーーーーーー
+nextの環境構築
+dokerfile, docker-compose.ymlをフォルダに用意
+package.jsonを作成
+`ーーーーーーーーーーーーーー
+{
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export"
+  }
+}
+ーーーーーーーーーーーーーー`
+// docker-compose run --service-ports app
+// /lib/redux-store.jsを配置
+// /pages/_app.jsを配置
+// /store.jsでcreateStoreにthunkMiddlewareを渡す
+各種インストール
+// npm install redux
+// npm install react-redux
+// npm install redux-devtools
+// npm install redux-persist
+// npm install redux-thunk
+// npm install next
+// npm install react
+// npm install react-dom
+// npm install firebase
+// npm install typescript
+// npm install @material-ui/core
+// npm install @material-ui/icons
+// npm install @types/react-router-dom
+// npm install react-router-dom
+// apt-get update
+// apt-get install -y vim
+起動
+// npm run dev
+ーーーーーーーーーーーーーーーーーーーーーーーー
+reactの環境構築
+// 1.Dockerfileを作成
+// 2.イメージ作成
+// docker build -t イメージ名 .
+// 3.コンテナ作成
+// docker run -it コンテナ名
+// 4.reactアプリの作成
+// npx create-react-app アプリ名
+// 5.コンテナからローカルにアプリをコピー
+// docker cp コンテナid:app/アプリ名 ローカルのパス/付けたい名前
+// 6.docker-compose.ymlを作成
+// 7.appイメージとコンテナの作成
+// docker-compose run --service-ports app
+// 8.各種インストール
+// npm install redux
+// npm install react-redux
+// npm install redux-devtools
+// npm install redux-persist
+// npm install redux-thunk
+// npm install next
+// npm install react
+// npm install react-dom
+// npm install firebase
+// npm install typescript
+// npm install @material-ui/core
+// npm install @material-ui/icons
+// npm install @types/react-router-dom
+// npm install react-router-dom
+// apt-get update
+// apt-get install -y vim
+// yarn install
+// 9.起動
+// yarn start
 ーーーーーーーーーーーーーーーーーーーーーーーー
 // 関数コンポーネント
 function Welcome(props) {
@@ -65,6 +143,7 @@ export default class extends object {
 // index.html
 ーーーーーーーーーーーーーー
 import object from './class.js';
+import _app from './learning.next/pages/_app.js'
 import newObject from './newClass.js';
 
 // オブジェクトを初期化
@@ -75,4 +154,26 @@ document.getElementById("class").innerHTML = object1.print();
 let object2 = new newObject(0, 150, 200);
 // 継承元のメソッドを上書きする
 document.getElementById("class2").innerHTML = object2.print();
+ーーーーーーーーーーーーーーーーーーーーーーーー
+// react 環境変数の設定
+// 環境変数は.envに記載
+// 環境変数を呼び出したいファイル
+ーーーーーーーーーーーー
+import dotenv from "dotenv";
+
+dotenv.config(process.env.REACT_APP_API)
+ーーーーーーーーーーーー
+ーーーーーーーーーーーーーーーーーーーーーーーー
+// next.js 環境変数の設定
+// next.config.js
+ーーーーーーーーーーーー
+module.exports = {
+  env: {
+    REACT_APP_apiKey: 'hogehoge',
+  },
+}
+// 環境変数を呼び出したいファイル
+ーーーーーーーーーーーー
+process.env.REACT_APP_API
+ーーーーーーーーーーーー
 ーーーーーーーーーーーーーーーーーーーーーーーー
