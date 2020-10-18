@@ -122,8 +122,8 @@ ReactDOM.render(
 
 // コンポーネントクラス
 ReactDOM.render(<App />, document.getElementById('root'));
-ReactDOM.render(<Square x="600" y="100" w="100" h="100" c="cyan" />, document.getElementById('square1'));
-ReactDOM.render(<Square x="650" y="150" w="100" h="100" c="magenta" />, document.getElementById('square2'));
+ReactDOM.render(<Square x="600" y="5500" w="100" h="100" c="cyan" />, document.getElementById('square1'));
+ReactDOM.render(<Square x="650" y="5600" w="100" h="100" c="magenta" />, document.getElementById('square2'));
 ReactDOM.render(<State />, document.getElementById('state'));
 ReactDOM.render(<ListComponent />, document.getElementById('listComponent'));
 ReactDOM.render(<ChildComponent />, document.getElementById('childComponent'));
