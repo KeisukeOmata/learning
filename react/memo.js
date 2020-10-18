@@ -30,15 +30,16 @@ package.jsonを作成
 // /pages/_app.jsを配置
 // /store.jsでcreateStoreにthunkMiddlewareを渡す
 各種インストール
-// npm install --save redux
-// npm install --save react-redux
-// npm install --save-dev redux-devtools
-// npm install --save redux-persist
-// npm install --save redux-thunk
-// npm install --save next
-// npm install --save react
-// npm install --save react-dom
-// npm install --save firebase
+// npm install redux
+// npm install react-redux
+// npm install redux-devtools
+// npm install redux-persist
+// npm install redux-thunk
+// npm install next
+// npm install react
+// npm install react-dom
+// npm install firebase
+// npm install typescript
 // apt-get update
 // apt-get install -y vim
 起動
@@ -58,15 +59,16 @@ reactの環境構築
 // 7.appイメージとコンテナの作成
 // docker-compose run --service-ports app
 // 8.各種インストール
-// npm install --save redux
-// npm install --save react-redux
-// npm install --save-dev redux-devtools
-// npm install --save redux-persist
-// npm install --save redux-thunk
-// npm install --save next
-// npm install --save react
-// npm install --save react-dom
-// npm install --save firebase
+// npm install redux
+// npm install react-redux
+// npm install redux-devtools
+// npm install redux-persist
+// npm install redux-thunk
+// npm install next
+// npm install react
+// npm install react-dom
+// npm install firebase
+// npm install typescript
 // apt-get update
 // apt-get install -y vim
 // yarn install
