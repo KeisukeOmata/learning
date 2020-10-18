@@ -3,8 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+// typescript
+import TopPage from './pages/topPage';
 // hooks
-import UseContext　from './useContext';
+import UseContext from './useContext';
 import UseReducer from './useReducer';
 import UseMemo from './useMemo';
 import UseRef from './useRef';
@@ -28,6 +30,9 @@ import ListComponent from './listComponent';
 import ChildComponent from './childComponent';
 import FormComponent from './formComponent';
 import SentenceContext from './sentenceContext';
+
+// typescript
+ReactDOM.render(<TopPage />, document.getElementById('typescript'));
 
 // hooks
 ReactDOM.render(<UseContext />, document.getElementById('useContext'));
