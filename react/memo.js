@@ -42,6 +42,8 @@ package.jsonを作成
 // npm install typescript
 // npm install @material-ui/core
 // npm install @material-ui/icons
+// npm install @types/react-router-dom
+// npm install react-router-dom
 // apt-get update
 // apt-get install -y vim
 起動
@@ -73,6 +75,8 @@ reactの環境構築
 // npm install typescript
 // npm install @material-ui/core
 // npm install @material-ui/icons
+// npm install @types/react-router-dom
+// npm install react-router-dom
 // apt-get update
 // apt-get install -y vim
 // yarn install

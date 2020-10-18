@@ -1,4 +1,5 @@
 import React, { FC, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 import IconButton from '@material-ui/core/IconButton';
 import Paper from '@material-ui/core/Paper';
@@ -25,7 +26,15 @@ const useStyle = makeStyles(() =>
 
 const TopMain: FC = () => {
   const classes = useStyle();
+  // react-router-dom
+  const history = useHistory();
   const [keyword, setKeyword] = useState("")
+
+  // 画面遷移
+  const handleSubmit = () => {
+    history.push("/search/" + keyword);
+  }
+  
 
   // 入力値をstateに設定
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -34,7 +43,7 @@ const TopMain: FC = () => {
 
   return (
     <div className={classes.background}>
-      <Paper className={classes.paper}>
+      <Paper className={classes.paper} component="form" onSubmit={handleSubmit}>
         <IconButton type="submit">
           <SearchIcon />
         </IconButton>
