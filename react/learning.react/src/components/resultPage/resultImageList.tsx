@@ -1,4 +1,6 @@
-import React, { FC, useState } from "react";
+import React, { FC, useState, useEffect } from "react";
+// URLの値を取得する
+import { useParams } from 'react-router-dom';
 import firebase from '../../firebase';
 import { TileDate } from "../../types/types";
 
@@ -6,6 +8,8 @@ const ImageItemList: FC = () => {
   // TileDate型のstate: dataとそれを設定するsetData関数
   // stateの初期値は[]
   const [data, setData] = useState<TileDate[]>([]);
+  // URLの値を取得する
+  const { keyword } = useParams();
 
   // asyncで非同期処理
   const getData = async (searchWord: string | undefined) => {
@@ -25,10 +29,16 @@ const ImageItemList: FC = () => {
     setData(temporaryData as TileDate[]);
   }
 
+  // レンダリングが終わった後に呼ばれるhook
+  useEffect(() => { 
+    getData(keyword);
+  // 空の配列を渡すとレンダリング後、1度だけ呼ばれる
+  }, []);
+
   return(
-    <>
+    <div>
       
-    </>
+    </div>
   )
 }
 
