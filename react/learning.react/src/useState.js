@@ -8,10 +8,12 @@ export default function UseState() {
   const [count, setCount] = useState({ hoge: 0, fuga: 0 });
 
   const hoge = () => {
+    // 可変長引数
     setCount({ ...count, hoge: count.hoge + 1 });
   };
 
   const fuga = () => {
+    // 可変長引数
     setCount({ ...count, fuga: count.fuga + 1 });
   };
 
