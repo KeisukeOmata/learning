@@ -37,9 +37,15 @@ const ImageItemList: FC = () => {
 
   return(
     <div>
-      
+      {data.map((tile) => (
+        <div>
+          <img src={tile.image} alt={tile.title}/>
+        </div>
+      ))}
     </div>
   )
 }
+
+export default ImageItemList;
 
 
