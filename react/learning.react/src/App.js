@@ -1,25 +1,25 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './App.css';
-import SampleData from './firebase/sampleData';
+// import SampleData from './firebase/sampleData';
 import firebase from "firebase";
 import dotenv from "dotenv";
 
-// firebaseの設定
-var firebaseConfig = {
-    // 環境変数読み込み
-    apiKey: dotenv.config(process.env.REACT_APP_apiKey),
-    authDomain: dotenv.config(process.env.REACT_APP_authDomain),
-    databaseURL: "https://react-39d75.firebaseio.com",
-    projectId: dotenv.config(process.env.REACT_APP_projectId),
-    storageBucket: dotenv.config(process.env.REACT_APP_storageBucket),
-    messagingSenderId: dotenv.config(process.env.REACT_APP_messagingSenderId),
-    appId: dotenv.config(process.env.REACT_APP_appId),
-    measurementId: dotenv.config(process.env.REACT_APP_measurementId)
-  };
-  // firebaseの初期化
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
+// // firebaseの設定
+// var firebaseConfig = {
+//     // 環境変数読み込み
+//     apiKey: dotenv.config(process.env.REACT_APP_apiKey),
+//     authDomain: dotenv.config(process.env.REACT_APP_authDomain),
+//     databaseURL: "https://react-39d75.firebaseio.com",
+//     projectId: dotenv.config(process.env.REACT_APP_projectId),
+//     storageBucket: dotenv.config(process.env.REACT_APP_storageBucket),
+//     messagingSenderId: dotenv.config(process.env.REACT_APP_messagingSenderId),
+//     appId: dotenv.config(process.env.REACT_APP_appId),
+//     measurementId: dotenv.config(process.env.REACT_APP_measurementId)
+//   };
+//   // firebaseの初期化
+//   firebase.initializeApp(firebaseConfig);
+//   firebase.analytics();
 
 // Appコンポーネント
 class App extends Component {
@@ -202,7 +202,7 @@ class App extends Component {
               <HogeComponent name="hoge" style={componentStyle1} number="100" />
               <HogeComponent name="fuga" style={componentStyle2} number="200" />
               <h2>firebase</h2>
-              <SampleData />
+              {/* <SampleData /> */}
             </div>
           :
             <div>
