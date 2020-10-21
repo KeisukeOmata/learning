@@ -9,7 +9,11 @@ const ImageItemList: FC = () => {
   // stateの初期値は[]
   const [data, setData] = useState<TileDate[]>([]);
   // URLの値を取得する
-  const { keyword } = useParams();
+  // const { keyword } : any = useParams();
+  const { keyword } = useParams() as { 
+    keyword: string;
+  }
+
 
   // asyncで非同期処理
   const getData = async (searchWord: string | undefined) => {
