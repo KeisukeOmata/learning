@@ -3,17 +3,18 @@ import React, { FC, useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
 import firebase from '../../firebase';
 import { TileDate } from "../../types/types";
+import { ParamTypes } from "../../types/paramTypes";
 
 const ImageItemList: FC = () => {
   // TileDate型のstate: dataとそれを設定するsetData関数
   // stateの初期値は[]
   const [data, setData] = useState<TileDate[]>([]);
   // URLの値を取得する
+  const { keyword } = useParams<ParamTypes>();
   // const { keyword } : any = useParams();
-  const { keyword } = useParams() as { 
-    keyword: string;
-  }
-
+  // const { keyword } = useParams() as { 
+  //   keyword: string;
+  // }
 
   // asyncで非同期処理
   const getData = async (searchWord: string | undefined) => {
