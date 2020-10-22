@@ -4,6 +4,23 @@ import { useParams } from 'react-router-dom';
 import firebase from '../../firebase';
 import { TileDate } from "../../types/types";
 import { ParamTypes } from "../../types/paramTypes";
+import { createStyles, makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles(() =>
+  createStyles({
+    root: {
+      display: "flex",
+      flexWrap: "wrap",
+      width: "80%",
+      textAlign: "center",
+      marginTop: "2%",
+    },
+    tileImage: {
+      height: "218px",
+      width: "218px",
+    },
+  }),
+);
 
 const ImageItemList: FC = () => {
   // TileDate型のstate: dataとそれを設定するsetData関数
@@ -15,6 +32,8 @@ const ImageItemList: FC = () => {
   // const { keyword } = useParams() as { 
   //   keyword: string;
   // }
+  const classes = useStyles();
+
 
   // asyncで非同期処理
   const getData = async (searchWord: string | undefined) => {
@@ -41,10 +60,11 @@ const ImageItemList: FC = () => {
   }, []);
 
   return(
-    <div>
+    <div className={classes.root}>
       {data.map((tile) => (
         <div>
-          <img src={tile.image} alt={tile.title}/>
+          <img className={classes.tileImage} src={tile.image} alt={tile.title} />
+          <h3>{tile.title}</h3>
         </div>
       ))}
     </div>
