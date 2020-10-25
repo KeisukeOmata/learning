@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useState } from "react";
 import { useParams } from 'react-router-dom';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
-// import Button from '@material-ui/core/Button';
+import Button from '@material-ui/core/Button';
 import firebase from '../firebase';
 import TopHeader from "../components/topPage/topHeader";
 import { TileDate } from "../types/types";
@@ -12,6 +12,10 @@ const useStyles = makeStyles(() =>
     tileImage: {
       height: "436px",
       width: "436px",
+    },
+    main: {
+      textAlign: "center",
+      marginTop: "5%",
     },
   })
 );
@@ -36,7 +40,7 @@ const DownloadPage: FC = () => {
       temporaryData.push(doc.data());
     })
     // temporaryDataをobjectの配列型からTileDateの配列型に変換してstateに設定
-    setData(temporaryData as TileDate[]);
+    setData(temporaryData as TileDate[]);
   }
 
   // レンダリングが終わった後に呼ばれるhook
@@ -57,12 +61,29 @@ const DownloadPage: FC = () => {
     )
   }
 
-  return (
+  const downloadButton = () => {
+    return (
+      <div>
+        {data.map((tile) => (
+          // variant="contained"で立体的なボタン
+          <Button variant="contained" href={tile.downloadURL}>
+            無料ダウンロード
+          </Button>
+        ))}
+      </div>
+    )
+  }
+  
+
+    return (
     <div>
-      <TopHeader/>
-      {displayImage()}
+      <TopHeader />
+      <div className={classes.main}>  
+        {displayImage()}
+        {downloadButton()}
+      </div>
     </div>
   )
 }
 
-export default DownloadPage;
+export default DownloadPage;

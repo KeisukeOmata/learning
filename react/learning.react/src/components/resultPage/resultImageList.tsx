@@ -51,7 +51,7 @@ const ImageItemList: FC = () => {
       temporaryData.push(doc.data());
     })
     // temporaryDataをobjectの配列型からTileDateの配列型に変換してstateに設定
-    setData(temporaryData as TileDate[]);
+    setData(temporaryData as TileDate[]);
   }
 
   // レンダリングが終わった後に呼ばれるhook
@@ -78,6 +78,4 @@ const ImageItemList: FC = () => {
   )
 }
 
-export default ImageItemList;
-
-
+export default ImageItemList;
