@@ -1,40 +1,25 @@
-import React, { FC, useState, useEffect } from "react";
-// URLの値を取得する
-import { useParams, useHistory } from 'react-router-dom';
-import firebase from '../../firebase';
-import { TileDate } from "../../types/types";
-import { ParamTypes } from "../../types/paramTypes";
+import React, { FC, useEffect, useState } from "react";
+import { useParams } from 'react-router-dom';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
+// import Button from '@material-ui/core/Button';
+import firebase from '../firebase';
+import TopHeader from "../components/topPage/topHeader";
+import { TileDate } from "../types/types";
+import { ParamTypes } from "../types/paramTypes";
 
 const useStyles = makeStyles(() =>
   createStyles({
-    root: {
-      display: "flex",
-      flexWrap: "wrap",
-      width: "80%",
-      textAlign: "center",
-      marginTop: "2%",
-    },
     tileImage: {
-      height: "218px",
-      width: "218px",
+      height: "436px",
+      width: "436px",
     },
-  }),
+  })
 );
 
-const ImageItemList: FC = () => {
-  // TileDate型のstate: dataとそれを設定するsetData関数
-  // stateの初期値は[]
-  const [data, setData] = useState<TileDate[]>([]);
-  // URLの値を取得する
+const DownloadPage: FC = () => {
   const { keyword } = useParams<ParamTypes>();
-  // const { keyword } : any = useParams();
-  // const { keyword } = useParams() as { 
-  //   keyword: string;
-  // }
   const classes = useStyles();
-  const history = useHistory();
+  const [data, setData] = useState<TileDate[]>([]);
   
   // asyncで非同期処理
   const getData = async (searchWord: string | undefined) => {
@@ -60,24 +45,24 @@ const ImageItemList: FC = () => {
   // 空の配列を渡すとレンダリング後、1度だけ呼ばれる
   }, []);
 
-  return(
-    <div className={classes.root}>
-      {data.map((tile) => (
-        <div>
-          {/* onClick属性に無名関数を指定 */}
-          <Button onClick={() =>
-            // history.pushでURLに引数で渡した文字列を追加する
-            history.push("/download/" + tile.title)
-          }>
+  const displayImage = () => {
+    return (
+      <div>
+        {data.map((tile) => (
+          <div>
             <img className={classes.tileImage} src={tile.image} alt={tile.title} />
-          </Button>
-          <h3>{tile.title}</h3>
-        </div>
-      ))}
+          </div>
+        ))}
+      </div>
+    )
+  }
+
+  return (
+    <div>
+      <TopHeader/>
+      {displayImage()}
     </div>
   )
 }
 
-export default ImageItemList;
-
-
+export default DownloadPage;
