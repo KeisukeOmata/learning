@@ -18,10 +18,6 @@ gem 'mysql2', '>=0.4.4'
 docker-compose run --service-ports app
 # 7.各種インストール
 bundle install
-# yarn install
-# apt update; apt -y upgrade
-# # vimのインストール
-# apt-get update;apt-get install vim
 # assets:precompileでエラーが発生する場合はyarn add hoge
 bin/rails assets:precompile
 # 8.起動
@@ -44,12 +40,7 @@ docker cp コンテナid:app/アプリ名 ローカルのパス/付けたい名�
 # 6.docker-compose.ymlを作成
 # 7.appイメージとコンテナの作成
 docker-compose run --service-ports app
-# 8.webpackの依存関係で怒られるので.envに以下を記載
-vim .env
------------------
-SKIP_PREFLIGHT_CHECK=true
------------------
-# 9.起動
+# 8.起動
 yarn start
 ----------------------------
 # コンテナに入る(アタッチ)
