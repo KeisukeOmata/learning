@@ -44,22 +44,58 @@ docker cp コンテナid:app/アプリ名 ローカルのパス/付けたい名�
 # 7.appイメージとコンテナの作成
 docker-compose run --service-ports app
 # 8.各種インストール
-npm install --save redux
-npm install --save react-redux
-npm install --save-dev redux-devtools
-npm install --save redux-persist
-npm install --save redux-thunk
-npm install --save next
-npm install --save react
-npm install --save react-dom
-npm install --save firebase
+npm install redux
+npm install react-redux
+npm install redux-devtools
+npm install redux-persist
+npm install redux-thunk
+npm install next
+npm install react
+npm install react-dom
+npm install firebase
+npm install typescript
+npm install @material-ui/core
+npm install @material-ui/icons
+npm install @types/react-router-dom
+npm install react-router-dom
 apt-get update
 apt-get install -y vim
 # yarn install
 # 9.起動
 yarn start
 ----------------------------
-# nextの環境構築
+# nextの環境構築2
+# 1.dokerfile, docker-compose.ymlをフォルダに用意
+# 2.コンテナ作成
+docker-compose run --service-ports app
+# 3.アプリ作成
+yarn create next-app isr
+# 4.typescriptをインストール
+# touch tsconfig.json
+mv pages/index.js pages/index.tsx
+mv pages/_app.js pages/_app.tsx
+yarn add --dev typescript @types/react @types/node
+# src/@typesを作成
+# 各種インストール
+yarn add vercel
+yarn add @types/axios
+yarn add @types/firebase
+yarn add firebase-admin
+yarn add @types/recoil
+yarn add bootstrap@next
+yarn add sass
+# アニメーション
+yarn add @types/react-toastify
+# 日時を扱う
+yarn add dayjs
+# 画像
+yarn add canvas
+
+# 環境変数にbase64でエンコードしたjsonファイルの内容を指定し、それを実行時にデコードして利用
+# .env.localにエンコードした文字列を環境変数として設定
+base64 -i next-57fd0-firebase-adminsdk-7tp80-f1525cff04.json > encoded.txt
+----------------------------
+# nextの環境構築1
 # 1.dokerfile, docker-compose.ymlをフォルダに用意
 # 2.package.jsonを作成
 ーーーーーーーーーーーーーー
@@ -78,15 +114,20 @@ docker-compose run --service-ports app
 # 5./pages/_app.jsを配置
 # 6./store.jsでcreateStoreにthunkMiddlewareを渡す
 # 7.各種インストール
-npm install --save redux
-npm install --save react-redux
-npm install --save-dev redux-devtools
-npm install --save redux-persist
-npm install --save redux-thunk
-npm install --save next
-npm install --save react
-npm install --save react-dom
-npm install --save firebase
+npm install redux
+npm install react-redux
+npm install redux-devtools
+npm install redux-persist
+npm install redux-thunk
+npm install next
+npm install react
+npm install react-dom
+npm install firebase
+npm install typescript
+npm install @material-ui/core
+npm install @material-ui/icons
+npm install @types/react-router-dom
+npm install react-router-dom
 apt-get update
 apt-get install -y vim
 yarn install
