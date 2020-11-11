@@ -1,8 +1,0 @@
-<%= form_for cart_item, url:cart_item_create_path(id) do |f| %>
-  <div id="quantity">数量
-    <%= f.number_field :item_quantity, size: "5" %>
-  </div>
-  <div style="margin-top: 15px;">
-    <%= f.submit "カートに入れる", class: "btn btn-info" %>
-  </div>
-<% end %>
