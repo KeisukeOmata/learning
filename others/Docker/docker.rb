@@ -1,3 +1,37 @@
+# nextの環境構築2
+# 1.dokerfile, docker-compose.ymlをフォルダに用意
+# 2.コンテナ作成
+docker-compose run --service-ports app
+# 3.アプリ作成
+# コンテナ内
+yarn create next-app todo
+# 4.typescriptをインストール
+# touch tsconfig.json
+mv pages/index.js pages/index.tsx
+mv pages/_app.js pages/_app.tsx
+yarn add --dev typescript @types/react @types/node
+# src/components, foundations, layouts, pages, typesを作成
+# 各種インストール
+yarn add vercel
+yarn add @types/axios
+yarn add @types/firebase
+yarn add firebase-admin
+yarn add @types/recoil
+yarn add bootstrap@next
+yarn add sass
+# アニメーション
+yarn add @types/react-toastify
+# 日時を扱う
+yarn add dayjs
+# 画像
+yarn add canvas
+# リセットcss
+yarn add minireset.css
+
+# 環境変数にbase64でエンコードしたjsonファイルの内容を指定し、それを実行時にデコードして利用
+# .env.localにエンコードした文字列を環境変数として設定
+base64 -i next-57fd0-firebase-adminsdk-7tp80-f1525cff04.json > encoded.txt
+----------------------------
 # docker-compose
 # 1.利用するイメージをpullしておく
 docker pull docker.elastic.co/elasticsearch/elasticsearch:7.9.1
@@ -63,37 +97,6 @@ apt-get install -y vim
 # yarn install
 # 9.起動
 yarn start
-----------------------------
-# nextの環境構築2
-# 1.dokerfile, docker-compose.ymlをフォルダに用意
-# 2.コンテナ作成
-docker-compose run --service-ports app
-# 3.アプリ作成
-yarn create next-app isr
-# 4.typescriptをインストール
-# touch tsconfig.json
-mv pages/index.js pages/index.tsx
-mv pages/_app.js pages/_app.tsx
-yarn add --dev typescript @types/react @types/node
-# src/@typesを作成
-# 各種インストール
-yarn add vercel
-yarn add @types/axios
-yarn add @types/firebase
-yarn add firebase-admin
-yarn add @types/recoil
-yarn add bootstrap@next
-yarn add sass
-# アニメーション
-yarn add @types/react-toastify
-# 日時を扱う
-yarn add dayjs
-# 画像
-yarn add canvas
-
-# 環境変数にbase64でエンコードしたjsonファイルの内容を指定し、それを実行時にデコードして利用
-# .env.localにエンコードした文字列を環境変数として設定
-base64 -i next-57fd0-firebase-adminsdk-7tp80-f1525cff04.json > encoded.txt
 ----------------------------
 # nextの環境構築1
 # 1.dokerfile, docker-compose.ymlをフォルダに用意
