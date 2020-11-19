@@ -177,3 +177,19 @@ module.exports = {
 process.env.REACT_APP_API
 ーーーーーーーーーーーー
 ーーーーーーーーーーーーーーーーーーーーーーーー
+// Webhook
+Versel
+settings => Git Integration => Deploy HooksでWebhookを作成で、WebhookのURLが発行される
+microCMS
+API設定 => Webhook => カスタム通知からURLを入力
+
+// 他のAPIを参照する
+参照するAPIを作成(カテゴリーなど)
+API設定 => APIスキーマ => 種類をコンテンツ参照を選択する
+ーーーーーーーーーーーーーーーーーーーーーーーー
+
+src/
+  + pages/       ... ページコンポーネント（Next.js標準）
+  + foundations/ ... ページ全体に関わるロジックを含むコンポーネントたち（認証処理/スプラッシュ画面など）
+  + layouts/     ... ページ全体のUIに関わるコンポーネントたち（ヘッダやフッタなど）
+  + components/  ... 再利用性の高いコンポーネントたち
