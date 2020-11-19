@@ -48,3 +48,12 @@
 /react/learning.next/yarn-debug.log*
 /react/learning.next/yarn-error.log*
 /react/learning.next/next.config.js
+
+/react/todo/.next
+/react/todo/.env
+/react/todo/.env.build
+/react/todo/node_modules
+/react/todo/npm-debug.log*
+/react/todo/yarn-debug.log*
+/react/todo/yarn-error.log*
+/react/todo/next.config.js
