@@ -4,9 +4,9 @@
 docker-compose run --service-ports app
 # 3.アプリ作成
 # コンテナ内
-yarn create next-app todo
+yarn create next-app next
 # 4.typescriptをインストール
-# touch tsconfig.json
+touch tsconfig.json
 mv pages/index.js pages/index.tsx
 mv pages/_app.js pages/_app.tsx
 yarn add --dev typescript @types/react @types/node
@@ -19,6 +19,7 @@ yarn add firebase-admin
 yarn add @types/recoil
 yarn add bootstrap@next
 yarn add sass
+yarn add @material-ui/core
 # アニメーション
 yarn add @types/react-toastify
 # 日時を扱う
