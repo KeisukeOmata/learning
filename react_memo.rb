@@ -63,7 +63,6 @@ function Posts({ posts }) {
 
 export default Posts
 ーーーーーーーーーーーーーーーーーーーーーーーー
-ーーーーーーーーーーーーーーーーーーーーーーーー
 # 環境変数の設定
 # 環境変数は.envに記載
 # 環境変数を呼び出したいファイル
@@ -100,7 +99,6 @@ API設定 => APIスキーマ => 種類をコンテンツ参照を選択する
 function Welcome(props) {
   return <h1>Hello, {props.name}</h1>;
 }
-
 const element = <Welcome name="Sara" />;
 ReactDOM.render(
   element,
@@ -113,7 +111,6 @@ class Welcome extends React.Component {
     return <h1>Hello, {this.props.name}</h1>;
   }
 }
-
 const element = <Welcome name="Sara" />;
 ReactDOM.render(
   element,
