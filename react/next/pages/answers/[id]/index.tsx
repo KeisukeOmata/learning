@@ -1,3 +1,4 @@
+import { GetServerSideProps } from 'next'
 import Layout from '../../../components/Layout'
 import Head from 'next/head'
 import { Props } from '../../../types/Props'
@@ -6,7 +7,7 @@ import TwitterShareButton from '../../../components/TwitterShareButton'
 
 // 必ずサーバサイドで呼ばれる
 // APIを取得
-export async function getServerSideProps({ query }) {
+export const getServerSideProps: GetServerSideProps = async (query) => {
   const res = await fetch(process.env.API_URL + `/api/answers/${query.id}`)
   const json = await res.json()
   // 取得した値をpropsとして返す
