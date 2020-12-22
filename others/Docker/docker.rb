@@ -1,10 +1,10 @@
 # nextの環境構築2
 # 1.dokerfile, docker-compose.ymlをフォルダに用意
 # 2.コンテナ作成
-docker-compose run --service-ports app
+docker-compose run --service-ports next_blog
 # 3.アプリ作成
 # コンテナ内
-yarn create next-app next
+yarn create next-app next_blog
 # 4.typescriptをインストール
 touch tsconfig.json
 mv pages/index.js pages/index.tsx
@@ -19,7 +19,9 @@ yarn add firebase-admin
 yarn add @types/recoil
 yarn add bootstrap@next
 yarn add sass
+import { useState } from "react";
 yarn add @material-ui/core
+yarn add @material-ui/icons
 # アニメーション
 yarn add @types/react-toastify
 # 日時を扱う
