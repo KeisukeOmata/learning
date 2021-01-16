@@ -38,7 +38,7 @@ git pull
 # 再度移動するときはコミット
 git commit
 ----------------------------------
-リポジトリ統合
+# リポジトリ統合
 cd learning 
 mkdir fav_map_rails
 touch fav_map_rails/.gitkeep 
