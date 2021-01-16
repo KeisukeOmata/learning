@@ -44,6 +44,8 @@ yarn cypress:open
 yarn add next-pwa
 touch next.config.js
 yarn add pwacompat
+# apollo
+yarn add apollo-boost @apollo/react-hooks graphql apollo-link-ws subscriptions-transport-ws
 # storybook
 yarn add -D @storybook/react @babel/core babel-loader babel-preset-react-app
 # package.json
@@ -83,6 +85,8 @@ yarn run storybook
 yarn storyshots
 yarn puppeteer-storyshots
 # 各種インストール
+yarn add -D classnames
+yarn add -D keen-slider 
 yarn add @types/swiper
 yarn add vercel
 yarn add @types/axios
@@ -106,6 +110,18 @@ yarn lint
 yarn lint --fix
 
 # Shopify
+# 管理ストア
+ストア作成(https://www.shopify.jp/)
+パートナーアカウント作成(https://www.shopify.jp/partners)
+ストア管理から管理ストアを追加する
+
+パートナーのビジネスメールが異なる必要がある
+アプリ管理内からストアフロントのアクセストークンが確認できる
+# 開発ストア
+パートナーで開発ストアを作成
+ストア側で[アプリ管理] > [プライベートアプリを管理する]と移動し、[プライベートアプリを有効にする]
+アプリ管理内からストアフロントのアクセストークンが確認できる
+
 brew tap shopify/shopify
 brew install shopify-cli
 shopify version
