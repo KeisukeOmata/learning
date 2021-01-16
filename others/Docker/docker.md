@@ -1,40 +1,3 @@
-# nextの環境構築2
-# 1.dokerfile, docker-compose.ymlをフォルダに用意
-# 2.コンテナ作成
-docker-compose run --service-ports next_blog
-# 3.アプリ作成
-# コンテナ内
-yarn create next-app next_blog
-# 4.typescriptをインストール
-touch tsconfig.json
-mv pages/index.js pages/index.tsx
-mv pages/_app.js pages/_app.tsx
-yarn add --dev typescript @types/react @types/node
-# src/components, foundations, layouts, pages, typesを作成
-# 各種インストール
-yarn add vercel
-yarn add @types/axios
-yarn add @types/firebase
-yarn add firebase-admin
-yarn add @types/recoil
-yarn add bootstrap@next
-yarn add sass
-import { useState } from "react";
-yarn add @material-ui/core
-yarn add @material-ui/icons
-# アニメーション
-yarn add @types/react-toastify
-# 日時を扱う
-yarn add dayjs
-# 画像
-yarn add canvas
-# リセットcss
-yarn add minireset.css
-
-# 環境変数にbase64でエンコードしたjsonファイルの内容を指定し、それを実行時にデコードして利用
-# .env.localにエンコードした文字列を環境変数として設定
-base64 -i next-57fd0-firebase-adminsdk-7tp80-f1525cff04.json > encoded.txt
-----------------------------
 # docker-compose
 # 1.利用するイメージをpullしておく
 docker pull docker.elastic.co/elasticsearch/elasticsearch:7.9.1
@@ -80,65 +43,11 @@ docker cp コンテナid:app/アプリ名 ローカルのパス/付けたい名�
 # 6.docker-compose.ymlを作成
 # 7.appイメージとコンテナの作成
 docker-compose run --service-ports app
-# 8.各種インストール
-npm install redux
-npm install react-redux
-npm install redux-devtools
-npm install redux-persist
-npm install redux-thunk
-npm install next
-npm install react
-npm install react-dom
-npm install firebase
-npm install typescript
-npm install @material-ui/core
-npm install @material-ui/icons
-npm install @types/react-router-dom
-npm install react-router-dom
+# yarn install
 apt-get update
 apt-get install -y vim
-# yarn install
 # 9.起動
 yarn start
-----------------------------
-# nextの環境構築1
-# 1.dokerfile, docker-compose.ymlをフォルダに用意
-# 2.package.jsonを作成
-ーーーーーーーーーーーーーー
-{
-  "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start",
-    "export": "next export"
-  }
-}
-ーーーーーーーーーーーーーー
-# 3.コンテナ作成
-docker-compose run --service-ports app
-# 4./lib/redux-store.jsを配置
-# 5./pages/_app.jsを配置
-# 6./store.jsでcreateStoreにthunkMiddlewareを渡す
-# 7.各種インストール
-npm install redux
-npm install react-redux
-npm install redux-devtools
-npm install redux-persist
-npm install redux-thunk
-npm install next
-npm install react
-npm install react-dom
-npm install firebase
-npm install typescript
-npm install @material-ui/core
-npm install @material-ui/icons
-npm install @types/react-router-dom
-npm install react-router-dom
-apt-get update
-apt-get install -y vim
-yarn install
-# 8.起動
-npm run dev
 ----------------------------
 # コンテナに入る(アタッチ)
 docker attach
