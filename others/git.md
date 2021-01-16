@@ -36,4 +36,15 @@ git branch
 git checkout
 git pull
 # 再度移動するときはコミット
-git commit 
+git commit
+----------------------------------
+# リポジトリ統合
+cd learning 
+mkdir fav_map_rails
+touch fav_map_rails/.gitkeep 
+git add -A fav_map_rails
+git commit -m "Add fav_map_rails"
+git remote add fav_map_rails ../fav_map_rails
+git fetch fav_map_rails
+git merge --allow-unrelated-histories -X subtree=fav_map_rails fav_map_rails/master
+rm fav_map_rails/.gitkeep
