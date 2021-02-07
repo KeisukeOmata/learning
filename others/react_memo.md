@@ -55,6 +55,6 @@ mkdir stories
 cd stories  
 touch Button.stories.tsx  
 # jsonを環境変数に設定
-# 環境変数にbase64でエンコードしたjsonファイルの内容を指定し、それを実行時にデコードして利用
-# .env.localにエンコードした文字列を環境変数として設定
+環境変数にbase64でエンコードしたjsonファイルの内容を指定し、それを実行時にデコードして利用
+.env.localにエンコードした文字列を環境変数として設定
 base64 -i next-57fd0-firebase-adminsdk-7tp80-f1525cff04.json > encoded.txt
