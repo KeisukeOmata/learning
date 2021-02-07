@@ -1,9 +1,0 @@
-/* フォームが未入力、指定以外の文字列の場合赤の点線を表示 */
-input:invalid {
-  border: 2px dashed red;
-}
-
-/* フォームが入力済み、指定の文字列の場合青の実線を表示 */
-input:valid {
-  border: 1px solid blue;
-}
